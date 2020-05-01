@@ -11,7 +11,6 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { HeaderComponent } from './components/header/header.component';
-import { UserfinderComponent } from './components/userfinder/userfinder.component';
 
 
 @NgModule({
@@ -25,7 +24,6 @@ import { UserfinderComponent } from './components/userfinder/userfinder.componen
     AboutUsComponent,
     ContactUsComponent,
     HeaderComponent,
-    UserfinderComponent
   ],
   imports: [
     BrowserModule,

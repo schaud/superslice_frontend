@@ -4,8 +4,6 @@ import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
-import { MenuComponent } from './components/menu/menu.component';
-import { UserfinderComponent } from './components/userfinder/userfinder.component';
 
 
 const routes: Routes = [
@@ -13,7 +11,6 @@ const routes: Routes = [
   {path:'contact-us', component: ContactUsComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: SignupComponent},
-  {path: 'user', component: UserfinderComponent}
 
 ];
 
