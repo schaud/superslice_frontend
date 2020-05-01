@@ -127,3 +127,8 @@ input[type=text], input[type=password] {
     right: 10%;
   
   }
+  .i1 {
+    width :32px; 
+    height:42px;
+    float:right;
+  }

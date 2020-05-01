@@ -11,6 +11,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { HeaderComponent } from './components/header/header.component';
     AboutUsComponent,
     ContactUsComponent,
     HeaderComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
