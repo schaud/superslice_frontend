@@ -7,6 +7,7 @@ import { StartupComponent } from './components/startup/startup.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { LoginComponent } from './components/login/login.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { MenuComponent } from './components/menu/menu.component';
     StartupComponent,
     SignupComponent,
     LoginComponent,
-    MenuComponent
+    MenuComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

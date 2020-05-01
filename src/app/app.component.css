@@ -129,14 +129,4 @@ input[type=text], input[type=password] {
        width: 100%;
     }
   }
-footer{
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-}
-  footer > a{
-      color:black; 
-      margin:0 20px 0 20px;
-      text-decoration: underline;
-  }
+
