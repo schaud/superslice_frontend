@@ -1,0 +1,20 @@
+h1,h2 {
+    text-align: center;
+}
+
+div.pizza_legacy_intro {
+    text-align: center;
+    word-wrap: break-word;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50em;
+}
+
+div.love_in_intro {
+    text-align: center;
+    word-wrap: break-word;
+ 
+    margin-left: auto;
+    margin-right: auto;
+    width: 50em;
+}
