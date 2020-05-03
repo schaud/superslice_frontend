@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
+=======
 import {LoginService} from "../../services/login.service";
+>>>>>>> master
 
 @Component({
   selector: 'app-header',
@@ -8,12 +11,16 @@ import {LoginService} from "../../services/login.service";
 })
 export class HeaderComponent implements OnInit {
 
+<<<<<<< HEAD
+  constructor() { }
+=======
   constructor(private login: LoginService) { }
 
   username: string;
   password: string;
   user: any;
   session: string;
+>>>>>>> master
 
   title = 'SuperSlice';
   loginmodal:string;
@@ -30,7 +37,11 @@ export class HeaderComponent implements OnInit {
     this.registermodal = 'notshown';
 
   }
+<<<<<<< HEAD
+ 
+=======
 
+>>>>>>> master
   showLogin() {
     this.loginmodal = 'shown';
 
@@ -40,6 +51,8 @@ export class HeaderComponent implements OnInit {
 
   }
 
+<<<<<<< HEAD
+=======
   async loginUser(): Promise<any> {
     this.session = null;
     this.user = await this.login.loginserv(this.username, this.password);
@@ -49,4 +62,5 @@ export class HeaderComponent implements OnInit {
       this.session = localStorage.getItem('user_key');
     }
   }
+>>>>>>> master
 }
