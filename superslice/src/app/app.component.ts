@@ -6,6 +6,7 @@ declare var $:any;
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+<<<<<<< HEAD:src/app/app.component.ts
 export class AppComponent implements OnInit{
   title = 'SuperSlice';
   
@@ -13,4 +14,8 @@ export class AppComponent implements OnInit{
   
   }
   
+=======
+export class AppComponent {
+  title = 'superslice';
+>>>>>>> master:superslice/src/app/app.component.ts
 }
