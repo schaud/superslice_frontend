@@ -21,4 +21,5 @@ export class PizzaCustomizationService {
     let veggiePromise:Promise<any>  = this.http.get('http://localhost:9000/getVeggieToppings').toPromise();
     return veggiePromise;
   }
+  
 }
