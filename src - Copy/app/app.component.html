@@ -1,0 +1,94 @@
+<header>
+  <nav style="background-color: red;"class="navbar navbar-expand-sm navbar-light">
+    <!-- Brand -->
+    <a class="navbar-brand" href="#">Super Slice</a>
+    <div id="navLinks">
+    <ul class="navbar-nav">
+    <!-- Dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            Menu
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Plain</a><!--ngfor goes on this line for different specialty pizzas -->
+            <a class="dropdown-item" href="#">Build Your Own</a>
+          </div>
+        </li>
+    <!-- Links -->
+    
+      <li class="nav-item">
+        <a class="nav-link"(click)="showLogin()"href="#" >Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="showRegister()"href="#">Register</a>
+      </li>
+  
+
+    </ul>
+  </div>
+  </nav>
+</header>
+<app-startup></app-startup>
+<div id="loginForm" [ngClass]="[loginmodal]">
+  
+  <form class="modal-content animate" action="" method="post">
+    <div class="imgcontainer">
+      <span (click)="hideLogin()" class="close" title="Close Modal">&times;</span>
+  <h2>Log In</h2>
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Sign In</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" (click)="hideLogin()" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>
+</div>
+
+
+<div id="RegisterForm" [ngClass]="[registermodal]">
+  
+  <form class="modal-content animate" action="" method="post">
+    <div class="imgcontainer">
+      <span (click)="hideRegister()" class="close" title="Close Modal">&times;</span>
+  <h2>Register</h2>
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+        
+      <button type="submit">Sign Up</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" (click)="hideRegister()" class="cancelbtn">Cancel</button>
+
+    </div>
+  </form>
+</div>
+
+
+
+
+<router-outlet></router-outlet>
+
+<footer><a href="#">About Us</a><a href="#">Location</a><a href="#">Contact Us</a></footer>
