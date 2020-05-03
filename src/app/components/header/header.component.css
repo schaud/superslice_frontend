@@ -6,9 +6,6 @@ input[type=text], input[type=password] {
     border: 1px solid #ccc;
     box-sizing: border-box;
   }
-<<<<<<< HEAD
-  
-=======
 
 #navLinks{
   position: absolute;
@@ -37,50 +34,39 @@ input[type=text], input[type=password] {
     opacity: 0.8;
   }
 
->>>>>>> master
   .cancelbtn {
     width: auto;
     padding: 10px 18px;
     background-color: #f44336;
   }
-<<<<<<< HEAD
   
-=======
 
->>>>>>> master
 
   .imgcontainer {
     text-align: center;
     margin: 24px 0 12px 0;
     position: relative;
   }
-<<<<<<< HEAD
-  
-=======
 
->>>>>>> master
+
   img.avatar {
     width: 40%;
     border-radius: 50%;
   }
-<<<<<<< HEAD
   
   .container {
     padding: 16px;
   }
   
-=======
 
   .container {
     padding: 16px;
   }
 
->>>>>>> master
   span.psw {
     float: right;
     padding-top: 16px;
   }
-<<<<<<< HEAD
   
 
   .notshown {
@@ -117,7 +103,6 @@ input[type=text], input[type=password] {
     width: 80%; 
   }
   
-=======
 
 
   .notshown {
@@ -154,7 +139,6 @@ input[type=text], input[type=password] {
     width: 80%;
   }
 
->>>>>>> master
   .close {
     position: absolute;
     right: 25px;
@@ -163,26 +147,19 @@ input[type=text], input[type=password] {
     font-size: 35px;
     font-weight: bold;
   }
-<<<<<<< HEAD
   
-=======
 
->>>>>>> master
   .close:hover,
   .close:focus {
     color: red;
     cursor: pointer;
   }
-<<<<<<< HEAD
   
-=======
 
->>>>>>> master
   .animate {
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s
   }
-<<<<<<< HEAD
   
   @-webkit-keyframes animatezoom {
     from {-webkit-transform: scale(0)} 
@@ -194,7 +171,6 @@ input[type=text], input[type=password] {
     to {transform: scale(1)}
   }
   
-=======
 
   @-webkit-keyframes animatezoom {
     from {-webkit-transform: scale(0)}
@@ -206,7 +182,6 @@ input[type=text], input[type=password] {
     to {transform: scale(1)}
   }
 
->>>>>>> master
   @media screen and (max-width: 300px) {
     span.psw {
        display: block;
@@ -215,7 +190,6 @@ input[type=text], input[type=password] {
     .cancelbtn {
        width: 100%;
     }
-<<<<<<< HEAD
   }
   #navLinks{
     position: absolute;
@@ -227,8 +201,6 @@ input[type=text], input[type=password] {
     height:42px;
     float:right;
   }
-=======
 
 
   }
->>>>>>> master
