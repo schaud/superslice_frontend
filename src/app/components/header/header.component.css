@@ -21,12 +21,11 @@ input[type=text], input[type=password] {
     cursor: pointer;
     width: 100%;
   }
-  
+
   button:hover {
     opacity: 0.8;
   }
-  
-=======
+
 
   button:hover {
     opacity: 0.8;
@@ -37,7 +36,7 @@ input[type=text], input[type=password] {
     padding: 10px 18px;
     background-color: #f44336;
   }
-  
+
 
 
   .imgcontainer {
@@ -51,11 +50,11 @@ input[type=text], input[type=password] {
     width: 40%;
     border-radius: 50%;
   }
-  
+
   .container {
     padding: 16px;
   }
-  
+
 
   .container {
     padding: 16px;
@@ -65,42 +64,42 @@ input[type=text], input[type=password] {
     float: right;
     padding-top: 16px;
   }
-  
+
 
   .notshown {
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
-    padding-top: 60px;
-  }
-  .shown {
-    display: block; 
-    position: fixed; 
+    display: none;
+    position: fixed;
     z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
     padding-top: 60px;
   }
-  
+  .shown {
+    display: block;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+  }
+
   .modal-content {
     background-color: #fefefe;
-    margin: 5% auto 15% auto; 
+    margin: 5% auto 15% auto;
     border: 1px solid #888;
-    width: 80%; 
+    width: 80%;
   }
-  
+
 
 
   .notshown {
@@ -145,30 +144,30 @@ input[type=text], input[type=password] {
     font-size: 35px;
     font-weight: bold;
   }
-  
+
 
   .close:hover,
   .close:focus {
     color: red;
     cursor: pointer;
   }
-  
+
 
   .animate {
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s
   }
-  
+
   @-webkit-keyframes animatezoom {
-    from {-webkit-transform: scale(0)} 
+    from {-webkit-transform: scale(0)}
     to {-webkit-transform: scale(1)}
   }
-    
+
   @keyframes animatezoom {
-    from {transform: scale(0)} 
+    from {transform: scale(0)}
     to {transform: scale(1)}
   }
-  
+
 
   @-webkit-keyframes animatezoom {
     from {-webkit-transform: scale(0)}
@@ -192,13 +191,13 @@ input[type=text], input[type=password] {
   #navLinks{
     position: absolute;
     right: 10%;
-  
+
   }
   .i1 {
-    width :32px; 
+    width :32px;
     height:42px;
     float:right;
   }
 
 
-  }
+

@@ -2,9 +2,7 @@
   <nav style="background-color: red;"class="navbar navbar-expand-sm navbar-light">
     <a class="navbar-brand" href="#"><img class="i2" src="../../../assets/logo.png"></a>
 
-    <div id="navLinks">
-    <ul class="navbar-nav " >
-    
+
     <div id="user">
       <h1>{{session}}</h1>
     </div>
@@ -22,7 +20,7 @@
             <a class="dropdown-item" routerLink="menu/special">Special</a>
             <a class="dropdown-item" routerLink="menu/staple">Staple</a>
           </div>
-          
+
         </li>
         <li> <a class="nav-link"(click)="showLogin()" routerLink="/login" >Login</a></li>
         <li><a class="nav-link" (click)="showRegister()" routerLink="/register">Register</a></li>
