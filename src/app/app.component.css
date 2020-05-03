@@ -8,6 +8,11 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
   }
 
+#navLinks{
+  position: absolute;
+  right: 10%;
+}
+
   /* Set a style for all buttons */
   button {
     background-color: #4CAF50;
@@ -130,8 +135,5 @@ input[type=text], input[type=password] {
     }
   }
 
-#navLinks{
-  position: absolute;
-  right: 10%;
-}
+
 
