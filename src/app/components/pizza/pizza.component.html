@@ -8,6 +8,7 @@
 <div *ngFor="let meat of meats">
 <input type="checkbox"  [name]="meat.toppingName"[value]="meat.toppingName">
 <label   [for]=" meat.toppingName"> {{meat.toppingName}}</label><br>
+
 </div>
 <h2>Veggies</h2>
 <div *ngFor="let veggie of veggies">
@@ -15,3 +16,5 @@
 <label   [for]=" veggie.toppingName"> {{veggie.toppingName}}</label><br>
 </div>
 <button>Add to Cart</button>
+
+
