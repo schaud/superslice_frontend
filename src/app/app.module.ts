@@ -14,7 +14,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 import { MenuSpecialComponent } from './components/menu-special/menu-special.component';
 import { MenuStapleComponent } from './components/menu-staple/menu-staple.component';
-
+import { PizzaComponent } from './components/pizza/pizza.component';
+import { HttpClientModule } from '@angular/common/http'; 
 
 @NgModule({
   declarations: [
@@ -30,10 +31,12 @@ import { MenuStapleComponent } from './components/menu-staple/menu-staple.compon
     HomeComponent,
     MenuSpecialComponent,
     MenuStapleComponent,
+    PizzaComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
