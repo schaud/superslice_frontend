@@ -4,7 +4,7 @@
 body {
     width: 100%;
     height: 100%;
-    background: url('/assets/pizza_bg.png') no-repeat center;
+    /* background: url('/assets/pizza_bg_1.jpg') no-repeat center; */
     background-size: 100%;
     background-position: top center;
 }
