@@ -12,7 +12,6 @@ input[type=text], input[type=password] {
   right: 10%;
 }
 
->>>>>>> master
   button {
     background-color: #4CAF50;
     color: white;
@@ -22,7 +21,6 @@ input[type=text], input[type=password] {
     cursor: pointer;
     width: 100%;
   }
-<<<<<<< HEAD
   
   button:hover {
     opacity: 0.8;
