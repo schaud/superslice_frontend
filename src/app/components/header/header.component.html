@@ -2,11 +2,9 @@
   <nav style="background-color: red;"class="navbar navbar-expand-sm navbar-light">
     <a class="navbar-brand" href="#"><img class="i2" src="../../../assets/logo.png"></a>
 
-<<<<<<< HEAD
     <div id="navLinks">
     <ul class="navbar-nav " >
     
-=======
     <div id="user">
       <h1>{{session}}</h1>
     </div>
@@ -14,13 +12,11 @@
     <div id="navLinks">
     <ul class="navbar-nav " >
 
->>>>>>> master
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
             Menu
           </a>
           <div class="dropdown-menu">
-<<<<<<< HEAD
             <a class="dropdown-item" routerLink="/pizzaCustomizer">Plain</a>
             <a class="dropdown-item" href="/pizzaCustomizer">Build Your Own</a>
             <a class="dropdown-item" routerLink="menu/special">Special</a>
@@ -31,27 +27,15 @@
         <li> <a class="nav-link"(click)="showLogin()" routerLink="/login" >Login</a></li>
         <li><a class="nav-link" (click)="showRegister()" routerLink="/register">Register</a></li>
         <li><a href="#"><img class="i1" src="../../../assets/cart.png"></a></li>
-=======
-            <a class="dropdown-item" href="#">Plain</a>
-            <a class="dropdown-item" href="#">Build Your Own</a>
-          </div>
 
-        </li>
-        <li> <a class="nav-link"(click)="showLogin()" routerLink="/login" >Login</a></li>
-        <li><a class="nav-link" (click)="showRegister()" routerLink="/register">Register</a></li>
-
->>>>>>> master
     </ul>
   </div>
   </nav>
 </header>
 <app-startup></app-startup>
 <div id="loginForm" [ngClass]="[loginmodal]">
-<<<<<<< HEAD
-  
-=======
 
->>>>>>> master
+
   <form class="modal-content animate" action="" method="post">
     <div class="imgcontainer">
       <span (click)="hideLogin()" class="close" title="Close Modal">&times;</span>
@@ -60,21 +44,12 @@
 
     <div class="container">
       <label for="uname"><b>Username</b></label>
-<<<<<<< HEAD
-      <input type="text" placeholder="Enter Username" name="uname" required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-        
-      <button type="submit">Sign In</button>
-=======
       <input type="text" [(ngModel)]="username" placeholder="Enter Username" name="uname" required>
 
       <label for="psw"><b>Password</b></label>
       <input type="password" [(ngModel)]="password" placeholder="Enter Password" name="psw" required>
 
       <button (click) = "loginUser(); hideLogin()">Sign In</button>
->>>>>>> master
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
@@ -82,22 +57,13 @@
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" (click)="hideLogin()" class="cancelbtn">Cancel</button>
-<<<<<<< HEAD
-      <span class="psw">Forgot <a href="#">password?</a></span>
-=======
       <span class="psw"> <a href="#">Forgot password?</a></span>
->>>>>>> master
     </div>
   </form>
 </div>
 
 
 <div id="RegisterForm" [ngClass]="[registermodal]">
-<<<<<<< HEAD
-  
-=======
-
->>>>>>> master
   <form class="modal-content animate" action="" method="post">
     <div class="imgcontainer">
       <span (click)="hideRegister()" class="close" title="Close Modal">&times;</span>
@@ -110,11 +76,6 @@
 
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
-<<<<<<< HEAD
-        
-=======
-
->>>>>>> master
       <button type="submit">Sign Up</button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -123,12 +84,6 @@
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" (click)="hideRegister()" class="cancelbtn">Cancel</button>
-<<<<<<< HEAD
     </div>
-    
-=======
-
-    </div>
->>>>>>> master
   </form>
 </div>
