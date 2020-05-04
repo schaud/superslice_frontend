@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from "../../services/data.service";
-
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-menu-staple',
@@ -12,7 +12,31 @@ export class MenuStapleComponent implements OnInit {
   pizza : string;
   image : string;
 
-  constructor(private dataservice:DataService) { }
+  meat_url = `http://localhost:9000/getMeatToppings`;
+  meat = [];
+
+  veg_url = `http://localhost:9000/getVeggieToppings`;
+  veg = [];
+
+  constructor(private dataservice:DataService) { 
+    
+          this.http.get(this.meat_url).toPromise().then(data =>{      
+        console.log("hello " + data[0].toppingName); 
+        for(let key in data)
+          if(data.hasOwnProperty(key)){
+            this.meat.push(data[key].toppingName);
+          }
+
+
+      })
+      this.http.get(this.veg_url).toPromise().then(data =>{
+       console.log("hello veg" + data[0].toppingName); //sausage
+        for(let key in data)
+          if(data.hasOwnProperty(key)){
+            this.veg.push(data[key].toppingName);
+          }
+      })
+  }
 
   staples = [
     {name: 'Pepperoni Pizza', img : '../assets/staple_pizza/Pepperpni.png'},
@@ -38,6 +62,5 @@ export class MenuStapleComponent implements OnInit {
   newImage(value){
     this.dataservice.sendImage(value);
   }
-
 
 }

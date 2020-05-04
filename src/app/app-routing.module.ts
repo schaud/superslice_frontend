@@ -9,10 +9,12 @@ import { MenuSpecialComponent } from './components/menu-special/menu-special.com
 import { MenuStapleComponent } from './components/menu-staple/menu-staple.component';
 import { PizzaComponent } from './components/pizza/pizza.component';
 import {SpecialsViewComponent} from "./components/specials-view/specials-view.component";
+import { CartComponent } from './components/cart/cart.component';
 
 
 const routes: Routes = [
 
+  {path: 'cart', component: CartComponent},
   {path: 'pizzaCustomizer',component:PizzaComponent},
   {path: '', component: HomeComponent},
   {path:'about-us', component: AboutUsComponent},
