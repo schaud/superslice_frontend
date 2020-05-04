@@ -1,74 +1,81 @@
 <div class="center">
-
-  <div class="gallery">
-
-    <a (click)="newPizza(specials[0].name); newImage(specials[0].img); getPizza(); newPizzaObj(pizzaData)" routerLink="menu/special/specials-view">
-      <img [src]="specials[0].img" width="600" height="400">
+  <div class="gallery" *ngFor="let special of specials">
+    <a (click)="newPizza(special.name); newImage(special.img); newPizzaObj(getPizza())" routerLink="menu/special/specials-view">
+      <img [src]="special.img" width="600" height="400">  <!-- [@photoState]="photoSize"-->
     </a>
-    <div class="desc">{{specials[0].name}}</div>
+    <div class="desc">{{special.name}}</div>
   </div>
-
-  <div class="gallery">
-    <a (click)="newPizza(specials[1].name); newImage(specials[1].img) " routerLink="menu/special/specials-view">
-      <img [src]="specials[1].img" width="600" height="400">
-    </a>
-    <div class="desc">{{specials[1].name}}</div>
-  </div>
-
-  <div class="gallery">
-    <a (click)="newPizza(specials[2].name); newImage(specials[2].img)" routerLink="menu/special/specials-view">
-      <img [src]="specials[2].img" width="600" height="400">
-    </a>
-    <div class="desc">{{specials[2].name}}</div>
-  </div>
-
-  <div class="gallery">
-    <a (click)="newPizza(specials[3].name); newImage(specials[3].img)" routerLink="menu/special/specials-view">
-      <img [src]="specials[3].img" width="600" height="400">
-    </a>
-    <div class="desc">{{specials[3].name}}</div>
-  </div>
-
-  <div class="gallery">
-    <a (click)="newPizza(specials[4].name); newImage(specials[4].img)" routerLink="menu/special/specials-view">
-      <img [src]="specials[4].img" width="600" height="400">
-    </a>
-    <div class="desc">{{specials[4].name}}</div>
-  </div>
-
-  <div class="gallery">
-    <a (click)="newPizza(specials[5].name); newImage(specials[5].img)"
-       routerLink="menu/special/specials-view">
-      <img [src]="specials[5].img" width="600" height="400">
-    </a>
-    <div class="desc">{{specials[5].name}}</div>
-  </div>
-
-  <div class="gallery">
-    <a (click)="newPizza(specials[6].name); newImage(specials[6].img)"
-       routerLink="menu/special/specials-view">
-      <img [src]="specials[6].img" width="600" height="400">
-    </a>
-    <div class="desc">{{specials[6].name}}</div>
-  </div>
-
-  <div class="gallery">
-    <a (click)="newPizza(specials[7].name); newImage(specials[7].img)"
-       routerLink="menu/special/specials-view">
-      <img [src]="specials[7].img" width="600" height="400">
-    </a>
-    <div class="desc">{{specials[7].name}}</div>
-  </div>
-
-  <div class="gallery">
-    <a (click)="newPizza(specials[8].name); newImage(specials[8].img)"
-       routerLink="menu/special/specials-view">
-      <img [src]="specials[8].img" width="600" height="400">
-    </a>
-    <div class="desc">{{specials[8].name}}</div>
-  </div>
-
-
 </div>
+
+<!--<div class="center">-->
+
+<!--  <div class="gallery">-->
+
+<!--    <a (click)="newPizza(specials[0].name); newImage(specials[0].img); newPizzaObj(getPizza())" routerLink="menu/special/specials-view">-->
+<!--      <img [src]="specials[0].img" width="600" height="400">-->
+<!--    </a>-->
+<!--    <div class="desc">{{specials[0].name}}</div>-->
+<!--  </div>-->
+
+<!--  <div class="gallery">-->
+<!--    <a (click)="newPizza(specials[1].name); newImage(specials[1].img) " routerLink="menu/special/specials-view">-->
+<!--      <img [src]="specials[1].img" width="600" height="400">-->
+<!--    </a>-->
+<!--    <div class="desc">{{specials[1].name}}</div>-->
+<!--  </div>-->
+
+<!--  <div class="gallery">-->
+<!--    <a (click)="newPizza(specials[2].name); newImage(specials[2].img)" routerLink="menu/special/specials-view">-->
+<!--      <img [src]="specials[2].img" width="600" height="400">-->
+<!--    </a>-->
+<!--    <div class="desc">{{specials[2].name}}</div>-->
+<!--  </div>-->
+
+<!--  <div class="gallery">-->
+<!--    <a (click)="newPizza(specials[3].name); newImage(specials[3].img)" routerLink="menu/special/specials-view">-->
+<!--      <img [src]="specials[3].img" width="600" height="400">-->
+<!--    </a>-->
+<!--    <div class="desc">{{specials[3].name}}</div>-->
+<!--  </div>-->
+
+<!--  <div class="gallery">-->
+<!--    <a (click)="newPizza(specials[4].name); newImage(specials[4].img)" routerLink="menu/special/specials-view">-->
+<!--      <img [src]="specials[4].img" width="600" height="400">-->
+<!--    </a>-->
+<!--    <div class="desc">{{specials[4].name}}</div>-->
+<!--  </div>-->
+
+<!--  <div class="gallery">-->
+<!--    <a (click)="newPizza(specials[5].name); newImage(specials[5].img)"-->
+<!--       routerLink="menu/special/specials-view">-->
+<!--      <img [src]="specials[5].img" width="600" height="400">-->
+<!--    </a>-->
+<!--    <div class="desc">{{specials[5].name}}</div>-->
+<!--  </div>-->
+
+<!--  <div class="gallery">-->
+<!--    <a (click)="newPizza(specials[6].name); newImage(specials[6].img)"-->
+<!--       routerLink="menu/special/specials-view">-->
+<!--      <img [src]="specials[6].img" width="600" height="400">-->
+<!--    </a>-->
+<!--    <div class="desc">{{specials[6].name}}</div>-->
+<!--  </div>-->
+
+<!--  <div class="gallery">-->
+<!--    <a (click)="newPizza(specials[7].name); newImage(specials[7].img)"-->
+<!--       routerLink="menu/special/specials-view">-->
+<!--      <img [src]="specials[7].img" width="600" height="400">-->
+<!--    </a>-->
+<!--    <div class="desc">{{specials[7].name}}</div>-->
+<!--  </div>-->
+
+<!--  <div class="gallery">-->
+<!--    <a (click)="newPizza(specials[8].name); newImage(specials[8].img)"-->
+<!--       routerLink="menu/special/specials-view">-->
+<!--      <img [src]="specials[8].img" width="600" height="400">-->
+<!--    </a>-->
+<!--    <div class="desc">{{specials[8].name}}</div>-->
+<!--  </div>-->
+<!--</div>-->
 
 
