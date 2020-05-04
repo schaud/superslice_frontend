@@ -17,11 +17,12 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path:'about-us', component: AboutUsComponent},
   {path:'contact-us', component: ContactUsComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: SignupComponent},
+  //{path: 'login', component: LoginComponent},
+  //{path: 'register', component: SignupComponent},
   {path: 'menu/special', component: MenuSpecialComponent},
   {path: 'menu/staple', component: MenuStapleComponent},
-  {path: 'menu/special/specials-view', component: SpecialsViewComponent}
+  {path: 'menu/special/specials-view', component: SpecialsViewComponent},
+  {path: 'menu/staple/specials-view', component: SpecialsViewComponent}
 
 
 ];

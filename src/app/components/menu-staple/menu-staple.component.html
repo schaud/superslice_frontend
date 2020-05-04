@@ -1,72 +1,78 @@
-
 <div class="center">
-    <div class="gallery">
-      <a target="_blank" href="#">
-        <img src="../assets/staple_pizza/Pepperpni.png" width="600" height="400">
-      </a>
-      <div class="desc">Pepperoni Pizza</div>
-    </div>
 
-    <div class="gallery">
-      <a target="_blank" href="#">
-        <img src="../assets/staple_pizza/mushroom.png" width="600" height="400">
-      </a>
-      <div class="desc">Mushroom Pizza</div>
-    </div>
+  <div class="gallery">
 
-    <div class="gallery">
-      <a target="_blank" href="#">
-        <img src="../assets/staple_pizza/chicken.png" width="600" height="400">
-      </a>
-      <div class="desc">Chicken Pizza</div>
-    </div>
-
-    <div class="gallery">
-      <a target="_blank" href="#">
-        <img src="../assets/staple_pizza/Anchovies.png" width="600" height="400">
-      </a>
-      <div class="desc">Anchovies Pizza</div>
-    </div>
-
-    <div class="gallery">
-      <a target="_blank" href="#">
-        <img src="../assets/staple_pizza/spinach.png" width="600" height="400">
-      </a>
-      <div class="desc">Spinach Pizza</div>
-    </div>
-
-
-
-
-
-    <div class="gallery">
-      <a target="_blank" href="#">
-        <img src="../assets/staple_pizza/bacon.png" width="600" height="400">
-      </a>
-      <div class="desc">Bacon Pizza</div>
-    </div>
-
-    <div class="gallery">
-      <a target="_blank" href="#">
-        <img src="../assets/staple_pizza/Cauliflower.png" width="600" height="400">
-      </a>
-      <div class="desc">Cauliflower Pizza</div>
-    </div>
-
-    <div class="gallery">
-        <a target="_blank" href="#">
-          <img src="../assets/staple_pizza/Sausage.png" width="600" height="400">
-        </a>
-        <div class="desc">Sausage Pizza</div>
-      </div>
-
-      <div class="gallery">
-        <a target="_blank" href="#">
-          <img src="../assets/staple_pizza/Eggplant.png" width="600" height="400">
-        </a>
-        <div class="desc">Eggplant Pizza</div>
-      </div>
-
+    <a (click)="newPizza(staples[0].name); newImage(staples[0].img)"
+      routerLink="../staple/specials-view">
+      <img [src]="staples[0].img" width="600" height="400">
+    </a>
+    <div class="desc">{{staples[0].name}}</div>
   </div>
+
+  <div class="gallery">
+    <a (click)="newPizza(staples[1].name); newImage(staples[1].img) "
+      routerLink="../staple/specials-view">
+      <img [src]="staples[1].img" width="600" height="400">
+    </a>
+    <div class="desc">{{staples[1].name}}</div>
+  </div>
+
+  <div class="gallery">
+    <a (click)="newPizza(staples[2].name); newImage(staples[2].img)"
+      routerLink="../staple/specials-view">
+      <img [src]="staples[2].img" width="600" height="400">
+    </a>
+    <div class="desc">{{staples[2].name}}</div>
+  </div>
+
+  <div class="gallery">
+    <a (click)="newPizza(staples[3].name); newImage(staples[3].img)"
+      routerLink="../staple/specials-view">
+      <img [src]="staples[3].img" width="600" height="400">
+    </a>
+    <div class="desc">{{staples[3].name}}</div>
+  </div>
+
+  <div class="gallery">
+    <a (click)="newPizza(staples[4].name); newImage(staples[4].img)"
+      routerLink="../staple/specials-view">
+      <img [src]="staples[4].img" width="600" height="400">
+    </a>
+    <div class="desc">{{staples[4].name}}</div>
+  </div>
+
+  <div class="gallery">
+    <a (click)="newPizza(staples[5].name); newImage(staples[5].img)"
+      routerLink="../staple/specials-view">
+      <img [src]="staples[5].img" width="600" height="400">
+    </a>
+    <div class="desc">{{staples[5].name}}</div>
+  </div>
+
+  <div class="gallery">
+    <a (click)="newPizza(staples[6].name); newImage(staples[6].img)"
+      routerLink="../staple/specials-view">
+      <img [src]="staples[6].img" width="600" height="400">
+    </a>
+    <div class="desc">{{staples[6].name}}</div>
+  </div>
+
+  <div class="gallery">
+    <a (click)="newPizza(staples[7].name); newImage(staples[7].img)"
+      routerLink="../staple/specials-view">
+      <img [src]="staples[7].img" width="600" height="400">
+    </a>
+    <div class="desc">{{staples[7].name}}</div>
+  </div>
+
+  <div class="gallery">
+    <a (click)="newPizza(staples[8].name); newImage(staples[8].img)"
+      routerLink="../staple/specials-view">
+      <img [src]="staples[8].img" width="600" height="400">
+    </a>
+    <div class="desc">{{staples[8].name}}</div>
+  </div>
+
+</div>
 
 
