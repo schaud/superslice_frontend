@@ -17,6 +17,7 @@ import { MenuStapleComponent } from './components/menu-staple/menu-staple.compon
 import { PizzaComponent } from './components/pizza/pizza.component';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule} from '@angular/forms';
+import { SpecialsViewComponent } from './components/specials-view/specials-view.component';
 import { CartComponent } from './components/cart/cart.component';
 import { OrderComponent } from './components/order/order.component';
 import { PlaceOrderComponent } from './components/place-order/place-order.component';
@@ -36,6 +37,7 @@ import { PlaceOrderComponent } from './components/place-order/place-order.compon
     MenuSpecialComponent,
     MenuStapleComponent,
     PizzaComponent,
+    SpecialsViewComponent
     CartComponent,
     OrderComponent,
     PlaceOrderComponent

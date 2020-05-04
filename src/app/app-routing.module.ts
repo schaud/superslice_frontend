@@ -8,6 +8,7 @@ import { HomeComponent } from './components/home/home.component';
 import { MenuSpecialComponent } from './components/menu-special/menu-special.component';
 import { MenuStapleComponent } from './components/menu-staple/menu-staple.component';
 import { PizzaComponent } from './components/pizza/pizza.component';
+import {SpecialsViewComponent} from "./components/specials-view/specials-view.component";
 import { CartComponent } from './components/cart/cart.component';
 
 
@@ -18,16 +19,18 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path:'about-us', component: AboutUsComponent},
   {path:'contact-us', component: ContactUsComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: SignupComponent},
+  //{path: 'login', component: LoginComponent},
+  //{path: 'register', component: SignupComponent},
   {path: 'menu/special', component: MenuSpecialComponent},
   {path: 'menu/staple', component: MenuStapleComponent},
- 
+  {path: 'menu/special/specials-view', component: SpecialsViewComponent},
+  {path: 'menu/staple/specials-view', component: SpecialsViewComponent}
+
 
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes), RouterModule],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -29,9 +29,7 @@ export class HeaderComponent implements OnInit {
   }
   hideRegister() {
     this.registermodal = 'notshown';
-
   }
- 
 
   showLogin() {
     this.loginmodal = 'shown';
@@ -39,7 +37,6 @@ export class HeaderComponent implements OnInit {
   }
   hideLogin() {
     this.loginmodal = 'notshown';
-
   }
 
   async loginUser(): Promise<any> {
