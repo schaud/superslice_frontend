@@ -2,7 +2,7 @@
 
   <div class="gallery">
 
-    <a (click)="newPizza(specials[0].name); newImage(specials[0].img)" routerLink="menu/special/specials-view">
+    <a (click)="newPizza(specials[0].name); newImage(specials[0].img); getPizza(); newPizzaObj(pizzaData)" routerLink="menu/special/specials-view">
       <img [src]="specials[0].img" width="600" height="400">
     </a>
     <div class="desc">{{specials[0].name}}</div>
