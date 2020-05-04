@@ -17,6 +17,7 @@ import { MenuStapleComponent } from './components/menu-staple/menu-staple.compon
 import { PizzaComponent } from './components/pizza/pizza.component';
 import { HttpClientModule} from '@angular/common/http';
 import { FormsModule} from '@angular/forms';
+import { SpecialsViewComponent } from './components/specials-view/specials-view.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FormsModule} from '@angular/forms';
     HomeComponent,
     MenuSpecialComponent,
     MenuStapleComponent,
-    PizzaComponent
+    PizzaComponent,
+    SpecialsViewComponent
   ],
   imports: [
     BrowserModule,
