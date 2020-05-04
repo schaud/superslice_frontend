@@ -10,10 +10,12 @@ import { MenuStapleComponent } from './components/menu-staple/menu-staple.compon
 import { PizzaComponent } from './components/pizza/pizza.component';
 import {SpecialsViewComponent} from "./components/specials-view/specials-view.component";
 import { CartComponent } from './components/cart/cart.component';
+import { EmployeeViewComponent } from './components/employee-view/employee-view.component';
 
 
 const routes: Routes = [
 
+  {path: 'employee', component: EmployeeViewComponent},
   {path: 'cart', component: CartComponent},
   {path: 'pizzaCustomizer',component:PizzaComponent},
   {path: '', component: HomeComponent},

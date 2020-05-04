@@ -18,7 +18,7 @@ export class MenuStapleComponent implements OnInit {
   veg_url = `http://localhost:9000/getVeggieToppings`;
   veg = [];
 
-  constructor(private dataservice:DataService) { 
+  constructor(private dataservice:DataService, private http:HttpClient) { 
     
           this.http.get(this.meat_url).toPromise().then(data =>{      
         console.log("hello " + data[0].toppingName); 
