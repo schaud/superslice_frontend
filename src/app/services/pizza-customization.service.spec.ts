@@ -2,7 +2,6 @@ import { TestBed } from '@angular/core/testing';
 
 import { PizzaCustomizationService } from './pizza-customization.service';
 
-
 describe('PizzaCustomizationService', () => {
   let service: PizzaCustomizationService;
 

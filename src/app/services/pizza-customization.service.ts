@@ -10,6 +10,7 @@ export class PizzaCustomizationService {
 
   getMeatToppings():Promise<any>{
     let meatPromise:Promise<any>  = this.http.get('http://localhost:9000/getMeatToppings').toPromise();
+    console.log(meatPromise);
     return meatPromise;
   }
   getSizes():Promise<any>{
@@ -20,4 +21,5 @@ export class PizzaCustomizationService {
     let veggiePromise:Promise<any>  = this.http.get('http://localhost:9000/getVeggieToppings').toPromise();
     return veggiePromise;
   }
+  
 }
