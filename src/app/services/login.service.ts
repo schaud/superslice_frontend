@@ -11,7 +11,8 @@ export class LoginService {
   constructor(private http: HttpClient) { }
 
   loginserv(username, password) : Promise<any>{
-    const loginpromise: Promise<any> = this.http.get(`http://localhost:9000/query/user?username=${username}&password=${password}`).toPromise();
+    const loginpromise: Promise<any> = 
+    this.http.get(`http://localhost:9000/query/user?username=${username}&password=${password}`).toPromise();
     return loginpromise;
   }
 
