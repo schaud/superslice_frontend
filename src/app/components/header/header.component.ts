@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(private login: LoginService, private signup: SignupService) { }
 
+
   username: string;
   password: string;
   user: any;
@@ -59,6 +60,5 @@ export class HeaderComponent implements OnInit {
       this.session = localStorage.getItem('user_key');
     }
   }
-
 
 }
