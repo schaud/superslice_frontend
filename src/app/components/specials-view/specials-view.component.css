@@ -1,0 +1,19 @@
+#title{
+  padding-left: 20px;
+}
+
+#toppings{
+  float: left;
+  padding-left: 20px;
+}
+#cart{
+  position: relative;
+  top: 10px;
+}
+
+img{
+  float: left;
+  padding-left: 20px;
+}
+
+

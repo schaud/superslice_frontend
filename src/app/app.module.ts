@@ -21,6 +21,7 @@ import { SpecialsViewComponent } from './components/specials-view/specials-view.
 import { CartComponent } from './components/cart/cart.component';
 import { OrderComponent } from './components/order/order.component';
 import { PlaceOrderComponent } from './components/place-order/place-order.component';
+import {CommonModule} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { PlaceOrderComponent } from './components/place-order/place-order.compon
     MenuSpecialComponent,
     MenuStapleComponent,
     PizzaComponent,
-    SpecialsViewComponent
+    SpecialsViewComponent,
     CartComponent,
     OrderComponent,
     PlaceOrderComponent
