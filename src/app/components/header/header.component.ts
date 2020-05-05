@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService} from "../../services/login.service";
+import { SignupService } from 'src/app/services/signup.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ import {LoginService} from "../../services/login.service";
 export class HeaderComponent implements OnInit {
 
 
-  constructor(private login: LoginService) { }
+  constructor(private login: LoginService, private signup: SignupService) { }
 
   username: string;
   password: string;
@@ -48,4 +49,16 @@ export class HeaderComponent implements OnInit {
       this.session = localStorage.getItem('user_key');
     }
   }
+
+  async SignUpUser(): Promise<any>{
+    this.session = null;
+    this.user = await this.signup.SignUpUserserv(this.username, this.password);
+    console.log(this.user);
+    if (this.user != null) {
+      localStorage.setItem('user_key', this.username);
+      this.session = localStorage.getItem('user_key');
+    }
+  }
+
+
 }
