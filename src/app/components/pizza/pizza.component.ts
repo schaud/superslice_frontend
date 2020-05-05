@@ -5,6 +5,7 @@ import { ThrowStmt } from '@angular/compiler';
 import { ɵELEMENT_PROBE_PROVIDERS__POST_R3__ } from '@angular/platform-browser';
 import { pizzaForm } from 'src/app/models/pizzaform';
 
+
 @Component({
   selector: 'app-pizza',
   templateUrl: './pizza.component.html',
@@ -21,6 +22,7 @@ export class PizzaComponent implements OnInit {
   prices:Array<number> = [];
   costTotal:number;
   size:string;
+
   ngOnInit(): void {
     this.getSizes();
     this.getMeats();
@@ -84,6 +86,7 @@ export class PizzaComponent implements OnInit {
   async getSizes():Promise<topping>{
     this.sizes = await this.pizzaCustomizer.getSizes();
     return this.sizes;
+
   }
   async getMeats():Promise<any>{
     this.meats = await this.pizzaCustomizer.getMeatToppings();
