@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DataService} from "../../services/data.service";
 import {pizza} from "../../models/pizza";
 import {PizzaRetrieverService} from "../../services/pizza-retriever.service";
@@ -12,8 +12,7 @@ export class HomeComponent implements OnInit {
 
   pizza : string;
   image: string;
-  pizzaData: pizza;
-
+  pizzaData: any;
 
   constructor(private dataservice:DataService, private pizzaservice : PizzaRetrieverService) { }
 
@@ -30,11 +29,6 @@ export class HomeComponent implements OnInit {
     {name: 'MediterraneanPizza', img : '../assets/Mediterranean.png'}
     ];
 
-
-
-
-
-
   ngOnInit(): void {
     this.dataservice.sharedPizza.subscribe(pizza => this.pizza = pizza);
     this.dataservice.sharedImage.subscribe(image => this.image = image);
@@ -50,15 +44,27 @@ export class HomeComponent implements OnInit {
     this.dataservice.sendImage(value);
   }
 
-  async newPizzaObj(value){
-    await this.dataservice.sendPizzaObj(value);
+   newPizzaObj(value){
+     this.dataservice.sendPizzaObj(value);
   }
 
-  async getPizza(): Promise<pizza> {
-    this.pizzaData = await this.pizzaservice.pizzaserv(this.pizza);
+  pizzaObj : pizza;
+
+  async getPizza(value): Promise<pizza> {
+
+    this.pizzaData = await this.pizzaservice.pizzaserv(value);
     console.log(this.pizzaData);
-    console.log(this.pizzaData.toppings[1].toppingName)
+    console.log(value);
     return this.pizzaData;
   }
 
 }
+
+// viewConsolePizzaDat() : void {
+//   this.pizzaData.then(pizza=>console.log(pizza));
+// }
+
+// viewConsolePizzaDat() : void {
+//   this.pizzaData.then(pizza=>console.log(pizza));
+// }
+

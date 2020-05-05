@@ -12,7 +12,8 @@ export class SpecialsViewComponent implements OnInit {
 
   pizza : string;
   image : string;
-  pizzaData: pizza;
+  pizzaData: any;
+  pizzaItem: pizza;
 
   constructor(private dataservice : DataService, private pizzaservice : PizzaRetrieverService) { }
 
@@ -21,13 +22,30 @@ export class SpecialsViewComponent implements OnInit {
     this.dataservice.sharedPizza.subscribe(pizza=>this.pizza=pizza);
     this.dataservice.sharedImage.subscribe(image => this.image = image);
     this.dataservice.sharedPizzaObj.subscribe(pizzaData => this.pizzaData = pizzaData);
+    this.ViewPizza();
+
 
 
   }
 
-  viewConsolePizzaDat() : void {
-    console.log(this.pizzaData)
+viewConsolePizzaDat() : void {
+  this.pizzaData.then(pizza=>this.pizzaItem);
+  console.log(this.pizzaItem)
+
+}
+
+  async ViewPizza() : Promise<void> {
+    this.pizzaItem = await this.pizzaData.then();
+    this.pizzaItem.toppings.shift();
+    console.log(this.pizzaItem);
+
   }
+
+
+
+
+
+
 
 
 

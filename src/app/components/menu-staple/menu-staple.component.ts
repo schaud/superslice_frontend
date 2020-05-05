@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from "../../services/data.service";
-import { HttpClient } from '@angular/common/http';
+import {pizza} from "../../models/pizza";
+import {PizzaRetrieverService} from "../../services/pizza-retriever.service";
 
 
 
@@ -13,52 +14,29 @@ export class MenuStapleComponent implements OnInit {
 
   pizza : string;
   image : string;
-
-  meat_url = `http://localhost:9000/getMeatToppings`;
-  meat = [];
-
-  veg_url = `http://localhost:9000/getVeggieToppings`;
-  veg = [];
-
-  constructor(private dataservice:DataService, private http: HttpClient) {
+  pizzaData : any;
 
 
-    this.http.get(this.meat_url).toPromise().then(data => {
-
-      console.log("hello " + data[0].toppingName);
-
-      for (let key in data)
-        if (data.hasOwnProperty(key)) {
-          this.meat.push(data[key].toppingName);
-        }
-    })
-
-    this.http.get(this.veg_url).toPromise().then(data =>{
-      console.log("hello veg" + data[0].toppingName); //sausage
-      for(let key in data)
-        if(data.hasOwnProperty(key)){
-          this.veg.push(data[key].toppingName);
-        }
-    })
-  }
+  constructor(private dataservice:DataService, private pizzaservice : PizzaRetrieverService) { }
 
 
 
   staples = [
-    {name: 'Pepperoni Pizza', img : '../assets/staple_pizza/Pepperpni.png'},
-    {name: 'Mushroom Pizza', img : '../assets/staple_pizza/mushroom.png'},
-    {name: 'Chicken Pizza', img : '../assets/staple_pizza/chicken.png'},
-    {name: 'Anchovies Pizza', img : '../assets/staple_pizza/Anchovies.png'},
-    {name: 'Spinach Pizza', img : '../assets/staple_pizza/spinach.png'},
-    {name: 'Bacon Pizza', img : '../assets/staple_pizza/bacon.png'},
-    {name: 'Cauliflower Pizza', img : '../assets/staple_pizza/Cauliflower.png'},
-    {name: 'Sausage Pizza', img : '../assets/staple_pizza/Sausage.png'},
-    {name: 'Eggplant Pizza', img : '../assets/staple_pizza/Eggplant.png'}
+    {name: 'PepperoniPizza', img : '../assets/staple_pizza/Pepperpni.png'},
+    {name: 'MushroomPizza', img : '../assets/staple_pizza/mushroom.png'},
+    {name: 'ChickenPizza', img : '../assets/staple_pizza/chicken.png'},
+    {name: 'AnchoviesPizza', img : '../assets/staple_pizza/Anchovies.png'},
+    {name: 'SpinachPizza', img : '../assets/staple_pizza/spinach.png'},
+    {name: 'BaconPizza', img : '../assets/staple_pizza/bacon.png'},
+    {name: 'CauliflowerPizza', img : '../assets/staple_pizza/Cauliflower.png'},
+    {name: 'SausagePizza', img : '../assets/staple_pizza/Sausage.png'},
+    {name: 'EggplantPizza', img : '../assets/staple_pizza/Eggplant.png'}
   ];
 
   ngOnInit(): void {
     this.dataservice.sharedPizza.subscribe(pizza => this.pizza = pizza);
     this.dataservice.sharedImage.subscribe(image => this.image = image);
+    this.dataservice.sharedPizzaObj.subscribe(pizzaData => this.pizzaData = pizzaData);
   }
 
   newPizza(value){
@@ -69,5 +47,16 @@ export class MenuStapleComponent implements OnInit {
     this.dataservice.sendImage(value);
   }
 
+  newPizzaObj(value){
+    this.dataservice.sendPizzaObj(value);
+  }
 
+
+  async getPizza(value): Promise<pizza> {
+
+    this.pizzaData = await this.pizzaservice.pizzaserv(value);
+    console.log(this.pizzaData);
+    console.log(value);
+    return this.pizzaData;
+  }
 }

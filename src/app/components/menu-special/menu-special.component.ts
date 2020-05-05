@@ -27,6 +27,7 @@ export class MenuSpecialComponent implements OnInit {
 
 
   ngOnInit(): void {
+
   }
 
 }
