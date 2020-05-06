@@ -1,7 +1,7 @@
 <h1>Pizza customizer</h1>
 <h2>Sizes</h2>
 <div *ngFor="let size of sizes">
-<
+
 <input type="radio"  name="size"[value]="size.toppingName" (change)="ontoppingChange(size.toppingName,size.cost,$event.target.checked)">
 
 <label   [for]=" size.toppingName"> {{size.toppingName}}</label><br>
