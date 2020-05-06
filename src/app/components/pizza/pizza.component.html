@@ -1,12 +1,15 @@
 <h1>Pizza customizer</h1>
 <h2>Sizes</h2>
 <div *ngFor="let size of sizes">
+
 <input type="radio"  name="size"[value]="size.toppingName" (change)="ontoppingChange(size.toppingName,size.cost,$event.target.checked)">
+
 <label   [for]=" size.toppingName"> {{size.toppingName}}</label><br>
 </div>
 <h2>Meats</h2>
 <div *ngFor="let meat of meats">
 <input type="checkbox"  [name]="meat.toppingName"[value]="meat.toppingName" (change)="onChange(meat.toppingName,meat.cost,$event.target.checked)">
+
 <label   [for]=" meat.toppingName"> {{meat.toppingName}}</label><br>
 
 </div>
@@ -16,6 +19,6 @@
 <label   [for]=" veggie.toppingName"> {{veggie.toppingName}}</label><br>
 </div>
 <h3>Price : ${{costTotal}}</h3>
-<button (click)="addToCart()">Add to Cart</button>
+<button class="btn-success" (click)="addToCart()">Add to Cart</button>
 
 

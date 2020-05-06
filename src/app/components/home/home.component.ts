@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {DataService} from "../../services/data.service";
 import {pizza} from "../../models/pizza";
 import {PizzaRetrieverService} from "../../services/pizza-retriever.service";
@@ -12,28 +12,22 @@ export class HomeComponent implements OnInit {
 
   pizza : string;
   image: string;
-  pizzaData: pizza;
-
+  pizzaData: any;
 
   constructor(private dataservice:DataService, private pizzaservice : PizzaRetrieverService) { }
 
 
   specials = [
-    {name: 'AlfredoPizza', img : '../assets/alfredo.jpg'},
-    {name: 'MeatLoversPizza', img : '../assets/meat_lover.jpg'},
-    {name: 'HawaiianPizza', img : '../assets/Hawaii.jpg'},
-    {name: 'VeggiePizza', img : '../assets/vege_delux.jpg'},
-    {name: 'ItalianPizza', img : '../assets/Italian.jpg'},
-    {name: 'SupremePizza', img : '../assets/Supreme_pizza.jpg'},
+    {name: 'AlfredoPizza', img : '../assets/alfredo.png'},
+    {name: 'MeatLoversPizza', img : '../assets/meat-lovers.png'},
+    {name: 'HawaiianPizza', img : '../assets/Hawaii.png'},
+    {name: 'VeggiePizza', img : '../assets/vege_delux.png'},
+    {name: 'ItalianPizza', img : '../assets/Italian.png'},
+    {name: 'SupremePizza', img : '../assets/Supreme_pizza.png'},
     {name: 'FourCheesePizza', img : '../assets/Four_Cheese.png'},
     {name: 'WhitePizza', img : '../assets/white_pizza.png'},
     {name: 'MediterraneanPizza', img : '../assets/Mediterranean.png'}
     ];
-
-
-
-
-
 
   ngOnInit(): void {
     this.dataservice.sharedPizza.subscribe(pizza => this.pizza = pizza);
@@ -50,15 +44,27 @@ export class HomeComponent implements OnInit {
     this.dataservice.sendImage(value);
   }
 
-  async newPizzaObj(value){
-    await this.dataservice.sendPizzaObj(value);
+   newPizzaObj(value){
+     this.dataservice.sendPizzaObj(value);
   }
 
-  async getPizza(): Promise<pizza> {
-    this.pizzaData = await this.pizzaservice.pizzaserv(this.pizza);
+  pizzaObj : pizza;
+
+  async getPizza(value): Promise<pizza> {
+
+    this.pizzaData = await this.pizzaservice.pizzaserv(value);
     console.log(this.pizzaData);
-    console.log(this.pizzaData.toppings[1].toppingName)
+    console.log(value);
     return this.pizzaData;
   }
 
 }
+
+// viewConsolePizzaDat() : void {
+//   this.pizzaData.then(pizza=>console.log(pizza));
+// }
+
+// viewConsolePizzaDat() : void {
+//   this.pizzaData.then(pizza=>console.log(pizza));
+// }
+
