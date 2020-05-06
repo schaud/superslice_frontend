@@ -23,6 +23,10 @@ import { OrderComponent } from './components/order/order.component';
 import { PlaceOrderComponent } from './components/place-order/place-order.component';
 import {CommonModule} from '@angular/common';
 
+import { OrderNumberComponent } from './components/order-number/order-number.component';
+import { EmployeeViewComponent } from './components/employee-view/employee-view.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,7 +45,9 @@ import {CommonModule} from '@angular/common';
     SpecialsViewComponent,
     CartComponent,
     OrderComponent,
-    PlaceOrderComponent
+    PlaceOrderComponent,
+    OrderNumberComponent,
+    EmployeeViewComponent
   ],
   imports: [
     BrowserModule,

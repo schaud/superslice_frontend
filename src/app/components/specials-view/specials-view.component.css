@@ -5,7 +5,10 @@
 #toppings{
   float: left;
   padding-left: 20px;
+  width: 250px;
 }
+
+
 #cart{
   position: relative;
   top: 10px;
@@ -15,5 +18,16 @@ img{
   float: left;
   padding-left: 20px;
 }
+
+
+#cost{
+  width: 100px;
+  float: left;
+  background-color:red;
+  color: white;
+  border-radius: 5px;
+  text-align: center;
+}
+
 
 
