@@ -10,11 +10,13 @@ import {pizza} from "../../models/pizza";
 })
 export class SpecialsViewComponent implements OnInit {
 
+
   pizza: string;
   image: string;
   pizzaData: any;
   pizzaItem: pizza;
   cost : number;
+
 
 
   constructor(private dataservice: DataService, private pizzaservice: PizzaRetrieverService) {
@@ -28,7 +30,9 @@ export class SpecialsViewComponent implements OnInit {
     this.ViewPizza();
 
 
+
   }
+
 
 
   async ViewPizza(): Promise<void> {
@@ -42,6 +46,12 @@ export class SpecialsViewComponent implements OnInit {
 
   }
 }
+
+
+
+
+
+
 
   // newPizza(){
   //   this.dataservice.sendPizza('');
