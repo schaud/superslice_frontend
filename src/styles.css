@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+/* @import url(assets/fonts/futura-heavy-oblique.ttf) */
+
+@import url(https://fonts.googleapis.com/css?family=futura);
+
+/* @font-face{
+    font-family:Montserrat;
+    src: url("assets/fonts/futura-heavy-oblique.ttf");
+} */
+
+*{
+    font-family:futura,bold,oblique;
+}
