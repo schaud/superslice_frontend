@@ -6,4 +6,6 @@ h3{
 }
 button{
     float:right;
+    border-radius: 10%;
+    margin-right: 20px;
 }
