@@ -1,0 +1,30 @@
+<h1 id="title">Plain Pizza</h1>
+<img src="../../../assets/plainPizza.jpg" width="600" height="400">
+
+<div id="toppings">
+  <h2>Toppings:</h2>
+<div *ngFor="let topping of pizzaItem.toppings">
+  <b>{{topping.toppingName}}</b></div>
+  <button id="cart">Add To Cart</button>
+</div>
+
+<!-- <div class="center">
+  <div class="gallery">
+    <a (load)="newPizza(staple.name); newImage(staple.img); newPizzaObj(getPizza(staple.name))"
+      routerLink="menu/plain/specials-view">
+      <img src="../../../assets/plain_pizza/plainPizza.jpg" width="600" height="400">
+    </a>
+    <div class="desc">{{staple.name}}</div>
+  </div>
+</div> -->
+<!--
+<h1 id="title">Plain Pizza</h1>
+<img src="../../../assets/plainPizza.jpg" width="600" height="400">
+
+ <div id="toppings">
+  <h2>Toppings:</h2> 
+ <div *ngFor="let topping of pizzaItem.toppings"> 
+   <b>{{topping.toppingName}}</b></div>
+  <button id="cart">Add To Cart</button>
+</div> -->
+

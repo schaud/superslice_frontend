@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from "../../services/data.service";
+import {pizzaForm} from "../../models/pizzaform";
+import {orderForm} from "../../models/orderform";
 
 @Component({
   selector: 'app-cart',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  cartItems : orderForm = Object.create(orderForm)
+
+  constructor(private dataservice:DataService) { }
 
   ngOnInit(): void {
+    this.dataservice.sharedOrderForm.subscribe(cartItems => this.cartItems = cartItems);
+    console.log('In the Cart:');
+    console.log(this.cartItems);
   }
+
 
 }
