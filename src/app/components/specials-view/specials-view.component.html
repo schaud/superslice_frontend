@@ -2,14 +2,41 @@
 <img [src]="image" width="600" height="400">
 
 <div id="toppings">
-  <h2>Toppings:</h2>
+  <h2>Toppings</h2>
 <div *ngFor="let topping of pizzaItem.toppings">
   <b>{{topping.toppingName}}</b></div>
-  <button id="cart">Add To Cart</button>
+
+  <br>
+
+  <div id = "sizes" >
+    <h2 id="sizetitle">Size</h2>
+    <div *ngFor="let size of sizes">
+
+      <input type="radio"  name="size"[value]="size.toppingName" [checked]="size.toppingName=='Medium'" (change)="ontoppingChange(size.toppingName,size.cost,$event.target.checked)">
+      <label [for]=" size.toppingName"> {{size.toppingName}}</label><br>
+
+    </div>
+  </div>
+
 </div>
 
-<div id="cost"><h3>{{cost}}</h3>
+
+<div id = costncart>
+
+
+<div id="cost">
+  <h3>{{cost}}</h3>
 </div>
+
+  <div id="addcart">
+    <button id="cart-btn"  (click)="addToCart()"> Add To Cart </button>
+  </div>
+
+</div>
+
+
+
+
 
 
 

@@ -18,12 +18,12 @@ export class HomeComponent implements OnInit {
 
 
   specials = [
-    {name: 'AlfredoPizza', img : '../assets/alfredo.jpg'},
-    {name: 'MeatLoversPizza', img : '../assets/meat_lover.jpg'},
-    {name: 'HawaiianPizza', img : '../assets/Hawaii.jpg'},
-    {name: 'VeggiePizza', img : '../assets/vege_delux.jpg'},
-    {name: 'ItalianPizza', img : '../assets/Italian.jpg'},
-    {name: 'SupremePizza', img : '../assets/Supreme_pizza.jpg'},
+    {name: 'AlfredoPizza', img : '../assets/alfredo.png'},
+    {name: 'MeatLoversPizza', img : '../assets/meat-lovers.png'},
+    {name: 'HawaiianPizza', img : '../assets/Hawaii.png'},
+    {name: 'VeggiePizza', img : '../assets/vege_delux.png'},
+    {name: 'ItalianPizza', img : '../assets/Italian.png'},
+    {name: 'SupremePizza', img : '../assets/Supreme_pizza.png'},
     {name: 'FourCheesePizza', img : '../assets/Four_Cheese.png'},
     {name: 'WhitePizza', img : '../assets/white_pizza.png'},
     {name: 'MediterraneanPizza', img : '../assets/Mediterranean.png'}

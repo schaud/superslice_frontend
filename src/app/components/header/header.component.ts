@@ -24,8 +24,6 @@ export class HeaderComponent implements OnInit {
   ngOnInit(){
     this.loginmodal = 'notshown'
     this.registermodal = 'notshown'
-    this.session = localStorage.getItem('user_key');
-
   }
   showRegister() {
     this.registermodal = 'shown';
@@ -44,6 +42,7 @@ export class HeaderComponent implements OnInit {
   }
 
   async loginUser(): Promise<any> {
+    this.session = null;
     this.user = await this.login.loginserv(this.username, this.password);
     console.log(this.user);
     if (this.user != null) {

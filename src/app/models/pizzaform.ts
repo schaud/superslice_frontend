@@ -3,6 +3,7 @@ export class pizzaForm{
     size:string;
     cost:number;
     toppingNames:Array<string>;
+
      constructor(type:string,size:string,cost:number, toppingNames:Array<string>) {
 		this.type = type;
         this.size = size;
