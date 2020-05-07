@@ -22,7 +22,20 @@ export class HeaderComponent implements OnInit {
   title = 'SuperSlice';
   loginmodal:string;
   registermodal:string;
+
+  // For Employee
+  employeeloginmodal:string;
+
+  showEmployeeLogin(){
+    this.employeeloginmodal = 'shown';
+  }
+  hideEmployeeLogin(){
+    this.employeeloginmodal = 'notshown';
+  }
+
+
   ngOnInit(){
+    this.employeeloginmodal = 'notshown'
     this.loginmodal = 'notshown'
     this.registermodal = 'notshown'
   }
@@ -46,15 +59,25 @@ export class HeaderComponent implements OnInit {
     this.session = null;
     this.user = await this.login.loginserv(this.username, this.password);
     console.log(this.user);
-    if (this.user != null) {
+    if (this.user != null && this.user.userRole.roleId == 2) {
       localStorage.setItem('user_key', this.username);
       this.session = localStorage.getItem('user_key');
     
     }
-
-   
-
   }
+
+  async EmployeeloginUser(): Promise<any> {
+    this.session = null;
+    this.user = await this.login.loginserv(this.username, this.password);
+    console.log(this.user);
+    if (this.user != null && this.user.userRole.roleId == 1) {
+      localStorage.setItem('user_key', this.username);
+      this.session = localStorage.getItem('user_key');
+    
+    }
+  }
+
+  
 
   async SignUpUser(): Promise<any>{
     this.session = null;

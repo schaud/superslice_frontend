@@ -90,7 +90,7 @@
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" (click)="hideLogin()" class="cancelbtn">Cancel</button>
-      <span class="psw"> <a href="#">Forgot password?</a></span>
+          <span style="float: right;"><a  (click)="hideLogin(); showEmployeeLogin()"   href="#">Are you an Employee ?</a></span>
     </div>
   </form>
 </div>
