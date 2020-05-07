@@ -24,10 +24,10 @@ const routes: Routes = [
   {path:'contact-us', component: ContactUsComponent},
   //{path: 'login', component: LoginComponent},
   //{path: 'register', component: SignupComponent},
-  {path: 'menu/plain', component: PlainPizzaComponent},
+  // {path: 'menu/plain', component: PlainPizzaComponent},
   {path: 'menu/special', component: MenuSpecialComponent},
   {path: 'menu/staple', component: MenuStapleComponent},
-  {path: 'menu/plain/specials-view', component: SpecialsViewComponent},
+  {path: 'menu/plain/specials-view', component: PlainPizzaComponent},
   {path: 'menu/special/specials-view', component: SpecialsViewComponent},
   {path: 'menu/staple/specials-view', component: SpecialsViewComponent}
 
