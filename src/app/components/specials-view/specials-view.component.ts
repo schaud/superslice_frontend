@@ -10,21 +10,16 @@ import {pizza} from "../../models/pizza";
 })
 export class SpecialsViewComponent implements OnInit {
 
-
-  pizza: string;
-  image: string;
+  pizza : string;
+  image : string;
   pizzaData: any;
   pizzaItem: pizza;
-  cost : number;
 
-
-
-  constructor(private dataservice: DataService, private pizzaservice: PizzaRetrieverService) {
-  }
+  constructor(private dataservice : DataService, private pizzaservice : PizzaRetrieverService) { }
 
 
   ngOnInit(): void {
-    this.dataservice.sharedPizza.subscribe(pizza => this.pizza = pizza);
+    this.dataservice.sharedPizza.subscribe(pizza=>this.pizza=pizza);
     this.dataservice.sharedImage.subscribe(image => this.image = image);
     this.dataservice.sharedPizzaObj.subscribe(pizzaData => this.pizzaData = pizzaData);
     this.ViewPizza();
@@ -33,19 +28,20 @@ export class SpecialsViewComponent implements OnInit {
 
   }
 
+viewConsolePizzaDat() : void {
+  this.pizzaData.then(pizza=>this.pizzaItem);
+  console.log(this.pizzaItem)
 
+}
 
-  async ViewPizza(): Promise<void> {
+  async ViewPizza() : Promise<void> {
     this.pizzaItem = await this.pizzaData.then();
     this.pizzaItem.toppings.shift();
-    this.cost = this.pizzaItem.cost;
-    for (let top of this.pizzaItem.toppings){
-      this.cost += top.cost;
-    }
     console.log(this.pizzaItem);
 
   }
-}
+
+
 
 
 
@@ -71,4 +67,4 @@ export class SpecialsViewComponent implements OnInit {
   //   return this.pizzaData;
   //   }
 
-
+}
