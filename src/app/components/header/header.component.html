@@ -50,7 +50,7 @@
       <label for="psw"><b>Password</b></label>
       <input type="password" [(ngModel)]="password" placeholder="Enter Password" name="psw" required>
 
-      <button (click) = "EmployeeloginUser(); hideEmployeeLogin()">Sign In</button>
+      <button id="emploginBtn" (click) = "EmployeeloginUser(); hideEmployeeLogin(); goToEmployee()">Sign In</button>
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>

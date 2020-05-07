@@ -4,7 +4,9 @@ import {log} from "util";
 
 
 @Injectable({
+  
   providedIn: 'root'
+
 })
 export class LoginService {
 
@@ -14,5 +16,7 @@ export class LoginService {
     const loginpromise: Promise<any> = this.http.get(`http://localhost:9000/query/user?username=${username}&password=${password}`).toPromise();
     return loginpromise;
   }
+
+  
 
 }

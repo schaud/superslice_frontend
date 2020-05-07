@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService} from "../../services/login.service";
 import { SignupService } from 'src/app/services/signup.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +11,7 @@ import { SignupService } from 'src/app/services/signup.service';
 export class HeaderComponent implements OnInit {
 
 
-  constructor(private login: LoginService, private signup: SignupService) { }
+  constructor(private login: LoginService, private signup: SignupService, private _router: Router) { }
 
 
   username: string;
@@ -70,7 +71,11 @@ export class HeaderComponent implements OnInit {
     if (this.user != null && this.user.userRole.roleId == 1) {
       localStorage.setItem('user_key', this.username);
       this.session = localStorage.getItem('user_key');
+    
     }
+
+   
+
   }
 
   async SignUpUser(): Promise<any>{
@@ -81,6 +86,10 @@ export class HeaderComponent implements OnInit {
       localStorage.setItem('user_key', this.username);
       this.session = localStorage.getItem('user_key');
     }
+  }
+
+  goToEmployee():void {
+    this._router.navigate(['/employee']);
   }
 
 }
