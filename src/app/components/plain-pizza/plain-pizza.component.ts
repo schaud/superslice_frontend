@@ -65,11 +65,11 @@ export class PlainPizzaComponent implements OnInit {
       this.prices.push(price);
       this.size=name;
       if(name == "Medium"){
-      this.divView.nativeElement.setAttribute("height","375");
-      this.divView.nativeElement.setAttribute("width","575");
+      this.divView.nativeElement.setAttribute("height","350");
+      this.divView.nativeElement.setAttribute("width","550");
 }else if(name == "Small"){
-  this.divView.nativeElement.setAttribute("height","350");
-  this.divView.nativeElement.setAttribute("width","550")
+  this.divView.nativeElement.setAttribute("height","300");
+  this.divView.nativeElement.setAttribute("width","500")
       }else if(name == "Large"){
         this.divView.nativeElement.setAttribute("height","400");
         this.divView.nativeElement.setAttribute("width","600");

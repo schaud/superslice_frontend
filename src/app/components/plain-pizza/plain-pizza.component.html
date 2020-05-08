@@ -1,4 +1,4 @@
-
+<!-- 
     <body id="buffer">
         <div id="container">
         <div id="photo">
@@ -21,8 +21,35 @@
         </div></div>
     </div>
     </div>
-    </body>
+    </body> -->
 
+    <body class="Site">
+        <header></header>
+        <main class="Site-content"><body id="buffer">
+            <div id="container">
+            <div id="photo">
+                <h1 id="title">Plain Pizza</h1>
+                <div id="photo1"><img #pizzaPic src="../../../assets/plain_pizza/imageedit_3_2133899129.png" width="550" height="350"></div>
+                
+            </div>
+            
+            <div id ="fixx"><div id="toppings">
+                <h2>Sizes</h2>
+                <div *ngFor="let size of sizes">
+            
+                    <input type="radio"  name="size"[value]="size.toppingName" (change)="ontoppingChange(size.toppingName,size.cost,$event.target.checked)">
+                    
+                    <label   [for]=" size.toppingName"> {{size.toppingName}}</label><br>
+                    </div>
+            <div>
+                <h3>Price : ${{costTotal}}</h3>
+                <button class="btn-success" (click)="addToCart()">Add to Cart</button>
+            </div></div>
+        </div>
+        </div>
+        </body></main>
+      
+      </body>
 
   
 
