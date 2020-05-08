@@ -1,0 +1,10 @@
+*{
+    text-align: center;
+}
+h1{
+    color:blue;
+}
+.chart{
+    position: relative;
+    left:13%;
+}
