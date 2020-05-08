@@ -8,23 +8,20 @@ import { EmailService } from 'src/app/services/email.service';
 })
 export class ContactUsComponent implements OnInit {
 
+  name:string;
+  email:string;
+  comment:string;
+
   constructor(private emailserv : EmailService) { }
+
 
 
   ngOnInit(): void {
   }
 
-  onSubmit(name, email, comment) {
-    this.emailserv.sendEmail({
-      from: 'hello@gmail.com',
-      to: email,
-      name: name,
-      text: comment,
-    })
-    .subscribe(
-      () => {},
-      err => console.log(err)
-    );
+  onSubmit() {
+
+    this.emailserv.sendEmail(this.name,this.email,this.comment);
   } 
 
 }

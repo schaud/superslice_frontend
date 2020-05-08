@@ -9,19 +9,17 @@ import { map } from "rxjs/operators";
 
 export class EmailService {
 
-  constructor(private http:  Http) { }
-  sendEmail(argparam) {
-    // return this.http.post('httpspakainfo.com/email/', argparam)
-    // .map(res => res.json())
-    // .catch(this._errorHandler);
-    return this.http.get("http://localhost:9000/",argparam).pipe(map(res =>{res.json()}));
+  constructor(private http:  Http) { 
+
+  }
+
+  async sendEmail(username,emailAddress,comments) :Promise<any>{
+    let promise = this.http.post("http://localhost:9000/sendEmail",{username,emailAddress,comments}).toPromise();
+    return promise;
   }
   private _errorHandler(error: Response) {
     console.error(error);
     return Observable.throw(error || 'Server Error')
   }
-  // res.header('Access-Control-Allow-Origin', "*");
-  // res.header('Access-Control-Allow-Methods', 'POST');
-  // res.header("Access-Control-Allow-Headers", "accept, content-type");
-  // res.header("Access-Control-Max-Age", "1728000");
+
 }
