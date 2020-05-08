@@ -87,7 +87,6 @@ export class PizzaComponent implements OnInit {
   async getSizes():Promise<topping>{
     this.sizes = await this.pizzaCustomizer.getSizes();
     return this.sizes;
-
   }
   async getMeats():Promise<any>{
     this.meats = await this.pizzaCustomizer.getMeatToppings();
