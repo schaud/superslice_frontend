@@ -10,6 +10,7 @@
 #photo{
 height: 1000;
 position: relative;
+object-fit: contain;
 }
 
 
