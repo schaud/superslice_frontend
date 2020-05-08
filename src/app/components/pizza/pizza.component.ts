@@ -12,7 +12,7 @@ import { pizzaForm } from 'src/app/models/pizzaform';
   styleUrls: ['./pizza.component.css'],
 })
 export class PizzaComponent implements OnInit {
-  
+
   constructor(private pizzaCustomizer:PizzaCustomizationService) {}
 
   sizes: topping;
@@ -22,6 +22,7 @@ export class PizzaComponent implements OnInit {
   prices:Array<number> = [];
   costTotal:number;
   size:string;
+  quant = 1;
 
   ngOnInit(): void {
     this.getSizes();
@@ -37,9 +38,9 @@ export class PizzaComponent implements OnInit {
     }
     console.log(this.costTotal)
   }
-  onChange(name:string,price:number, isChecked: boolean) {  
+  onChange(name:string,price:number, isChecked: boolean) {
     if(isChecked) {
-      
+
       this.names.push(name);
       this.prices.push(price);
       console.log(this.prices)
@@ -54,12 +55,12 @@ export class PizzaComponent implements OnInit {
     console.log(this.names)
     }
   }
-  ontoppingChange(name:string,price:number, isChecked: boolean) {  
+  ontoppingChange(name:string,price:number, isChecked: boolean) {
     if(isChecked) {
-      
+
 
       let index:number = this.names.findIndex(x => x == this.size)
-      
+
       this.prices.splice(index,1);
       this.prices.push(price);
       this.size=name;
@@ -79,7 +80,7 @@ export class PizzaComponent implements OnInit {
     }
   }
   addToCart(){
-     let pizza:pizzaForm = new pizzaForm("CustomPizza",this.size,this.costTotal,this.names);
+     let pizza:pizzaForm = new pizzaForm("CustomPizza",this.size,this.costTotal,this.names, this.quant);
     console.log(pizza)
     }
 
