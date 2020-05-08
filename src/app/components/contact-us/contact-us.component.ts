@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EmailService } from 'src/app/services/email.service';
 
 @Component({
   selector: 'app-contact-us',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactUsComponent implements OnInit {
 
-  constructor() { }
+  name:string;
+  email:string;
+  comment:string;
+
+  constructor(private emailserv : EmailService) { }
+
+
 
   ngOnInit(): void {
   }
+
+  onSubmit() {
+
+    this.emailserv.sendEmail(this.name,this.email,this.comment);
+  } 
 
 }
