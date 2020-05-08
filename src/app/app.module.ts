@@ -26,6 +26,15 @@ import { OrderNumberComponent } from './components/order-number/order-number.com
 
 import {CommonModule} from '@angular/common';
 import { PlainPizzaComponent } from './components/plain-pizza/plain-pizza.component';
+import { EmailService } from './services/email.service';
+import {MatInputModule} from '@angular/material/input';
+
+import {  ErrorHandler } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,9 +63,20 @@ import { PlainPizzaComponent } from './components/plain-pizza/plain-pizza.compon
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatInputModule,
+    HttpModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule,
+    BrowserAnimationsModule
+    
+    
   ],
-  providers: [],
+  providers: [
+    EmailService,
+    
+  ],
   bootstrap: [AppComponent]
 })
 

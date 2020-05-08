@@ -2,12 +2,21 @@
     <h1>Contact information</h1>
     <h2>Email Us</h2>
     <form>
+        <label>Name</label>
+        <input mdInput  type="text" class="form-control"
+        required
+        name="name" #name placeholder="name">
         <label for="usr">Email:</label>
-        <input type="email" class="form-control" id="usr">
-        <label for="comment">Comment:</label>
-        <textarea class="form-control" rows="5" id="comment"></textarea>
-        <button class="btn-default" type="submit">Submit</button>
+        <input mdInput type="email" class="form-control"
+        required
+        name="email" #email placeholder="email">
+        <label for="comment" >Comment:</label>
+        <input mdInput  type="text" class="form-control"
+              required
+              name="comment" #comment placeholder="comment">
+        <button class="btn-default" type="submit" (click)="onSubmit(name.value, email.value, comment.value)">Submit</button>
     </form>
+ 
     <h2>Give us a call</h2>
     <p>555-SSPizza</p>
 </div>
