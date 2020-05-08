@@ -15,7 +15,7 @@
             Menu
           </a>
           <div class="dropdown-menu">
-            <a class="dropdown-item" routerLink="/pizzaCustomizer">Plain</a>
+            <a class="dropdown-item" routerLink="menu/plain/specials-view">Plain</a>
             <a class="dropdown-item" routerLink="/pizzaCustomizer">Build Your Own</a>
             <a class="dropdown-item" routerLink="">Special</a>
             <a class="dropdown-item" routerLink="menu/staple">Staple</a>
@@ -32,6 +32,40 @@
   </nav>
 </header>
 <app-startup></app-startup>
+
+
+<!--  -->
+<div id="employee_loginForm" [ngClass]="[employeeloginmodal]">
+
+
+  <form class="modal-content animate" action="" method="post">
+    <div class="imgcontainer">
+      <span (click)="hideEmployeeLogin()" class="close" title="Close Modal">&times;</span>
+  <h2>Employee Log In</h2>
+    </div>
+
+    <div class="container">
+      <label for="uname"><b>Username</b></label>
+      <input type="text" [(ngModel)]="username" placeholder="Enter Username" name="uname" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" [(ngModel)]="password" placeholder="Enter Password" name="psw" required>
+
+      <button id="emploginBtn" (click) = "EmployeeloginUser(); hideEmployeeLogin(); goToEmployee()">Sign In</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" (click)="hideEmployeeLogin()" class="cancelbtn">Cancel</button>
+    </div>
+  </form>
+</div>
+
+
+
+
 <div id="loginForm" [ngClass]="[loginmodal]">
 
 
@@ -56,7 +90,7 @@
 
     <div class="container" style="background-color:#f1f1f1">
       <button type="button" (click)="hideLogin()" class="cancelbtn">Cancel</button>
-      <span class="psw"> <a href="#">Forgot password?</a></span>
+          <span style="float: right;"><a  (click)="hideLogin(); showEmployeeLogin()"   href="#">Are you an Employee ?</a></span>
     </div>
   </form>
 </div>

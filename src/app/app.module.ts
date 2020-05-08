@@ -22,9 +22,14 @@ import { SpecialsViewComponent } from './components/specials-view/specials-view.
 import { CartComponent } from './components/cart/cart.component';
 import { OrderComponent } from './components/order/order.component';
 import { PlaceOrderComponent } from './components/place-order/place-order.component';
-import {CommonModule} from '@angular/common';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 
+import { EmployeeViewComponent } from './components/employee-view/employee-view.component';
+import { OrderNumberComponent } from './components/order-number/order-number.component';
+
+
+import {CommonModule} from '@angular/common';
+import { PlainPizzaComponent } from './components/plain-pizza/plain-pizza.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +49,14 @@ import { StatisticsComponent } from './components/statistics/statistics.componen
     CartComponent,
     OrderComponent,
     PlaceOrderComponent,
+
     StatisticsComponent
+
+    PlainPizzaComponent,
+    EmployeeViewComponent,
+    OrderNumberComponent
+ 
+
   ],
   imports: [
     BrowserModule,
