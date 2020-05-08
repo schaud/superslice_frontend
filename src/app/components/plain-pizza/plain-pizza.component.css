@@ -19,14 +19,6 @@
   padding-left: 20px;
 }
 
-#photo{
-height: 1000;
-position: relative;
-object-fit: contain;
-}
-
-
-
 #container{
   position: relative;
   }
