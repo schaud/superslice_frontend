@@ -28,7 +28,7 @@ export class SpecialsViewComponent implements OnInit {
   // confirmedPizza : pizzaForm = {type: null, cost: null, size: null, toppingNames: null};
 
   cartItems : orderForm = {username: localStorage.getItem('user_key'),
-    pizzaForms: [{type : null, toppingNames: [null], size: null, cost: null}],
+    pizzaForms: [{type : null, toppingNames: [null], size: null, cost: null, quantity: 1}],
     note: null };
 
 
@@ -101,7 +101,10 @@ export class SpecialsViewComponent implements OnInit {
     this.confirmedPizza.toppingNames = [];
     console.log('Confirmed Pizza');
     console.log(this.confirmedPizza);
+
     this.cartItems.pizzaForms.push(this.confirmedPizza)
+
+
     console.log('Current Order');
     
 

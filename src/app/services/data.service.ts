@@ -22,7 +22,7 @@ export class DataService {
 
   private cartObj = new BehaviorSubject<orderForm>(
     {username: localStorage.getItem('user_key'),
-    pizzaForms: [{type : null, toppingNames: [null], size: null, cost: null}],
+    pizzaForms: [{type : null, toppingNames: [null], size: null, cost: null, quantity:1}],
     note: null }
     );
   sharedOrderForm = this.cartObj.asObservable();
