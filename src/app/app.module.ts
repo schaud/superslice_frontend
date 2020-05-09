@@ -84,8 +84,8 @@ import { EmployeeHeaderComponent } from './components/employee-header/employee-h
     // MatFormFieldModule,
     // MatSelectModule,
     // MatInputModule,
-    BrowserAnimationsModule
-    
+    BrowserAnimationsModule,
+    ChartsModule,
     
   ],
   providers: [
@@ -94,9 +94,9 @@ import { EmployeeHeaderComponent } from './components/employee-header/employee-h
 
 
 
-  ],
+  
 
-    ChartsModule
+    
 
 
   ],
