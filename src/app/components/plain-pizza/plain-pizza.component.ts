@@ -17,6 +17,7 @@ export class PlainPizzaComponent implements OnInit {
   prices:Array<number> = [];
   costTotal:number;
   size:string;
+  quantity:number;
 
 
   constructor(private pizzaCustomizer:PizzaCustomizationService,private el: ElementRef) { }
@@ -88,10 +89,10 @@ export class PlainPizzaComponent implements OnInit {
     console.log(this.names)
     }
   }
-  // addToCart(){
-  //    let pizza:pizzaForm = new pizzaForm("CustomPizza",this.size,this.costTotal,this.names);
-  //   console.log(pizza)
-  //   }
+  addToCart(){
+     let pizza:pizzaForm = new pizzaForm("CustomPizza",this.size,this.costTotal,this.names,this.quantity);
+    console.log(pizza)
+    }
 
   async getSizes():Promise<topping>{
     this.sizes = await this.pizzaCustomizer.getSizes();
