@@ -1,7 +1,38 @@
+  <br>
+  <br>
+  <table>
+    <thead>
+      <tr>
+        <th>Ticket #</th>
+        <th>Items #</th>
+        <th >Note</th>
+        <th class="th3">Update Status</th>
 
-<div class="p1">
-    <br />
-    <span style="word-spacing: 130px;">Order#: </span> 
-    <span style="word-spacing: 190px;">Items: </span>
-    <span >Update Status: </span>
-</div>
+      </tr>
+
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of url; let i = index; ">
+    
+          <td>{{url[i].ticketId}}</td>
+        <td>
+              <div style="list-style-type:none; text-align: center;" *ngFor="let pizza of u.pizzas; let j = index;">
+                 <div class="c_style">pizza # {{j}}</div>
+                  <span *ngFor="let topping of pizza.toppings">
+                     <span>{{topping.toppingName}},</span>
+                  </span> 
+              </div>                
+        </td>
+        <td>{{this.url[i].note}}</td>
+        <td> 
+          <select id="up-status">
+            <option value="Pending" selected="selected">Pending</option>
+            <option value="Cooking">Cooking</option>
+            <option value="Ready">Ready</option>
+            <option value="Complete">Complete</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+    
+  </table>
