@@ -23,11 +23,9 @@ export class PlainPizzaComponent implements OnInit {
 
   constructor(private pizzaCustomizer:PizzaCustomizationService,private el: ElementRef) { }
 
-  // id="pic"
+  
   ngOnInit(): void {
     this.getSizes();
-    // this.dataservice.sharedImage.subscribe(image => this.image = image);
-    // this.dataservice.sharedPizzaObj.subscribe(pizzaData => this.pizzaData = pizzaData);
   }
   addToTotal(){
     this.costTotal=0;
