@@ -20,7 +20,9 @@ export class HeaderComponent implements OnInit {
   user: any;
   session: string;
   cartItems : orderForm = {username: localStorage.getItem('user_key'),
+
   pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity: 1}],
+
   note: null };
   numOfItems:number=this.cartItems.pizzaForms.length;
   title = 'SuperSlice';
