@@ -24,8 +24,8 @@ export class SpecialsViewComponent implements OnInit {
   costTotal: number;
   sizes: topping;
   defaultCost : number = 10;
-  confirmedPizza : pizzaForm =  Object.create(pizzaForm);
-  // confirmedPizza : pizzaForm = {type: null, cost: null, size: null, toppingNames: null};
+  confirmedPizza : pizzaForm = {type: null, cost: null, size: '', toppingNames: [null], quantity : 1};
+  // confirmedPizza :
 
   cartItems : orderForm = {username: localStorage.getItem('user_key'),
     pizzaForms: [{type : null, toppingNames: [null], size: null, cost: null, quantity: 1}],
@@ -93,21 +93,43 @@ export class SpecialsViewComponent implements OnInit {
     }
   }
 
-  addToCart(): void{
 
+  addToCart() : void {
+
+    console.log(this.cartItems)
     this.confirmedPizza.type = this.pizza;
+    console.log(this.confirmedPizza.type)
     this.confirmedPizza.size = this.size;
+    console.log(this.confirmedPizza.size)
     this.confirmedPizza.cost = this.cost;
     this.confirmedPizza.toppingNames = [];
     console.log('Confirmed Pizza');
     console.log(this.confirmedPizza);
 
-    this.cartItems.pizzaForms.push(this.confirmedPizza)
+    let exists : boolean  = false;
 
+
+// redo to compare each specific field from cart items to confirmed pizza
+    for (let i = 0; i < this.cartItems.pizzaForms.length; i++){
+      if (
+        this.confirmedPizza.type === this.cartItems.pizzaForms[i].type &&
+          this.confirmedPizza.size === this.cartItems.pizzaForms[i].size
+        )
+       {
+         console.log('Cart size : ' + this.cartItems.pizzaForms[i].size)
+
+         console.log('Confirmed Size : ' + this.confirmedPizza.size)
+        exists = true;
+        this.cartItems.pizzaForms[i].quantity += 1;
+        break;
+      }
+    }
+    if (!exists){
+     this.cartItems.pizzaForms.push(this.confirmedPizza);
+    }
 
     console.log('Current Order');
     console.log(this.cartItems)
-
   }
 }
 
