@@ -88,8 +88,8 @@ export class PlainPizzaComponent implements OnInit {
     }
   }
   addToCart(){
-     let pizza:pizzaForm = new pizzaForm("CustomPizza",this.size,this.costTotal,this.names);
-    console.log(pizza)
+    //  let pizza:pizzaForm = new pizzaForm("CustomPizza",this.size,this.costTotal,this.names);
+    // console.log(pizza)
     }
 
   async getSizes():Promise<topping>{

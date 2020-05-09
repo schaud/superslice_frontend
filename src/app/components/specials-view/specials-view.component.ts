@@ -25,11 +25,6 @@ export class SpecialsViewComponent implements OnInit {
   pizzaData: any;
   pizzaItem: pizza;
   cost: number;
-  names: Array<string> = [];
-  prices: Array<number> = [];
-  size: string = 'Medium';
-  costTotal: number;
-  sizes: topping;
   defaultCost : number = 10;
   confirmedPizza : pizzaForm = {type: null, cost: null, size: '', toppingNames: [null], quantity : 1};
   // confirmedPizza :
@@ -37,7 +32,7 @@ export class SpecialsViewComponent implements OnInit {
     pizzaForms: [{type : null, toppingNames: [null], size: null, cost: null, quantity: 1}],
     note: null };
 
-  constructor(private dataservice : DataService, private pizzaservice : PizzaRetrieverService,private el: ElementRef,private pizzaCustomizer:PizzaCustomizationService) { }
+  constructor(private dataservice : DataService,private el: ElementRef,private pizzaCustomizer:PizzaCustomizationService) { }
 
 
   ngOnInit(): void {
@@ -58,15 +53,6 @@ export class SpecialsViewComponent implements OnInit {
     }
     console.log(this.pizzaItem);
 
-  }
-
-  addToTotal(){
-    this.costTotal=0;
-    for(let price of this.prices){
-      this.costTotal+=price
-
-    }
-    console.log(this.costTotal)
   }
 
   onChange(name:string,price:number, isChecked: boolean) {  
@@ -96,14 +82,14 @@ export class SpecialsViewComponent implements OnInit {
       this.prices.push(price);
       this.size=name;
       if(name == "Medium"){
-      this.divView.nativeElement.setAttribute("height","275");
-      this.divView.nativeElement.setAttribute("width","450");
+      this.divView.nativeElement.setAttribute("height","300");
+      this.divView.nativeElement.setAttribute("width","350");
 }else if(name == "Small"){
   this.divView.nativeElement.setAttribute("height","250");
   this.divView.nativeElement.setAttribute("width","300")
       }else if(name == "Large"){
-        this.divView.nativeElement.setAttribute("height","300");
-        this.divView.nativeElement.setAttribute("width","500");
+        this.divView.nativeElement.setAttribute("height","350");
+        this.divView.nativeElement.setAttribute("width","400");
       }
       console.log(this.prices)
       console.log(this.names)

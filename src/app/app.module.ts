@@ -35,7 +35,6 @@ import {  ErrorHandler } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
