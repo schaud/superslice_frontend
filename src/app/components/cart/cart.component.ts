@@ -47,7 +47,7 @@ export class CartComponent implements OnInit {
   populateQuantity() {
 
     for (let i = 0; i < this.cartItems.pizzaForms.length; i++){
-      this.quantity.push(1);
+      this.quantity.push(this.cartItems.pizzaForms[i].quantity);
       this.costPerPizza.push(this.cartItems.pizzaForms[i].cost)
     }
 
@@ -59,7 +59,7 @@ export class CartComponent implements OnInit {
     let total : number = 0;
 
     for (let pizzas of this.cartItems.pizzaForms){
-      total += pizzas.cost;
+      total += pizzas.cost * pizzas.quantity;
     }
     return total;
 
@@ -67,7 +67,7 @@ export class CartComponent implements OnInit {
 
   hideRow(index) {
     console.log(index);
-    this.totalCost = this.totalCost - this.cartItems.pizzaForms[index].cost;
+    this.totalCost = this.totalCost - this.cartItems.pizzaForms[index].cost * this.quantity[index];
     this.cartItems.pizzaForms.splice(index, 1);
 
   }
