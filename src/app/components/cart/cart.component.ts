@@ -5,7 +5,6 @@ import {orderForm} from "../../models/orderform";
 import  * as $  from 'jquery';
 import {DOCUMENT} from "@angular/common";
 
-
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',

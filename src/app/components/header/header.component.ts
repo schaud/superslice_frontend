@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {LoginService} from "../../services/login.service";
 import { SignupService } from 'src/app/services/signup.service';
 import { Router } from '@angular/router';
-
+import {orderForm} from '../../models/orderform';
+import {DataService} from '../../services/data.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -11,14 +12,17 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
 
-  constructor(private login: LoginService, private signup: SignupService, private _router: Router) { }
+  constructor(private login: LoginService, private signup: SignupService, private _router: Router,private dataservice:DataService) { }
 
 
   username: string;
   password: string;
   user: any;
   session: string;
-
+  cartItems : orderForm = {username: localStorage.getItem('user_key'),
+  pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0}],
+  note: null };
+  numOfItems:number=this.cartItems.pizzaForms.length;
   title = 'SuperSlice';
   loginmodal:string;
   registermodal:string;
@@ -38,6 +42,8 @@ export class HeaderComponent implements OnInit {
     this.employeeloginmodal = 'notshown'
     this.loginmodal = 'notshown'
     this.registermodal = 'notshown'
+    this.dataservice.sharedOrderForm.subscribe(cartItems => this.cartItems = cartItems);
+    console.log(this.cartItems.pizzaForms.length);
   }
   showRegister() {
     this.registermodal = 'shown';

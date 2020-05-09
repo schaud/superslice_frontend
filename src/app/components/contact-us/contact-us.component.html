@@ -2,12 +2,22 @@
     <h1>Contact information</h1>
     <h2>Email Us</h2>
     <form>
+        <label>Name</label>
+        <input mdInput  type="text" class="form-control"
+        required
+        name="name"  placeholder="name" [(ngModel)]="name">
         <label for="usr">Email:</label>
-        <input type="email" class="form-control" id="usr">
-        <label for="comment">Comment:</label>
-        <textarea class="form-control" rows="5" id="comment"></textarea>
-        <button class="btn-default" type="submit">Submit</button>
+        <input mdInput type="email" class="form-control"
+        required
+        name="email"  placeholder="email" [(ngModel)]="email">
+        <label for="comment" >Comment:</label>
+        <input mdInput  type="text" class="form-control"
+              required
+              name="comment"  placeholder="comment" [(ngModel)]="comment">
+        <button class="btn-default" type="submit" (click)="onSubmit()">Submit</button>
     </form>
+
+    
     <h2>Give us a call</h2>
     <p>555-SSPizza</p>
 </div>
