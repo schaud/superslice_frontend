@@ -35,7 +35,6 @@ import {  ErrorHandler } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -60,7 +59,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EmployeeViewComponent,
     OrderNumberComponent,
     StatisticsComponent
- 
+
   ],
   imports: [
     BrowserModule,
@@ -68,20 +67,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     HttpClientModule,
 
-
     MatInputModule,
     HttpModule,
     MatFormFieldModule,
     MatSelectModule,
     MatInputModule,
-    BrowserAnimationsModule
-    
-    
+    BrowserAnimationsModule,
+    ChartsModule
+
+
   ],
   providers: [
     EmailService,
-    
-
     ChartsModule
 
 

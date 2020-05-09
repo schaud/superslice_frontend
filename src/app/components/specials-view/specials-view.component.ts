@@ -101,6 +101,10 @@ export class SpecialsViewComponent implements OnInit {
         this.divView.nativeElement.setAttribute("height","300");
         this.divView.nativeElement.setAttribute("width","500");
       }
+      this.cost = this.prices[0];
+      for (let top of this.pizzaItem.toppings) {
+        this.cost += top.cost;
+      }
       console.log(this.prices)
       console.log(this.names)
       console.log("this is the size "+this.size)
