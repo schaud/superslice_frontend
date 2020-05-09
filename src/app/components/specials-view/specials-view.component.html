@@ -9,6 +9,22 @@
 <div *ngFor="let size of sizes">
 <input type="radio"  name="size"[value]="size.toppingName" (change)="ontoppingChange(size.toppingName,size.cost,$event.target.checked)">
 <label   [for]=" size.toppingName"> {{size.toppingName}}</label><br>
+  
+<div id="toppings">
+  <h2>Toppings</h2>
+<div *ngFor="let topping of pizzaItem.toppings">
+  <b>{{topping.toppingName}}</b></div>
+
+  <br>
+
+  <div id = "sizes" >
+    <h2 id="sizetitle">Size</h2>
+    <div *ngFor="let size of sizes">
+      <input type="radio"  name="size"[value]="size.toppingName" [checked]="size.toppingName=='Medium'" (change)="ontoppingChange(size.toppingName,size.cost,$event.target.checked)">
+      <label [for]=" size.toppingName"> {{size.toppingName}}</label><br>
+    </div>
+  </div>
+
 </div>
 <button class="btn-success" (click)="addToCart()">Add to Cart</button>
 </div>  -->
@@ -35,6 +51,24 @@
   </main>
 
 </body>
+
+
+<div id = costncart>
+
+
+<div id="cost">
+  <h3>{{cost}}</h3>
+</div>
+
+  <div id="addcart">
+    <button id="cart-btn"  (click)="addToCart()" routerLink="/cart"> Add To Cart </button>
+  </div>
+
+</div>
+
+
+
+
 
 
 
