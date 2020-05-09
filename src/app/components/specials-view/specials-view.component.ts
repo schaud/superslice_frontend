@@ -5,6 +5,7 @@ import {topping} from "../../models/topping";
 import {PizzaCustomizationService} from "../../services/pizza-customization.service";
 import {pizzaForm} from "../../models/pizzaform";
 import {orderForm} from "../../models/orderform";
+import {PizzaRetrieverService} from "../../services/pizza-retriever.service";
 
 @Component({
   selector: 'app-specials-view',
@@ -14,7 +15,7 @@ import {orderForm} from "../../models/orderform";
 export class SpecialsViewComponent implements OnInit {
   @ViewChild("pizzaPic") divView: ElementRef;
   sizes: topping;
-  
+
   names:Array<string> = [];
   prices:Array<number> = [];
   costTotal:number;
@@ -25,11 +26,6 @@ export class SpecialsViewComponent implements OnInit {
   pizzaData: any;
   pizzaItem: pizza;
   cost: number;
-  names: Array<string> = [];
-  prices: Array<number> = [];
-  size: string = 'Medium';
-  costTotal: number;
-  sizes: topping;
   defaultCost : number = 10;
   confirmedPizza : pizzaForm = {type: null, cost: null, size: '', toppingNames: [null], quantity : 1};
   // confirmedPizza :
@@ -37,7 +33,7 @@ export class SpecialsViewComponent implements OnInit {
     pizzaForms: [{type : null, toppingNames: [null], size: null, cost: null, quantity: 1}],
     note: null };
 
-  constructor(private dataservice : DataService, private pizzaservice : PizzaRetrieverService,private el: ElementRef,private pizzaCustomizer:PizzaCustomizationService) { }
+  constructor(private dataservice : DataService, private pizzaservice : PizzaRetrieverService, private el: ElementRef,private pizzaCustomizer:PizzaCustomizationService) { }
 
 
   ngOnInit(): void {
@@ -69,9 +65,9 @@ export class SpecialsViewComponent implements OnInit {
     console.log(this.costTotal)
   }
 
-  onChange(name:string,price:number, isChecked: boolean) {  
+  onChange(name:string,price:number, isChecked: boolean) {
     if(isChecked) {
-      
+
       this.names.push(name);
       this.prices.push(price);
       console.log(this.prices)
@@ -86,12 +82,12 @@ export class SpecialsViewComponent implements OnInit {
     console.log(this.names)
     }
   }
-  ontoppingChange(name:string,price:number, isChecked: boolean) {  
+  ontoppingChange(name:string,price:number, isChecked: boolean) {
     if(isChecked) {
-      
+
 
       let index:number = this.names.findIndex(x => x == this.size)
-      
+
       this.prices.splice(index,1);
       this.prices.push(price);
       this.size=name;
@@ -138,13 +134,13 @@ export class SpecialsViewComponent implements OnInit {
 
   }
 
-  addToTotal(): void {
-    this.costTotal = 0;
-    for (let price of this.prices) {
-      this.costTotal += price
-
-    }
-  }
+  // addToTotal(): void {
+  //   this.costTotal = 0;
+  //   for (let price of this.prices) {
+  //     this.costTotal += price
+  //
+  //   }
+  // }
 
 //   ontoppingChange(name: string, price: number, isChecked: boolean): void {
 
