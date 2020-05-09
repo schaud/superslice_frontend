@@ -13,6 +13,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { EmployeeViewComponent } from './components/employee-view/employee-view.component';
 import { PlainPizzaComponent } from './components/plain-pizza/plain-pizza.component';
 import {StatisticsComponent} from './components/statistics/statistics.component';
+import { LocationComponent } from './components/location/location.component';
 
 const routes: Routes = [
 
@@ -30,8 +31,9 @@ const routes: Routes = [
   {path: 'menu/plain/specials-view', component: PlainPizzaComponent},
   {path: 'menu/special/specials-view', component: SpecialsViewComponent},
   {path: 'menu/staple/specials-view', component: SpecialsViewComponent},
-  {path: 'stats', component: StatisticsComponent}
+  {path: 'stats', component: StatisticsComponent},
 
+  {path: 'location', component: LocationComponent}
 
 ];
 
