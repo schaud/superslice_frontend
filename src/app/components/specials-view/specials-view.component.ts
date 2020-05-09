@@ -53,6 +53,7 @@ export class SpecialsViewComponent implements OnInit {
       this.cost += top.cost;
     }
     console.log(this.pizzaItem);
+    console.log("this is the price of the pizza"+this.cost);
 
   }
 
@@ -100,10 +101,12 @@ export class SpecialsViewComponent implements OnInit {
       }else if(name == "Large"){
         this.divView.nativeElement.setAttribute("height","300");
         this.divView.nativeElement.setAttribute("width","500");
+
       }
       this.cost = this.prices[0];
       for (let top of this.pizzaItem.toppings) {
         this.cost += top.cost;
+
       }
       console.log(this.prices)
       console.log(this.names)

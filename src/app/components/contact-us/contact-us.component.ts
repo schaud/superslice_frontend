@@ -22,6 +22,7 @@ export class ContactUsComponent implements OnInit {
   onSubmit() {
 
     this.emailserv.sendEmail(this.name,this.email,this.comment);
+    
   } 
 
 }

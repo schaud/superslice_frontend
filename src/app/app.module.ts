@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ChartsModule } from 'ng2-charts';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
+import {AgmCoreModule} from '@agm/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { StartupComponent } from './components/startup/startup.component';
@@ -27,14 +27,18 @@ import { EmployeeViewComponent } from './components/employee-view/employee-view.
 import { OrderNumberComponent } from './components/order-number/order-number.component';
 import {StatisticsComponent} from './components/statistics/statistics.component';
 import {CommonModule} from '@angular/common';
+import {LocationComponent} from './components/location/location.component';
 import { PlainPizzaComponent } from './components/plain-pizza/plain-pizza.component';
 import { EmailService } from './services/email.service';
-import {MatInputModule} from '@angular/material/input';
 
-import {  ErrorHandler } from '@angular/core';
-import { HttpModule } from '@angular/http';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatSelectModule} from '@angular/material/select';
+// import {MatInputModule} from '@angular/material/input';
+import {MapsService} from './services/maps.service'
+// import {  ErrorHandler } from '@angular/core';
+ import { HttpModule } from '@angular/http';
+import { EmployeeHeaderComponent } from './components/employee-header/employee-header.component';
+// import {MatFormFieldModule} from '@angular/material/form-field';
+// import {MatSelectModule} from '@angular/material/select';
+
 
 
 @NgModule({
@@ -59,7 +63,10 @@ import {MatSelectModule} from '@angular/material/select';
     PlainPizzaComponent,
     EmployeeViewComponent,
     OrderNumberComponent,
-    StatisticsComponent
+
+    StatisticsComponent,
+    LocationComponent,
+    EmployeeHeaderComponent
 
   ],
   imports: [
@@ -68,23 +75,34 @@ import {MatSelectModule} from '@angular/material/select';
     FormsModule,
     HttpClientModule,
 
-    MatInputModule,
-    HttpModule,
-    MatFormFieldModule,
-    MatSelectModule,
-    MatInputModule,
+    ChartsModule,
+    AgmCoreModule.forRoot({
+      apiKey:'AIzaSyC2MHBjkpGK0Nj-ec79KS0Ht3imzUrulPw'
+    }),
+    // MatInputModule,
+     HttpModule,
+    // MatFormFieldModule,
+    // MatSelectModule,
+    // MatInputModule,
     BrowserAnimationsModule,
-    ChartsModule
-
-
+    ChartsModule,
+    
   ],
   providers: [
     EmailService,
-    ChartsModule
+    MapsService,
+
+
+
+  
+
+    
 
 
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 
 export class AppModule { }
