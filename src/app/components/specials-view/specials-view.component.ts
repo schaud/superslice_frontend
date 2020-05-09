@@ -106,7 +106,7 @@ export class SpecialsViewComponent implements OnInit {
 
 
     console.log('Current Order');
-    console.log(this.cartItems)
+    
 
   }
 }

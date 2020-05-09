@@ -11,12 +11,8 @@ import { PizzaComponent } from './components/pizza/pizza.component';
 import {SpecialsViewComponent} from "./components/specials-view/specials-view.component";
 import { CartComponent } from './components/cart/cart.component';
 import { EmployeeViewComponent } from './components/employee-view/employee-view.component';
-
-import {StatisticsComponent} from './components/statistics/statistics.component';
-
 import { PlainPizzaComponent } from './components/plain-pizza/plain-pizza.component';
-
-
+import {StatisticsComponent} from './components/statistics/statistics.component';
 
 const routes: Routes = [
 
@@ -34,8 +30,7 @@ const routes: Routes = [
   {path: 'menu/plain/specials-view', component: PlainPizzaComponent},
   {path: 'menu/special/specials-view', component: SpecialsViewComponent},
   {path: 'menu/staple/specials-view', component: SpecialsViewComponent},
-  {path: 'Stats', component:StatisticsComponent}
-
+  {path: 'stats', component: StatisticsComponent}
 
 
 ];
