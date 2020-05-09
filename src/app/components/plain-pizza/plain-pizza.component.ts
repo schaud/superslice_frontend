@@ -72,6 +72,7 @@ export class PlainPizzaComponent implements OnInit {
         this.divView.nativeElement.setAttribute("height","350");
         this.divView.nativeElement.setAttribute("width","400");
       }
+
       console.log(this.prices)
       console.log(this.names)
       console.log("this is the size "+this.size)

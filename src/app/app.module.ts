@@ -30,6 +30,7 @@ import {CommonModule} from '@angular/common';
 import {LocationComponent} from './components/location/location.component';
 import { PlainPizzaComponent } from './components/plain-pizza/plain-pizza.component';
 import { EmailService } from './services/email.service';
+
 // import {MatInputModule} from '@angular/material/input';
 import {MapsService} from './services/maps.service'
 // import {  ErrorHandler } from '@angular/core';
@@ -37,6 +38,7 @@ import {MapsService} from './services/maps.service'
 import { EmployeeHeaderComponent } from './components/employee-header/employee-header.component';
 // import {MatFormFieldModule} from '@angular/material/form-field';
 // import {MatSelectModule} from '@angular/material/select';
+
 
 @NgModule({
   declarations: [
@@ -60,15 +62,18 @@ import { EmployeeHeaderComponent } from './components/employee-header/employee-h
     PlainPizzaComponent,
     EmployeeViewComponent,
     OrderNumberComponent,
+
     StatisticsComponent,
     LocationComponent,
     EmployeeHeaderComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+
     ChartsModule,
     AgmCoreModule.forRoot({
       apiKey:'AIzaSyC2MHBjkpGK0Nj-ec79KS0Ht3imzUrulPw'
@@ -85,6 +90,10 @@ import { EmployeeHeaderComponent } from './components/employee-header/employee-h
   providers: [
     EmailService,
     MapsService,
+
+
+
+  ],
 
     ChartsModule
 

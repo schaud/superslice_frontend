@@ -20,7 +20,9 @@ export class HeaderComponent implements OnInit {
   user: any;
   session: string;
   cartItems : orderForm = {username: localStorage.getItem('user_key'),
-  pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0,quantity:0}],
+
+  pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity: 1}],
+
   note: null };
   numOfItems:number=this.cartItems.pizzaForms.length;
   title = 'SuperSlice';
@@ -68,7 +70,7 @@ export class HeaderComponent implements OnInit {
     if (this.user != null && this.user.userRole.roleId == 2) {
       localStorage.setItem('user_key', this.username);
       this.session = localStorage.getItem('user_key');
-    
+
     }
   }
 
@@ -79,11 +81,11 @@ export class HeaderComponent implements OnInit {
     if (this.user != null && this.user.userRole.roleId == 1) {
       localStorage.setItem('user_key', this.username);
       this.session = localStorage.getItem('user_key');
-    
+
     }
   }
 
-  
+
 
   async SignUpUser(): Promise<any>{
     this.session = null;
