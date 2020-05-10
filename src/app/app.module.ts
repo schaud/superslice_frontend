@@ -74,7 +74,6 @@ import { EmployeeHeaderComponent } from './components/employee-header/employee-h
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-
     ChartsModule,
     AgmCoreModule.forRoot({
       apiKey:'AIzaSyC2MHBjkpGK0Nj-ec79KS0Ht3imzUrulPw'
@@ -86,21 +85,15 @@ import { EmployeeHeaderComponent } from './components/employee-header/employee-h
     // MatInputModule,
     BrowserAnimationsModule,
     ChartsModule,
-    
+
   ],
   providers: [
     EmailService,
     MapsService,
-    ChartsModule
+    ChartsModule,],
 
-
-  
-
-
- 
-  bootstrap: [AppComponent],
-  
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+    bootstrap: [AppComponent],
+    schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 
 export class AppModule { }
