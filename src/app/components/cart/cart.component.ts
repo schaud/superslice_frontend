@@ -107,6 +107,15 @@ export class CartComponent implements OnInit {
 
     this.order = await this.checkoutservice.checkout(this.cartItems);
     console.log(this.cartItems);
+    console.log('Clearing Cart...')
+    this.cartItems = {username: localStorage.getItem('user_key'),
+      pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity:1}],
+      note: '' };
+    this.cartWithToppings = {username: localStorage.getItem('user_key'),
+      pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity:1}],
+      note: '' };
+    console.log('Cart has been cleared!')
+
   }
 
 
