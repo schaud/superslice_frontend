@@ -1,3 +1,15 @@
+
+
+.Site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.Site-content {
+  flex: 1;
+}
+
 #title{
   padding-left: 20px;
 }
@@ -8,12 +20,36 @@
   width: 250px;
 }
 
+#sizesDiv{
+  float: left;
+  padding-left: 20px;
+  width: 250px;
+}
+
+#container{
+  position: relative;
+  }
+
+#fixx{
+  position: absolute;
+  width: 500px;
+  height: 200px;
+  top: 250%;
+  left: 60%;
+  margin-top: -100px; /* Negative half of height. */
+  margin-left: -250px; 
+}
+#cart{
+  position: relative;
+  top: 10px;
+}
 
 
 
 img{
   float: left;
   padding-left: 20px;
+
 }
 
 
@@ -28,6 +64,7 @@ img{
   /*position: relative;*/
   /*top: -110px;*/
   /*left: 75px;*/
+  top: 150px;
   width: 100px;
   float: left;
   background-color:red;
@@ -57,12 +94,15 @@ img{
 }
 
 #cart-btn{
-  width: 150px;
+  width: 100px;
+  margin-top: 50px;
   background-color:red;
   color: white;
   border-radius: 5px;
   text-align: center;
 }
+
+
 
 
 

@@ -17,4 +17,8 @@ div.love_in_intro {
     margin-left: auto;
     margin-right: auto;
     width: 50em;
+
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }

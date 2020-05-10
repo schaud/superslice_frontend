@@ -4,6 +4,9 @@ import { topping } from 'src/app/models/topping';
 import { ThrowStmt } from '@angular/compiler';
 import { ɵELEMENT_PROBE_PROVIDERS__POST_R3__ } from '@angular/platform-browser';
 import { pizzaForm } from 'src/app/models/pizzaform';
+import {orderForm} from "../../models/orderform";
+import {pizza} from "../../models/pizza";
+import {DataService} from "../../services/data.service";
 
 
 @Component({
@@ -15,19 +18,28 @@ export class PlainPizzaComponent implements OnInit {
   @ViewChild("pizzaPic") divView: ElementRef;
   sizes: topping;
   
+  pizza: string;
   names:Array<string> = [];
   prices:Array<number> = [];
   costTotal:number;
   size:string;
+  cost: number;
+  defaultCost : number = 10;
+  confirmedPizza : pizzaForm = {type: null, cost: null, size: '', toppingNames: [null], quantity : 1};
+  // confirmedPizza :
+    cartItems : orderForm = {username: localStorage.getItem('user_key'),
+    pizzaForms: [{type : null, toppingNames: [null], size: null, cost: null, quantity: 1}],
+    note: null };
+  quantity:number;
 
 
-  constructor(private pizzaCustomizer:PizzaCustomizationService,private el: ElementRef) { }
+  constructor(private dataservice : DataService,private pizzaCustomizer:PizzaCustomizationService,private el: ElementRef) { }
 
-  // id="pic"
+  
   ngOnInit(): void {
     this.getSizes();
-    // this.dataservice.sharedImage.subscribe(image => this.image = image);
-    // this.dataservice.sharedPizzaObj.subscribe(pizzaData => this.pizzaData = pizzaData);
+    this.dataservice.sharedOrderForm.subscribe(cartItems => this.cartItems = cartItems);
+    this.cost = this.defaultCost;
   }
   addToTotal(){
     this.costTotal=0;
@@ -38,11 +50,11 @@ export class PlainPizzaComponent implements OnInit {
     console.log(this.costTotal)
   }
 
-  onChange(name:string,price:number, isChecked: boolean) {  
+  onChange(name:string,cost:number, isChecked: boolean) {  
     if(isChecked) {
       
       this.names.push(name);
-      this.prices.push(price);
+      this.prices.push(cost);
       console.log(this.prices)
       console.log(this.names)
       this.addToTotal();
@@ -65,15 +77,16 @@ export class PlainPizzaComponent implements OnInit {
       this.prices.push(price);
       this.size=name;
       if(name == "Medium"){
-      this.divView.nativeElement.setAttribute("height","350");
-      this.divView.nativeElement.setAttribute("width","550");
+      this.divView.nativeElement.setAttribute("height","300");
+      this.divView.nativeElement.setAttribute("width","350");
 }else if(name == "Small"){
-  this.divView.nativeElement.setAttribute("height","300");
-  this.divView.nativeElement.setAttribute("width","500")
+  this.divView.nativeElement.setAttribute("height","250");
+  this.divView.nativeElement.setAttribute("width","300")
       }else if(name == "Large"){
-        this.divView.nativeElement.setAttribute("height","400");
-        this.divView.nativeElement.setAttribute("width","600");
+        this.divView.nativeElement.setAttribute("height","350");
+        this.divView.nativeElement.setAttribute("width","400");
       }
+      this.cost = this.prices[0];
       console.log(this.prices)
       console.log(this.names)
       console.log("this is the size "+this.size)
@@ -89,14 +102,54 @@ export class PlainPizzaComponent implements OnInit {
     console.log(this.names)
     }
   }
-  addToCart(){
-     let pizza:pizzaForm = new pizzaForm("CustomPizza",this.size,this.costTotal,this.names);
-    console.log(pizza)
-    }
+  // addToCart(){
+  //   //  let pizza:pizzaForm = new pizzaForm("CustomPizza",this.size,this.costTotal,this.names);
+  //   // console.log(pizza)
+  //   }
+
 
   async getSizes():Promise<topping>{
     this.sizes = await this.pizzaCustomizer.getSizes();
     return this.sizes;
+
+  }
+
+  addToCart() : void {
+
+    console.log(this.cartItems)
+    this.confirmedPizza.type = "Plain Pizza";
+    console.log(this.confirmedPizza.type)
+    this.confirmedPizza.size = this.size;
+    console.log(this.confirmedPizza.size)
+    this.confirmedPizza.cost = this.cost;
+    this.confirmedPizza.toppingNames = ["None"];
+    console.log('Confirmed Pizza');
+    console.log(this.confirmedPizza);
+
+    let exists : boolean  = false;
+
+
+// redo to compare each specific field from cart items to confirmed pizza
+    for (let i = 0; i < this.cartItems.pizzaForms.length; i++){
+      if (
+        this.confirmedPizza.type === this.cartItems.pizzaForms[i].type &&
+          this.confirmedPizza.size === this.cartItems.pizzaForms[i].size
+        )
+       {
+         console.log('Cart size : ' + this.cartItems.pizzaForms[i].size)
+
+         console.log('Confirmed Size : ' + this.confirmedPizza.size)
+        exists = true;
+        this.cartItems.pizzaForms[i].quantity += 1;
+        break;
+      }
+    }
+    if (!exists){
+     this.cartItems.pizzaForms.push(this.confirmedPizza);
+    }
+
+    console.log('Current Order');
+    console.log(this.cartItems)
 
   }
 

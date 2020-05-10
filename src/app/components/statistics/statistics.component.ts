@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ChartsModule } from 'ng2-charts/ng2-charts';
+
 
 @Component({
   selector: 'app-statistics',
@@ -18,7 +20,7 @@ export class StatisticsComponent implements OnInit {
     { data: [17], label: 'Ricotta Cheese' },
   ];
   ToppingColors = [
-    
+
     {
       backgroundColor: 'blue',
       borderColor: 'pink',

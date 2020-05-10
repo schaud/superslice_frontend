@@ -19,8 +19,7 @@ export class SignupService {
 
   SignUpUserserv(username, password) :Promise<any> {
 
-    const signUpPromise =
-    this.http.post(this.url, {username,password}).toPromise(); 
+    const signUpPromise = this.http.post(this.url, {username,password}).toPromise();
     return signUpPromise;
   }
 
