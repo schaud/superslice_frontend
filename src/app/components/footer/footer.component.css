@@ -1,6 +1,6 @@
 footer{
 
-    position: relative;
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -11,11 +11,18 @@ footer{
     display: flex;
     justify-content: center;
     padding:20px;
+    /*flex-shrink: 0;*/
+
+
 
 }
   footer  a{
-      color:black; 
+      color:black;
       margin:0 50px 0 50px;
       text-decoration: underline;
   }
+
+
+
+
 
