@@ -13,10 +13,10 @@
 
     <div class="cart-item cart-column">
       <img class="cart-item-image" src="{{img}}" width="100" height="100">
-      <span class="cart-item-title">{{pizza.type}}</span>
+      <span class="cart-item-title">{{pizza.type|pizzaname}}</span>
     </div>
 
-    <span class="cart-toppings cart-column">{{pizza.type}}</span>
+    <span class="cart-toppings cart-column">{{pizza.type|pizzaname}}</span>
     <span class="cart-size cart-column">{{pizza.size}}</span>
     <span class="cart-price cart-column">{{pizza.cost}}</span>
 
