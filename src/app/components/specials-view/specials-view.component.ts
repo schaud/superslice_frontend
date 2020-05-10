@@ -205,6 +205,7 @@ export class SpecialsViewComponent implements OnInit {
 
     console.log('Current Order');
     console.log(this.cartItems)
+    console.log("this is the current num of items"+this.cartItems.pizzaForms.length)
 
   }
 }
