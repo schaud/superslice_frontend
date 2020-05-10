@@ -12,6 +12,9 @@ html, body {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 1.5em;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 .section-header {
   font-weight: normal;

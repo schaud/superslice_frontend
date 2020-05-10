@@ -19,7 +19,7 @@ export class SpecialsViewComponent implements OnInit {
   names:Array<string> = [];
   prices:Array<number> = [];
   costTotal:number;
-  size:string;
+  size:string = 'Medium';
 
   pizza: string;
   image: string;

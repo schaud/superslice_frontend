@@ -30,6 +30,7 @@ export class PlainPizzaComponent implements OnInit {
     cartItems : orderForm = {username: localStorage.getItem('user_key'),
     pizzaForms: [{type : null, toppingNames: [null], size: null, cost: null, quantity: 1}],
     note: null };
+  quantity:number;
 
 
   constructor(private dataservice : DataService,private pizzaCustomizer:PizzaCustomizationService,private el: ElementRef) { }
@@ -105,6 +106,7 @@ export class PlainPizzaComponent implements OnInit {
   //   //  let pizza:pizzaForm = new pizzaForm("CustomPizza",this.size,this.costTotal,this.names);
   //   // console.log(pizza)
   //   }
+
 
   async getSizes():Promise<topping>{
     this.sizes = await this.pizzaCustomizer.getSizes();

@@ -40,6 +40,7 @@ import { EmployeeHeaderComponent } from './components/employee-header/employee-h
 // import {MatSelectModule} from '@angular/material/select';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -83,8 +84,8 @@ import { EmployeeHeaderComponent } from './components/employee-header/employee-h
     // MatFormFieldModule,
     // MatSelectModule,
     // MatInputModule,
-    BrowserAnimationsModule
-    
+    BrowserAnimationsModule,
+    ChartsModule,
     
   ],
   providers: [
@@ -93,9 +94,7 @@ import { EmployeeHeaderComponent } from './components/employee-header/employee-h
     ChartsModule
 
 
-  ],
-
-   
+  
 
 
  

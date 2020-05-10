@@ -42,8 +42,19 @@
                     <label   [for]=" size.toppingName"> {{size.toppingName}}</label><br>
                     </div>
             <div>
-                <h3 id="cost">${{cost}}</h3>
+                <h3 id="cost">${{costTotal}}</h3>
         <button id="cart-btn"  (click)="addToCart()" routerLink="/cart"> Add To Cart </button>
+              
+              
+<!--                 <h3>Price : ${{costTotal}}</h3>
+                <button class="btn-success" (click)="addToCart()">Add to Cart</button> -->
+
+
+                <!-- <button class="btn-success" (click)="addToCart()">Add to Cart</button> -->
+
+                <!-- <button class="btn-success" >Add to Cart</button> -->
+
+
             </div></div>
         </div>
         </div>
