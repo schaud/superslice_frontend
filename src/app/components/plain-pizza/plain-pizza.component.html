@@ -29,7 +29,7 @@
             <div id="container">
          
                 <h1 id="title">Plain Pizza</h1>
-                <img #pizzaPic src="../../../assets/plain_pizza/imageedit_3_2133899129.png" width="300" height="250">
+                <img #pizzaPic src="../../../assets/plain_pizza/imageedit_3_2133899129.png" width="350" height="300">
                 
             
             
@@ -42,8 +42,8 @@
                     <label   [for]=" size.toppingName"> {{size.toppingName}}</label><br>
                     </div>
             <div>
-                <h3>Price : ${{costTotal}}</h3>
-                <button class="btn-success" >Add to Cart</button>
+                <h3 id="cost">${{cost}}</h3>
+        <button id="cart-btn"  (click)="addToCart()" routerLink="/cart"> Add To Cart </button>
             </div></div>
         </div>
         </div>

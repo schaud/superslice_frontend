@@ -1,17 +1,6 @@
 <!-- <h1 id="title">{{pizza}}</h1>
 <img [src]="image" width="600" height="400"> -->
 
-
- <!-- <div id="toppings">
-  <h2>Toppings:</h2>
-<div *ngFor="let topping of pizzaItem.toppings">
-  <b>{{topping.toppingName}}</b></div>
-  <h2>Sizes</h2>
-<div *ngFor="let size of sizes">
-<input type="radio"  name="size"[value]="size.toppingName" (change)="ontoppingChange(size.toppingName,size.cost,$event.target.checked)">
-<label   [for]=" size.toppingName"> {{size.toppingName}}</label><br>
-
-
  <!-- <div id="toppings">
   <h2>Toppings:</h2>
 <div *ngFor="let topping of pizzaItem.toppings">
@@ -45,22 +34,22 @@
   <main class="Site-content">
     <div id="container">
       <h1 id="title">{{pizza}}</h1>
-        <img #pizzaPic [src]="image" width="300" height="250">
+        <img #pizzaPic [src]="image" width="350" height="300">
           <div id ="fixx"><div id="toppings">
             <h2>Toppings:</h2>
               <div *ngFor="let topping of pizzaItem.toppings">
                 <b>{{topping.toppingName}}</b></div>
-          <h2>Sizes</h2>
-        <div *ngFor="let size of sizes">
-
-        <input type="radio"  name="size"[value]="size.toppingName" [checked]="size.toppingName=='Medium'" (change)="ontoppingChange(size.toppingName,size.cost,$event.target.checked)">
-        <label   [for]=" size.toppingName"> {{size.toppingName}}</label><br>
-        </div>
-        <h3>Price : ${{cost}}</h3>
-
-        <button class="btn-success" (click)="addToCart()">Add to Cart</button>
+                </div>
+                <div id="sizesDiv"> <h2>Sizes</h2>
+                  <div *ngFor="let size of sizes">
+                  <input type="radio"  name="size"[value]="size.toppingName" (change)="ontoppingChange(size.toppingName,size.cost,$event.target.checked)">
+                  <label   [for]=" size.toppingName"> {{size.toppingName}}</label><br>
+                  </div><h3 id="cost">${{cost}}</h3><div id="cartDiv"><button id="cart-btn"  (click)="addToCart()" routerLink="/cart"> Add To Cart </button></div>
+                  </div>
+         
+        
       </div></div>
-  </div>
+  
   </main>
 
 </body>

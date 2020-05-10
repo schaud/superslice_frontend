@@ -53,7 +53,6 @@ export class SpecialsViewComponent implements OnInit {
       this.cost += top.cost;
     }
     console.log(this.pizzaItem);
-    console.log("this is the price of the pizza"+this.cost);
 
   }
 
@@ -66,11 +65,11 @@ export class SpecialsViewComponent implements OnInit {
     console.log(this.costTotal)
   }
 
-  onChange(name:string,price:number, isChecked: boolean) {
+  onChange(name:string,cost:number, isChecked: boolean) {
     if(isChecked) {
 
       this.names.push(name);
-      this.prices.push(price);
+      this.prices.push(cost);
       console.log(this.prices)
       console.log(this.names)
       this.addToTotal();
@@ -93,20 +92,18 @@ export class SpecialsViewComponent implements OnInit {
       this.prices.push(price);
       this.size=name;
       if(name == "Medium"){
-      this.divView.nativeElement.setAttribute("height","275");
-      this.divView.nativeElement.setAttribute("width","450");
+      this.divView.nativeElement.setAttribute("height","300");
+      this.divView.nativeElement.setAttribute("width","350");
 }else if(name == "Small"){
   this.divView.nativeElement.setAttribute("height","250");
   this.divView.nativeElement.setAttribute("width","300")
       }else if(name == "Large"){
-        this.divView.nativeElement.setAttribute("height","300");
-        this.divView.nativeElement.setAttribute("width","500");
-
+        this.divView.nativeElement.setAttribute("height","350");
+        this.divView.nativeElement.setAttribute("width","400");
       }
       this.cost = this.prices[0];
       for (let top of this.pizzaItem.toppings) {
         this.cost += top.cost;
-
       }
       console.log(this.prices)
       console.log(this.names)
