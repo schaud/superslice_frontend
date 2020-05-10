@@ -22,8 +22,8 @@ export class PizzaComponent implements OnInit {
   veggies: any;
   names:Array<string> = [];
   prices:Array<number> = [];
-  costTotal:number;
-  size:string;
+  costTotal:number = 10;
+  size:string = 'Medium';
   quantity = 1;
 
   cartItems : orderForm = {username: localStorage.getItem('user_key'),
@@ -45,7 +45,7 @@ export class PizzaComponent implements OnInit {
 
   }
   addToTotal(){
-    this.costTotal=0;
+ this.costTotal=0;
     for(let price of this.prices){
       this.costTotal+=price
 
@@ -75,9 +75,13 @@ export class PizzaComponent implements OnInit {
 
       let index:number = this.names.findIndex(x => x == this.size)
 
+
+
       this.prices.splice(index,1);
       this.prices.push(price);
+
       this.size=name;
+
       console.log(this.prices)
       console.log(this.names)
       console.log("this is the size "+this.size)
