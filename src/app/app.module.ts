@@ -36,6 +36,7 @@ import {MapsService} from './services/maps.service'
 // import {  ErrorHandler } from '@angular/core';
  import { HttpModule } from '@angular/http';
 import { EmployeeHeaderComponent } from './components/employee-header/employee-header.component';
+import { PizzanamePipe } from './pipes/pizzaname.pipe';
 // import {MatFormFieldModule} from '@angular/material/form-field';
 // import {MatSelectModule} from '@angular/material/select';
 
@@ -66,7 +67,8 @@ import { EmployeeHeaderComponent } from './components/employee-header/employee-h
 
     StatisticsComponent,
     LocationComponent,
-    EmployeeHeaderComponent
+    EmployeeHeaderComponent,
+    PizzanamePipe
 
   ],
   imports: [
