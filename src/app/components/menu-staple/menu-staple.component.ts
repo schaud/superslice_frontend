@@ -25,7 +25,7 @@ export class MenuStapleComponent implements OnInit {
     {name: 'PepperoniPizza', img : '../assets/staple_pizza/Pepperpni.png'},
     {name: 'MushroomPizza', img : '../assets/staple_pizza/mushroom.png'},
     {name: 'ChickenPizza', img : '../assets/staple_pizza/chicken.png'},
-    {name: 'AnchoviesPizza', img : '../assets/staple_pizza/Anchovies.png'},
+    {name: 'AnchoviePizza', img : '../assets/staple_pizza/Anchovies.png'},
     {name: 'SpinachPizza', img : '../assets/staple_pizza/spinach.png'},
     {name: 'BaconPizza', img : '../assets/staple_pizza/bacon.png'},
     {name: 'CauliflowerPizza', img : '../assets/staple_pizza/Cauliflower.png'},

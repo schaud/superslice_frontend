@@ -91,15 +91,13 @@ import { EmployeeHeaderComponent } from './components/employee-header/employee-h
   providers: [
     EmailService,
     MapsService,
-
+    ChartsModule
 
 
   
 
-    
 
-
-  ],
+ 
   bootstrap: [AppComponent],
   
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
