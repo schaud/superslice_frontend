@@ -37,12 +37,12 @@
                 <h2>Sizes</h2>
                 <div *ngFor="let size of sizes">
             
-                    <input type="radio"  name="size"[value]="size.toppingName" (change)="ontoppingChange(size.toppingName,size.cost,$event.target.checked)">
+                    <input type="radio"  name="size"[value]="size.toppingName" [checked]="size.toppingName=='Medium'" (change)="ontoppingChange(size.toppingName,size.cost,$event.target.checked)">
                     
                     <label   [for]=" size.toppingName"> {{size.toppingName}}</label><br>
                     </div>
             <div>
-                <h3 id="cost">${{costTotal}}</h3>
+                <h3 id="cost">${{cost}}</h3>
         <button id="cart-btn"  (click)="addToCart()" routerLink="/cart"> Add To Cart </button>
               
               
