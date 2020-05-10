@@ -27,6 +27,15 @@ export class DataService {
     );
   sharedOrderForm = this.cartObj.asObservable();
 
+  private cartObj2 = new BehaviorSubject<orderForm>(
+    {username: localStorage.getItem('user_key'),
+      pizzaForms: [{type : null, toppingNames: [null], size: null, cost: null, quantity:1}],
+      note: null }
+  );
+  sharedOrder2Form = this.cartObj2.asObservable();
+
+
+
   cartItems : orderForm;
 
 
@@ -45,7 +54,6 @@ export class DataService {
   sendPizzaObj(pizzaObj : pizza){
     this.pizzaObj.next(pizzaObj)
   }
-
 
   sendOrderForm(cartObj : orderForm ){
     this.cartObj.next(cartObj)
