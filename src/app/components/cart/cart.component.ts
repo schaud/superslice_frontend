@@ -22,7 +22,7 @@ export class CartComponent implements OnInit {
 
      note: '' };
   images =  new Map([
-    ['AlfredoPizza','../assets/alfredo.png'],
+  ['AlfredoPizza','../assets/alfredo.png'],
   ['MeatLoversPizza','../assets/meat-lovers.png'],
   ['HawaiianPizza','../assets/Hawaii.png'],
   ['VeggiePizza','../assets/vege_delux.png'],
@@ -41,7 +41,8 @@ export class CartComponent implements OnInit {
   ['SausagePizza','../assets/staple_pizza/Sausage.png'],
   ['EggplantPizza','../assets/staple_pizza/Eggplant.png'],
   ['CustomPizza','../assets/byo.png']
-]);
+]
+  );
 
 
   cartWithToppings : orderForm = {username: localStorage.getItem('user_key'),
@@ -145,6 +146,5 @@ export class CartComponent implements OnInit {
     console.log('Cart has been cleared!')
 
   }
-
 
 }
