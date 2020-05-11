@@ -45,7 +45,9 @@ export class PizzaComponent implements OnInit {
 
   }
   addToTotal(){
- this.costTotal=0;
+    if (this.size == 'Medium'){
+      this.costTotal = 10;
+    } else this.costTotal=0;
     for(let price of this.prices){
       this.costTotal+=price
 

@@ -22,7 +22,7 @@
 
 
     <span  class="cart-size cart-column">{{pizza.size}}</span>
-    <span  class="cart-price cart-column">{{pizza.cost}}</span>
+    <span  class="cart-price cart-column">{{pizza.cost | currency}}</span>
 
 
     <div class="cart-quantity cart-column">
@@ -36,7 +36,7 @@
   </div>
   <div class="cart-total">
     <strong class="cart-total-title">Total:</strong>
-    <span class="cart-total-price">${{totalCost}}</span>
+    <span class="cart-total-price">{{totalCost | currency}}</span>
   </div>
 
 
