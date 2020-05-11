@@ -109,14 +109,14 @@ export class SpecialsViewComponent implements OnInit {
       this.prices.push(price);
       this.size=name;
       if(name == "Medium"){
-      this.divView.nativeElement.setAttribute("height","275");
-      this.divView.nativeElement.setAttribute("width","450");
+      this.divView.nativeElement.setAttribute("height","300");
+      this.divView.nativeElement.setAttribute("width","350");
 }else if(name == "Small"){
   this.divView.nativeElement.setAttribute("height","250");
   this.divView.nativeElement.setAttribute("width","300")
       }else if(name == "Large"){
-        this.divView.nativeElement.setAttribute("height","300");
-        this.divView.nativeElement.setAttribute("width","500");
+        this.divView.nativeElement.setAttribute("height","350");
+        this.divView.nativeElement.setAttribute("width","400");
 
       }
       this.cost = this.prices[0];
@@ -230,6 +230,7 @@ export class SpecialsViewComponent implements OnInit {
     }
     console.log('CWOT');
     console.log(this.cartItems)
+    console.log("this is the current num of items"+this.cartItems.pizzaForms.length)
 
     console.log('Added Pizza');
     console.log(this.pizzaItem.toppings)

@@ -33,6 +33,9 @@
         [labels]="CustomerchartLabels"
         [options]="chartOptions"
         [legend]="true"
+        [colors]="custColors"
         (chartClick)="CustomeronChartClick($event)">
     </canvas>
   </div>
+  <h3>The total revenue made : {{totalRevenue}}</h3>
+  <h3>The average Order amount : {{avgTotal}}</h3>

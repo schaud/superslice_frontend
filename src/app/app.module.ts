@@ -4,6 +4,7 @@ import { ChartsModule } from 'ng2-charts';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AgmCoreModule} from '@agm/core';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { StartupComponent } from './components/startup/startup.component';
 import { SignupComponent } from './components/signup/signup.component';
@@ -30,16 +31,16 @@ import {CommonModule} from '@angular/common';
 import {LocationComponent} from './components/location/location.component';
 import { PlainPizzaComponent } from './components/plain-pizza/plain-pizza.component';
 import { EmailService } from './services/email.service';
-
 // import {MatInputModule} from '@angular/material/input';
 import {MapsService} from './services/maps.service'
 // import {  ErrorHandler } from '@angular/core';
  import { HttpModule } from '@angular/http';
 import { EmployeeHeaderComponent } from './components/employee-header/employee-header.component';
+import { PizzanamePipe } from './pipes/pizzaname.pipe';
 // import {MatFormFieldModule} from '@angular/material/form-field';
 // import {MatSelectModule} from '@angular/material/select';
 
-
+import {StatsService} from './services/stats.service';
 
 @NgModule({
   declarations: [
@@ -63,10 +64,11 @@ import { EmployeeHeaderComponent } from './components/employee-header/employee-h
     PlainPizzaComponent,
     EmployeeViewComponent,
     OrderNumberComponent,
-
     StatisticsComponent,
     LocationComponent,
-    EmployeeHeaderComponent
+    EmployeeHeaderComponent,
+    PizzanamePipe
+
 
   ],
   imports: [
@@ -83,17 +85,21 @@ import { EmployeeHeaderComponent } from './components/employee-header/employee-h
     // MatFormFieldModule,
     // MatSelectModule,
     // MatInputModule,
-    BrowserAnimationsModule,
-    ChartsModule,
+
+    BrowserAnimationsModule
 
   ],
   providers: [
     EmailService,
     MapsService,
-    ChartsModule,],
 
-    bootstrap: [AppComponent],
-    schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+    StatsService,
+    ChartsModule
+  ],
+  bootstrap: [AppComponent],
+  
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+
 })
 
 export class AppModule { }
