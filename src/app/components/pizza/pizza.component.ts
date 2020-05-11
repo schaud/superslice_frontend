@@ -20,10 +20,11 @@ export class PizzaComponent implements OnInit {
   sizes: topping;
   meats: any;
   veggies: any;
-  names:Array<string> = [];
-  prices:Array<number> = [];
+  names:Array<string> = ["Medium"];
+  prices:Array<number> = [10];
   costTotal:number = 10;
-  size:string = 'Medium';
+  currentsize:string = 'Medium';
+  oldSize:string;
   quantity = 1;
 
   cartItems : orderForm = {username: localStorage.getItem('user_key'),
@@ -45,13 +46,12 @@ export class PizzaComponent implements OnInit {
 
   }
   addToTotal(){
-    if (this.size == 'Medium'){
-      this.costTotal = 10;
-    } else this.costTotal=0;
+     this.costTotal=0;
     for(let price of this.prices){
       this.costTotal+=price
 
     }
+   
     console.log(this.costTotal)
   }
   onChange(name:string,price:number, isChecked: boolean) {
@@ -65,42 +65,42 @@ export class PizzaComponent implements OnInit {
     }
     else{
       let index:number = this.names.findIndex(x => x == name)
+      console.log("deleting a "+ name+ " at position "+index)
     this.names.splice(index,1);
-    this.prices.splice(index,1);
+    this.prices.splice(index+1,1);
     this.addToTotal();
     console.log(this.names)
     }
   }
   ontoppingChange(name:string,price:number, isChecked: boolean) {
+    console.log("the old size is "+this.oldSize)
+    this.oldSize=this.currentsize;
     if(isChecked) {
 
+      let index:number = this.names.findIndex(x => x == this.oldSize)
 
-      let index:number = this.names.findIndex(x => x == this.size)
+      
 
+      console.log("deleting a "+ this.oldSize+ " at position "+index)
 
-
+      this.names.push(name);
+      this.names.splice(index,1);
       this.prices.splice(index,1);
       this.prices.push(price);
-
-      this.size=name;
+     
+      this.currentsize=name;
 
       console.log(this.prices)
       console.log(this.names)
-      console.log("this is the size "+this.size)
+      console.log("this is the size "+this.currentsize)
       this.addToTotal();
     }
-    else{
-      let index:number = this.names.findIndex(x => x == name)
-    this.names.splice(index,1);
-    this.prices.splice(index,1);
-    this.size ="";
-    console.log("this is the size "+this.size)
-    this.addToTotal();
-    console.log(this.names)
-    }
+
   }
   addToCart(){
-     let pizza:pizzaForm = new pizzaForm("CustomPizza",this.size,this.costTotal,this.names, this.quantity);
+    let index:number = this.names.findIndex(x => x == this.currentsize)
+      this.names.splice(index,1);
+     let pizza:pizzaForm = new pizzaForm("CustomPizza",this.currentsize,this.costTotal,this.names, this.quantity);
     console.log(pizza)
     this.cartItems.pizzaForms.push(pizza);
     this.cartWithToppings.pizzaForms.push(pizza);

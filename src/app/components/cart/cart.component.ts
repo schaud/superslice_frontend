@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ElementRef,ViewChild} from '@angular/core';
 import {DataService} from "../../services/data.service";
 import {pizzaForm} from "../../models/pizzaform";
 import {orderForm} from "../../models/orderform";
@@ -45,6 +45,7 @@ export class CartComponent implements OnInit {
   );
 
 
+
   cartWithToppings : orderForm = {username: localStorage.getItem('user_key'),
     pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity:1}],
     note: "null" };
@@ -56,6 +57,7 @@ export class CartComponent implements OnInit {
   pizzaData: any;
   order : any;
   note : string = 'none';
+  @ViewChild("shownSec") divView: ElementRef;
 
 
   constructor(private dataservice:DataService, private checkoutservice: CheckoutService) { }
@@ -65,6 +67,8 @@ export class CartComponent implements OnInit {
     this.dataservice.sharedPizzaObj.subscribe(pizzaData => this.pizzaData = pizzaData);
     this.dataservice.sharedOrderForm.subscribe(cartItems => this.cartItems = cartItems);
     this.dataservice.sharedOrder2Form.subscribe(cartWithToppings => this.cartWithToppings = cartWithToppings);
+    if(this.cartItems.pizzaForms.length <= 1 || this.cartWithToppings.pizzaForms.length<=1)
+    this.divView.nativeElement.setAttribute("style","visibility:visible;");
 
     if (this.cartItems.pizzaForms[0].type == null){
       this.cartItems.pizzaForms.shift();
