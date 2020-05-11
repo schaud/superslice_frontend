@@ -10,9 +10,16 @@
 
   <div class="cart-row" *ngFor="let pizza of cartWithToppings.pizzaForms; let i = index" >
 
+<!-- <<<<<<< raymond5 -->
     <div  class="cart-item cart-column dropdown">
-      <img class="cart-item-image" src="{{img}}" width="100" height="100">
+      <img class="cart-item-image" src="{{images.get(pizza.type)}}" width="100" height="100">
       <span class="cart-item-title">{{pizza.type| pizzaname}}</span>
+<!-- -- -->
+    <div class="cart-item cart-column">
+      <img class="cart-item-image" src="{{images.get(pizza.type)}}" width="100" height="100">
+      <span class="cart-item-title">{{pizza.type}}</span>
+<!-- >>>>>>> master -->
+       -->
       <div class="dropdown-content">
         <p *ngFor="let top of cartWithToppings.pizzaForms[i].toppingNames">{{top}}<br></p>
       </div>
@@ -40,8 +47,10 @@
     <span class="cart-total-price">${{totalCost}}</span>
   </div>
 
+
     <input type="text" [(ngModel)]="note" placeholder="Please enter any details about your order.">
   <button class="btn btn-primary btn-purchase" type="button" (click)="checkout()">PURCHASE</button>
+
 </section>
 
 

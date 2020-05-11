@@ -4,9 +4,11 @@ import {pizzaForm} from "../../models/pizzaform";
 import {orderForm} from "../../models/orderform";
 import  * as $  from 'jquery';
 import {DOCUMENT} from "@angular/common";
+
 import {pizza} from "../../models/pizza";
 import {topping} from "../../models/topping";
 import {CheckoutService} from "../../services/checkout.service";
+
 
 @Component({
   selector: 'app-cart',
@@ -17,13 +19,36 @@ export class CartComponent implements OnInit {
 
   cartItems : orderForm = {username: localStorage.getItem('user_key'),
     pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity:1}],
-    note: '' };
+
+     note: '' };
+  images =  new Map([
+    ['AlfredoPizza','../assets/alfredo.png'],
+  ['MeatLoversPizza','../assets/meat-lovers.png'],
+  ['HawaiianPizza','../assets/Hawaii.png'],
+  ['VeggiePizza','../assets/vege_delux.png'],
+  ['ItalianPizza','../assets/Italian.png'],
+  ['SupremePizza','../assets/Supreme_pizza.png'],
+  ['FourCheesePizza','../assets/Four_Cheese.png'],
+  ['WhitePizza','../assets/white_pizza.png'],
+  ['MediterraneanPizza','../assets/Mediterranean.png'],
+  ['PepperoniPizza','../assets/staple_pizza/Pepperpni.png'],
+  ['MushroomPizza','../assets/staple_pizza/mushroom.png'],
+  ['ChickenPizza','../assets/staple_pizza/chicken.png'],
+  ['AnchoviesPizza','../assets/staple_pizza/Anchovies.png'],
+  ['SpinachPizza','../assets/staple_pizza/spinach.png'],
+  ['BaconPizza','../assets/staple_pizza/bacon.png'],
+  ['CauliflowerPizza','../assets/staple_pizza/Cauliflower.png'],
+  ['SausagePizza','../assets/staple_pizza/Sausage.png'],
+  ['EggplantPizza','../assets/staple_pizza/Eggplant.png'],
+  ['CustomPizza','../assets/byo.png']
+]);
+
 
   cartWithToppings : orderForm = {username: localStorage.getItem('user_key'),
     pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity:1}],
     note: "null" };
 
-  img : string = '../assets/alfredo.png';
+
   totalCost: number;
   quantity: any = [];
   costPerPizza = [];
@@ -31,7 +56,9 @@ export class CartComponent implements OnInit {
   order : any;
   note : string = 'none';
 
+
   constructor(private dataservice:DataService, private checkoutservice: CheckoutService) { }
+
 
   ngOnInit(): void {
     this.dataservice.sharedPizzaObj.subscribe(pizzaData => this.pizzaData = pizzaData);
@@ -104,6 +131,7 @@ export class CartComponent implements OnInit {
 
   async checkout(): Promise<any>{
     this.cartItems.note = this.note;
+
 
     this.order = await this.checkoutservice.checkout(this.cartItems);
     console.log(this.cartItems);

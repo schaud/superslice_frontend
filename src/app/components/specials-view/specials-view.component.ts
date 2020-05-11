@@ -230,6 +230,7 @@ export class SpecialsViewComponent implements OnInit {
     }
     console.log('CWOT');
     console.log(this.cartItems)
+    console.log("this is the current num of items"+this.cartItems.pizzaForms.length)
 
     console.log('Added Pizza');
     console.log(this.pizzaItem.toppings)

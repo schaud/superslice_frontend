@@ -11,7 +11,9 @@ input[type=text], input[type=password] {
   position: absolute;
   right: 10%;
 }
-
+b{
+  color:red;
+}
   button {
     background-color: #4CAF50;
     color: white;
