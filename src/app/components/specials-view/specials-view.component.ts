@@ -12,6 +12,7 @@ import {PizzaRetrieverService} from "../../services/pizza-retriever.service";
   templateUrl: './specials-view.component.html',
   styleUrls: ['./specials-view.component.css']
 })
+
 export class SpecialsViewComponent implements OnInit {
   @ViewChild("pizzaPic") divView: ElementRef;
   sizes: topping;

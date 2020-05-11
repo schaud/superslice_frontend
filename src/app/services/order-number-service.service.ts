@@ -8,13 +8,13 @@ export class OrderNumberServiceService {
 
 
 
-  constructor(private http:HttpClient) { 
+  constructor(private http:HttpClient) {
   }
 
- 
+
 
   GetPendingOrder() : Promise<any>{
-    const pendingStatusPromise: Promise<any> = this.http.get(`http://localhost:9000/ticket?status=Pending`).toPromise();
+    const pendingStatusPromise: Promise<any> = this.http.get(`http://ec2-3-135-228-219.us-east-2.compute.amazonaws.com:9000/ticket?status=Pending`).toPromise();
     return pendingStatusPromise;
   }
 

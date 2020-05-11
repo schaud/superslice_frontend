@@ -10,7 +10,7 @@ export class CheckoutService {
 
   constructor(private http: HttpClient) { }
 
-  url = "http://localhost:9000/makeOrder";
+  url = "http://ec2-3-135-228-219.us-east-2.compute.amazonaws.com:9000/makeOrder";
   body: Observable<any>;
 
 
