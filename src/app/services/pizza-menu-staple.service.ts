@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
 })
 export class PizzaMenuStapleService {
 
-  private _meal_url = "http://localhost:9000/getMeatToppings";
-  private _veg_url = "http://localhost:9000/getVeggieToppings";
+  private _meal_url = "http://ec2-3-135-228-219.us-east-2.compute.amazonaws.com:9000/getMeatToppings";
+  private _veg_url = "http://ec2-3-135-228-219.us-east-2.compute.amazonaws.com:9000/getVeggieToppings";
 
   constructor(private http:HttpClient) {}
 
@@ -25,6 +25,6 @@ export class PizzaMenuStapleService {
     return veg;
   }
 
-  
-  
+
+
 }

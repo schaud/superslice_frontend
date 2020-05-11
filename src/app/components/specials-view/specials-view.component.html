@@ -24,12 +24,12 @@
                   <label   [for]=" size.toppingName"> {{size.toppingName}}</label><br>
                </div>
               </div> <!--end sizes  div -->
-
+              <div id = btn-cost>
+                <button id="cart-btn"  (click)="addToCart()" routerLink="/cart"> Add To Cart </button>
+                </div>
           </div> <!--end fixxx  div -->
 
-      <div id = btn-cost>
-      <button id="cart-btn"  (click)="addToCart()" routerLink="/cart"> Add To Cart </button>
-      </div>
+      
 
 
     </div> <!--end container  div -->

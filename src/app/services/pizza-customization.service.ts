@@ -9,17 +9,17 @@ export class PizzaCustomizationService {
   constructor(private http:HttpClient) { }
 
   getMeatToppings():Promise<any>{
-    let meatPromise:Promise<any>  = this.http.get('http://localhost:9000/getMeatToppings').toPromise();
+    let meatPromise:Promise<any>  = this.http.get('http://ec2-3-135-228-219.us-east-2.compute.amazonaws.com:9000/getMeatToppings').toPromise();
     console.log(meatPromise);
     return meatPromise;
   }
   getSizes():Promise<any>{
-    let sizePromise:Promise<any>  = this.http.get('http://localhost:9000/getSizes').toPromise();
+    let sizePromise:Promise<any>  = this.http.get('http://ec2-3-135-228-219.us-east-2.compute.amazonaws.com:9000/getSizes').toPromise();
     return sizePromise;
   }
   getVeggieToppings():Promise<any>{
-    let veggiePromise:Promise<any>  = this.http.get('http://localhost:9000/getVeggieToppings').toPromise();
+    let veggiePromise:Promise<any>  = this.http.get('http://ec2-3-135-228-219.us-east-2.compute.amazonaws.com:9000/getVeggieToppings').toPromise();
     return veggiePromise;
   }
-  
+
 }
