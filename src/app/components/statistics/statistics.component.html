@@ -1,4 +1,6 @@
 <h1>Statistics page</h1>
+<h3>The total revenue made : {{totalRevenue}}</h3>
+<h3>The average Order amount : {{avgTotal}}</h3>
 <div style="width: 75%;"class="chart">
     <h3>Most Popular Toppings</h3>
     <canvas
@@ -26,7 +28,7 @@
   </div>
   <div style="width: 75%;"class="chart">
     <h3>Most valuable customers</h3>
-    <canvas
+    <canvas style="padding-bottom: 70px;"
         baseChart
         [chartType]="'pie'"
         [datasets]="CustomerchartData"
@@ -37,5 +39,3 @@
         (chartClick)="CustomeronChartClick($event)">
     </canvas>
   </div>
-  <h3>The total revenue made : {{totalRevenue}}</h3>
-  <h3>The average Order amount : {{avgTotal}}</h3>

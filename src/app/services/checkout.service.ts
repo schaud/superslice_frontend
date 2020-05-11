@@ -11,7 +11,7 @@ export class CheckoutService {
   constructor(private http: HttpClient) { }
 
   url = "http://localhost:9000/makeOrder";
-  body:Observable<any>;
+  body: Observable<any>;
 
 
   checkout(order : orderForm) : Promise<any> {

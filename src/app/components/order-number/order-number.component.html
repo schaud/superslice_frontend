@@ -6,6 +6,8 @@
         <th>Ticket #</th>
         <th>Items #</th>
         <th >Note</th>
+        <th>Total Cost</th>
+        <th>Placement Date</th>
         <th class="th3">Update Status</th>
 
       </tr>
@@ -24,6 +26,8 @@
               </div>                
         </td>
         <td>{{this.url[i].note}}</td>
+        <td>${{url[i].totalCost}}</td>
+        <td>{{url[i].placementDate}}</td>
         <td> 
           <select id="up-status">
             <option value="Pending" selected="selected">Pending</option>

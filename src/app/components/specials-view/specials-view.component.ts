@@ -19,7 +19,7 @@ export class SpecialsViewComponent implements OnInit {
   names:Array<string> = [];
   prices:Array<number> = [];
   costTotal:number;
-  size:string;
+  size:string = 'Medium';
 
   pizza: string;
   image: string;
@@ -27,11 +27,16 @@ export class SpecialsViewComponent implements OnInit {
   pizzaItem: pizza;
   cost: number;
   defaultCost : number = 10;
+  toppings : Array<string> = ['']
   confirmedPizza : pizzaForm = {type: null, cost: null, size: '', toppingNames: [null], quantity : 1};
-  // confirmedPizza :
+  confirmedPizzaWToppings:  pizzaForm = {type: null, cost: null, size: '', toppingNames: [null], quantity : 1};
+
     cartItems : orderForm = {username: localStorage.getItem('user_key'),
     pizzaForms: [{type : null, toppingNames: [null], size: null, cost: null, quantity: 1}],
     note: null };
+    cartWithToppings: orderForm = {username: localStorage.getItem('user_key'),
+      pizzaForms: [{type : null, toppingNames: [null], size: null, cost: null, quantity: 1}],
+      note: null };
 
   constructor(private dataservice : DataService, private pizzaservice : PizzaRetrieverService, private el: ElementRef,private pizzaCustomizer:PizzaCustomizationService) { }
 
@@ -41,9 +46,14 @@ export class SpecialsViewComponent implements OnInit {
     this.dataservice.sharedImage.subscribe(image => this.image = image);
     this.dataservice.sharedPizzaObj.subscribe(pizzaData => this.pizzaData = pizzaData);
     this.dataservice.sharedOrderForm.subscribe(cartItems => this.cartItems = cartItems);
+    this.dataservice.sharedOrder2Form.subscribe(cartWithToppings => this.cartWithToppings = cartWithToppings);
+
     this.ViewPizza();
     this.getSizes();
     this.cost = this.defaultCost;
+    console.log('toppings')
+
+    console.log(this.toppings)
   }
 
   async ViewPizza(): Promise<void> {
@@ -52,7 +62,13 @@ export class SpecialsViewComponent implements OnInit {
     for (let top of this.pizzaItem.toppings) {
       this.cost += top.cost;
     }
-    console.log(this.pizzaItem);
+    for (let top of this.pizzaItem.toppings) {
+      this.toppings.push(top.toppingName);
+    }
+    this.toppings.shift();
+
+
+
     console.log("this is the price of the pizza"+this.cost);
 
   }
@@ -173,13 +189,21 @@ export class SpecialsViewComponent implements OnInit {
 
     console.log(this.cartItems)
     this.confirmedPizza.type = this.pizza;
+    this.confirmedPizzaWToppings.type = this.pizza;
     console.log(this.confirmedPizza.type)
     this.confirmedPizza.size = this.size;
+    this.confirmedPizzaWToppings.size = this.size;
     console.log(this.confirmedPizza.size)
     this.confirmedPizza.cost = this.cost;
+    this.confirmedPizzaWToppings.cost = this.cost;
+
+
     this.confirmedPizza.toppingNames = [];
+    this.confirmedPizzaWToppings.toppingNames = this.toppings;
     console.log('Confirmed Pizza');
     console.log(this.confirmedPizza);
+    console.log('Confirmed Pizza w t' );
+    console.log(this.confirmedPizzaWToppings);
 
     let exists : boolean  = false;
 
@@ -201,13 +225,25 @@ export class SpecialsViewComponent implements OnInit {
     }
     if (!exists){
      this.cartItems.pizzaForms.push(this.confirmedPizza);
-    }
+     this.cartWithToppings.pizzaForms.push(this.confirmedPizzaWToppings);
 
-    console.log('Current Order');
+    }
+    console.log('CWOT');
     console.log(this.cartItems)
     console.log("this is the current num of items"+this.cartItems.pizzaForms.length)
 
+    console.log('Added Pizza');
+    console.log(this.pizzaItem.toppings)
+
+    console.log('CWT');
+
+    console.log(this.cartWithToppings)
+
+
+
+
   }
+
 }
 
 

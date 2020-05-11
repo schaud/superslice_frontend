@@ -38,7 +38,9 @@ import {MapsService} from './services/maps.service'
 import { EmployeeHeaderComponent } from './components/employee-header/employee-header.component';
 // import {MatFormFieldModule} from '@angular/material/form-field';
 // import {MatSelectModule} from '@angular/material/select';
+
 import {StatsService} from './services/stats.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -79,17 +81,21 @@ import {StatsService} from './services/stats.service';
     // MatFormFieldModule,
     // MatSelectModule,
     // MatInputModule,
+
     BrowserAnimationsModule
+
   ],
   providers: [
     EmailService,
     MapsService,
+
     StatsService,
     ChartsModule
   ],
   bootstrap: [AppComponent],
   
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+
 })
 
 export class AppModule { }

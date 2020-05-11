@@ -1,24 +1,49 @@
-<h1>Pizza customizer</h1>
-<h2>Sizes</h2>
-<div *ngFor="let size of sizes">
+<h1>Pizza Customizzer &trade;</h1>
+<h5>Select as many toppings as you want!</h5>
 
-<input type="radio"  name="size"[value]="size.toppingName" (change)="ontoppingChange(size.toppingName,size.cost,$event.target.checked)">
+<div class="container">
 
-<label   [for]=" size.toppingName"> {{size.toppingName}}</label><br>
-</div>
-<h2>Meats</h2>
-<div *ngFor="let meat of meats">
-<input type="checkbox"  [name]="meat.toppingName"[value]="meat.toppingName" (change)="onChange(meat.toppingName,meat.cost,$event.target.checked)">
+  <div class="sizes">
 
-<label   [for]=" meat.toppingName"> {{meat.toppingName}}</label><br>
+    <h2>Sizes</h2>
+    <div *ngFor="let size of sizes">
+      <input type="radio"  name="size"[value]="size.toppingName" [checked]="size.toppingName=='Medium'"(change)="ontoppingChange(size.toppingName,size.cost,$event.target.checked)">
+      <label   [for]=" size.toppingName"> {{size.toppingName}}</label><br>
+    </div>
 
-</div>
-<h2>Veggies</h2>
-<div *ngFor="let veggie of veggies">
-<input type="checkbox"  [name]="veggie.toppingName"[value]="veggie.toppingName" (change)="onChange(veggie.toppingName,veggie.cost,$event.target.checked)">
-<label   [for]=" veggie.toppingName"> {{veggie.toppingName}}</label><br>
-</div>
+  </div>
+
+
+  <div class="meats">
+
+    <h2>Meats</h2>
+    <div *ngFor="let meat of meats">
+      <input type="checkbox"  [name]="meat.toppingName"[value]="meat.toppingName" (change)="onChange(meat.toppingName,meat.cost,$event.target.checked)">
+      <label   [for]=" meat.toppingName"> {{meat.toppingName}}</label><br>
+    </div>
+
+  </div>
+
+  <div class="veggies">
+
+    <h2>Veggies</h2>
+    <div *ngFor="let veggie of veggies">
+      <input type="checkbox"  [name]="veggie.toppingName"[value]="veggie.toppingName" (change)="onChange(veggie.toppingName,veggie.cost,$event.target.checked)">
+      <label   [for]=" veggie.toppingName"> {{veggie.toppingName}}</label><br>
+    </div>
+
+  </div>
+
+
+
+
+
+<div class="cost">
 <h3>Price : ${{costTotal}}</h3>
-<button class="btn-success" (click)="addToCart()">Add to Cart</button>
+  <div class="btn">
+    <button class="btn-success" (click)="addToCart()" routerLink="/cart">Add to Cart</button>
+  </div>
+</div>
+</div>
 
 

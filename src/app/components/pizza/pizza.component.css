@@ -1,11 +1,69 @@
 *{
-    text-align: center;
+    text-align: left;
+}
+
+h1{
+  padding-top: 20px;
+  text-align: center;
+  padding-bottom: 5px;
+}
+h5{
+  text-align: center;
+  padding-bottom: 30px;
+  margin-left: -35px;
 }
 h3{
     float: left;
 }
 button{
-    float:right;
     border-radius: 10%;
     margin-right: 20px;
+    margin-left: -10px;
+}
+
+.container{
+  width: 900px;
+  height: 900px;
+  display: flex;
+  align-items: flex-start;
+}
+
+div.sizes{
+  width:200px;
+
+}
+
+div.meats{
+  width:200px;
+}
+
+div.veggies{
+  width:200px;
+  height: 400px;
+  overflow: scroll;
+
+
+}
+
+div.cost{
+  padding-left: 30px;
+  position: relative;
+  width:250px;
+  /*align-content: start;*/
+
+}
+
+div.btn{
+  left: 0;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: rgba(0,0,0,.5);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
 }

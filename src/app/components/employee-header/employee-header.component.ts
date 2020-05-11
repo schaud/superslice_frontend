@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./employee-header.component.css']
 })
 export class EmployeeHeaderComponent implements OnInit {
-
+  session: string;
+  
   constructor() { }
 
   ngOnInit(): void {

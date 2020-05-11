@@ -1,10 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ElementRef,ViewChild} from '@angular/core';
 import {DataService} from "../../services/data.service";
 import {pizzaForm} from "../../models/pizzaform";
 import {orderForm} from "../../models/orderform";
 import  * as $  from 'jquery';
 import {DOCUMENT} from "@angular/common";
-import { CheckoutService } from 'src/app/services/checkout.service';
+
+import {pizza} from "../../models/pizza";
+import {topping} from "../../models/topping";
+import {CheckoutService} from "../../services/checkout.service";
+
 
 @Component({
   selector: 'app-cart',
@@ -15,7 +19,8 @@ export class CartComponent implements OnInit {
 
   cartItems : orderForm = {username: localStorage.getItem('user_key'),
     pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity:1}],
-    note: null };
+
+     note: '' };
   images =  new Map([
     ['AlfredoPizza','../assets/alfredo.png'],
   ['MeatLoversPizza','../assets/meat-lovers.png'],
@@ -35,25 +40,42 @@ export class CartComponent implements OnInit {
   ['CauliflowerPizza','../assets/staple_pizza/Cauliflower.png'],
   ['SausagePizza','../assets/staple_pizza/Sausage.png'],
   ['EggplantPizza','../assets/staple_pizza/Eggplant.png'],
-  ['CustomPizza','../assets/byo.png']
+  ['CustomPizza','../assets/byo.png'],
+
 ]);
-  
+
+
+  cartWithToppings : orderForm = {username: localStorage.getItem('user_key'),
+    pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity:1}],
+    note: "null" };
+
+
   totalCost: number;
   quantity: any = [];
   costPerPizza = [];
-  tempPizzas: Array<pizzaForm> = [Object.create(pizzaForm)];
-  tempPizza: pizzaForm = Object.create(pizzaForm);
+  pizzaData: any;
+  order : any;
+  note : string = 'none';
+  @ViewChild("shownSec") divView: ElementRef;
 
 
+  constructor(private dataservice:DataService, private checkoutservice: CheckoutService) { }
 
-
-  constructor(private dataservice:DataService,private checkoutserv:CheckoutService) { }
 
   ngOnInit(): void {
+    this.dataservice.sharedPizzaObj.subscribe(pizzaData => this.pizzaData = pizzaData);
     this.dataservice.sharedOrderForm.subscribe(cartItems => this.cartItems = cartItems);
+    this.dataservice.sharedOrder2Form.subscribe(cartWithToppings => this.cartWithToppings = cartWithToppings);
+    if(this.cartItems.pizzaForms.length <= 1 || this.cartWithToppings.pizzaForms.length<=1)
+    this.divView.nativeElement.setAttribute("style","visibility:visible;");
+
     if (this.cartItems.pizzaForms[0].type == null){
       this.cartItems.pizzaForms.shift();
     }
+    if (this.cartWithToppings.pizzaForms[0].type == null){
+      this.cartWithToppings.pizzaForms.shift();
+    }
+
     console.log('In the Cart:');
     console.log(this.cartItems);
     console.log(this.cartItems.pizzaForms)
@@ -62,6 +84,12 @@ export class CartComponent implements OnInit {
     console.log(this.totalCost);
     console.log(this.quantity);
     console.log(this.cartItems.pizzaForms.length);
+
+
+    console.log('cart with toppings')
+    console.log(this.cartWithToppings)
+
+
   }
 
 
@@ -86,11 +114,12 @@ export class CartComponent implements OnInit {
 
   }
 
-  hideRow(index) {
+
+  removeFromCart(index) {
     console.log(index);
     this.totalCost = this.totalCost - this.cartItems.pizzaForms[index].cost * this.quantity[index];
     this.cartItems.pizzaForms.splice(index, 1);
-
+    this.cartWithToppings.pizzaForms.splice(index, 1);
   }
 
   updateQuantity(){
@@ -104,15 +133,22 @@ export class CartComponent implements OnInit {
     console.log(this.cartItems)
   }
 
+  async checkout(): Promise<any>{
+    this.cartItems.note = this.note;
 
 
-  async checkOut(): Promise<any>{
-    this.checkoutserv.checkout(this.cartItems);
-    this.cartItems = null;
+    this.order = await this.checkoutservice.checkout(this.cartItems);
+    console.log(this.cartItems);
+    console.log('Clearing Cart...')
+    this.cartItems = {username: localStorage.getItem('user_key'),
+      pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity:1}],
+      note: '' };
+    this.cartWithToppings = {username: localStorage.getItem('user_key'),
+      pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity:1}],
+      note: '' };
+    console.log('Cart has been cleared!')
 
   }
-
-
 
 
 }
