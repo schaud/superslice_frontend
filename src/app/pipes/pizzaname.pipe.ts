@@ -16,7 +16,7 @@ export class PizzanamePipe implements PipeTransform {
    if(pizzaname.includes("Lovers")){
     return `${meat}`;
    }else if(pizzaname.includes("Cheese")){
-    return `${cheese }`;
+    return `${cheese}`;
    }
     return `${base+ " "+ "Pizza"}`
 
