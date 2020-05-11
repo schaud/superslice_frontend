@@ -10,22 +10,19 @@
 
   <div class="cart-row" *ngFor="let pizza of cartWithToppings.pizzaForms; let i = index" >
 
-
-    <div class="cart-item cart-column">
+<!-- <<<<<<< raymond5 -->
+    <div  class="cart-item cart-column dropdown">
       <img class="cart-item-image" src="{{images.get(pizza.type)}}" width="100" height="100">
+      <span class="cart-item-title">{{pizza.type| pizzaname}}</span>
 
-      <span class="cart-item-title">{{pizza.type}}</span>
       <div class="dropdown-content">
         <p *ngFor="let top of cartWithToppings.pizzaForms[i].toppingNames">{{top}}<br></p>
       </div>
-
-      <!--make a new object that appends toppings to order form, conserve original order form -->
-
     </div>
 
 
     <span  class="cart-size cart-column">{{pizza.size}}</span>
-    <span  class="cart-price cart-column">{{pizza.cost}}</span>
+    <span  class="cart-price cart-column">{{pizza.cost | currency}}</span>
 
 
     <div class="cart-quantity cart-column">
@@ -39,14 +36,14 @@
   </div>
   <div class="cart-total">
     <strong class="cart-total-title">Total:</strong>
-    <span class="cart-total-price">${{totalCost}}</span>
+    <span class="cart-total-price">{{totalCost | currency}}</span>
   </div>
 
 
     <input type="text" [(ngModel)]="note" placeholder="Please enter any details about your order.">
   <button class="btn btn-primary btn-purchase" type="button" (click)="checkout()">PURCHASE</button>
+  </section>
 
-</section>
 
 
 

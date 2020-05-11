@@ -24,7 +24,6 @@ export class HeaderComponent implements OnInit {
   pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity: 1}],
 
   note: null };
-  numOfItems:number=this.cartItems.pizzaForms.length -1;
   title = 'SuperSlice';
   loginmodal:string;
   registermodal:string;
@@ -46,6 +45,7 @@ export class HeaderComponent implements OnInit {
     this.registermodal = 'notshown'
     this.dataservice.sharedOrderForm.subscribe(cartItems => this.cartItems = cartItems);
     console.log("this is the num of items when it header starts"+this.cartItems.pizzaForms.length);
+    
   }
   showRegister() {
     this.registermodal = 'shown';
@@ -100,14 +100,6 @@ export class HeaderComponent implements OnInit {
   goToEmployee():void {
     this._router.navigate(['/employee']);
   }
-  updateItems(){
-    if(this.numOfItems>=0){
-      this.numOfItems = 0;
-      for(let items of this.cartItems.pizzaForms){
-        this.numOfItems+=items.quantity
-      }
-    }
-    
-  }
+
 
 }

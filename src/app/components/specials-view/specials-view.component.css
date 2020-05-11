@@ -1,5 +1,3 @@
-
-
 .Site {
   display: flex;
   min-height: 100vh;
@@ -11,105 +9,77 @@
 }
 
 #title{
-  padding-left: 20px;
+  padding-top: 20px;
+  text-align: center;
+  padding-bottom: 5px;
+  /*display: flex;*/
+  align-content: center;
 }
 
-#toppings{
-  float: left;
-  padding-left: 20px;
-  width: 250px;
+#title>h1{
+  display: inline-block;
 }
+
 
 #sizesDiv{
-  float: left;
-  padding-left: 20px;
+  padding-left: 50px;
   width: 250px;
 }
 
 #container{
+  width: 990px;
+  left: 25%;
   position: relative;
+  display: flex;
+  align-items: flex-start;
   }
 
 #fixx{
-  position: absolute;
-  width: 500px;
-  height: 200px;
-  top: 250%;
-  left: 60%;
-  margin-top: -100px; /* Negative half of height. */
-  margin-left: -250px; 
+  padding-top: 50px;
+  padding-left: 50px;
+  display: flex;
+  align-items: flex-start;
 }
 #cart{
   position: relative;
   top: 10px;
 }
 
-
-
 img{
-  float: left;
   padding-left: 20px;
 
 }
 
-
-
-#sizes{
-  position: absolute;
-  /*position: relative;*/
-}
-
-
 #cost{
-  /*position: relative;*/
-  /*top: -110px;*/
-  /*left: 75px;*/
-  top: 150px;
-  width: 100px;
-  float: left;
   background-color:red;
   color: white;
   border-radius: 5px;
-  text-align: center;
-  position: absolute;
 }
 
-
-
-
-
-
-#costncart{
-  float:left;
-  position: relative;
+#btn-cost{
+  /*width: 200px;*/
+  /*height: 150px;*/
+  display: flex;
 }
 
-#cost{
-  position: absolute;
-}
-
-#addcart{
-  position: absolute;
-  top: 275px;
-}
 
 #cart-btn{
-  width: 100px;
-  margin-top: 50px;
+  width: 200px;
   background-color:red;
   color: white;
   border-radius: 5px;
   text-align: center;
 }
 
+#btn-cost {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  width: 200px;
+}
 
-
-
-
-/*#costncart{*/
-/*  width:200px;*/
-/*}*/
-/*cart button*/
 
 
 
