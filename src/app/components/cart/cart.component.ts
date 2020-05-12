@@ -57,7 +57,10 @@ export class CartComponent implements OnInit {
   pizzaData: any;
   order : any;
   note : string = 'none';
+  // emptyMsg = document.getElementById('empty');
+  // cart = document.getElementById('cart-container');
   @ViewChild("shownSec") divView: ElementRef;
+
 
 
   constructor(private dataservice:DataService, private checkoutservice: CheckoutService) { }
@@ -67,15 +70,29 @@ export class CartComponent implements OnInit {
     this.dataservice.sharedPizzaObj.subscribe(pizzaData => this.pizzaData = pizzaData);
     this.dataservice.sharedOrderForm.subscribe(cartItems => this.cartItems = cartItems);
     this.dataservice.sharedOrder2Form.subscribe(cartWithToppings => this.cartWithToppings = cartWithToppings);
-    if(this.cartItems.pizzaForms.length <= 1 || this.cartWithToppings.pizzaForms.length<=1)
-    this.divView.nativeElement.setAttribute("style","visibility:visible;");
+    // if(this.cartItems.pizzaForms.length <= 1 || this.cartWithToppings.pizzaForms.length<=1)
+    // this.divView.nativeElement.setAttribute("style","visibility:visible;");
 
-    if (this.cartItems.pizzaForms[0].type == null){
-      this.cartItems.pizzaForms.shift();
+    if (this.cartItems.pizzaForms.length == 0){
+      this.cartIsEmpty();
     }
-    if (this.cartWithToppings.pizzaForms[0].type == null){
-      this.cartWithToppings.pizzaForms.shift();
+
+
+    // if (this.cartItems.pizzaForms[0].type == ''){
+    //   this.cartItems.pizzaForms.shift();
+    //   this.cartWithToppings.pizzaForms.shift();
+    // }
+    //
+    // if (this.cartWithToppings.pizzaForms[0].type == ''){
+    //   this.cartItems.pizzaForms.shift();
+    //   this.cartWithToppings.pizzaForms.shift();
+    // }
+
+    if (this.cartItems.pizzaForms == []){
+      this.cartIsEmpty();
     }
+
+
 
     console.log('In the Cart:');
     console.log(this.cartItems);
@@ -89,6 +106,11 @@ export class CartComponent implements OnInit {
 
     console.log('cart with toppings')
     console.log(this.cartWithToppings)
+
+
+
+
+
 
 
   }
@@ -121,6 +143,10 @@ export class CartComponent implements OnInit {
     this.totalCost = this.totalCost - this.cartItems.pizzaForms[index].cost * this.quantity[index];
     this.cartItems.pizzaForms.splice(index, 1);
     this.cartWithToppings.pizzaForms.splice(index, 1);
+    console.log(this.cartItems);
+    if (this.cartItems.pizzaForms.length == 0) {
+      this.cartIsEmpty();
+    }
   }
 
   updateQuantity(){
@@ -133,6 +159,16 @@ export class CartComponent implements OnInit {
     this.totalCost = tempCost;
     console.log(this.cartItems)
   }
+
+  cartIsEmpty() {
+
+    let emptyMsg = document.getElementById('empty');
+    let cart = document.getElementById('cart-container');
+
+    cart.style.visibility = 'hidden';
+    emptyMsg.style.display = 'block';
+  }
+
 
   async checkout(): Promise<any>{
     this.cartItems.note = this.note;

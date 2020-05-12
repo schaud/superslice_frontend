@@ -46,7 +46,9 @@ export class HeaderComponent implements OnInit {
     this.registermodal = 'notshown'
     this.dataservice.sharedOrderForm.subscribe(cartItems => this.cartItems = cartItems);
     console.log("this is the num of items when it header starts"+this.cartItems.pizzaForms.length);
+    this.session = localStorage.getItem('user_key');
   }
+
   showRegister() {
     this.registermodal = 'shown';
 
@@ -107,7 +109,7 @@ export class HeaderComponent implements OnInit {
         this.numOfItems+=items.quantity
       }
     }
-    
+
   }
 
 }
