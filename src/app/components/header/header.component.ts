@@ -4,6 +4,8 @@ import { SignupService } from 'src/app/services/signup.service';
 import { Router } from '@angular/router';
 import {orderForm} from '../../models/orderform';
 import {DataService} from '../../services/data.service';
+import {StatsService} from '../../services/stats.service';
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -12,9 +14,14 @@ import {DataService} from '../../services/data.service';
 export class HeaderComponent implements OnInit {
 
 
-  constructor(private login: LoginService, private signup: SignupService, private _router: Router,private dataservice:DataService) { }
+  constructor(private login: LoginService, private signup: SignupService, private _router: Router,private dataservice:DataService,private statServ:StatsService) { }
 
-
+  names:string[];
+  amounts:number[];
+  toppingNames:Array<string>=[];
+  toppingAmounts:Array<number>=[];
+  topnames:string[];
+  topamounts:number[];
   username: string;
   password: string;
   user: any;
@@ -40,6 +47,7 @@ export class HeaderComponent implements OnInit {
 
 
   ngOnInit(){
+    
     this.employeeloginmodal = 'notshown'
     this.loginmodal = 'notshown'
     this.registermodal = 'notshown'
@@ -101,5 +109,55 @@ export class HeaderComponent implements OnInit {
     this._router.navigate(['/employee']);
   }
 
+  logout():void{
+    localStorage.removeItem("user_key");
+    this.user=null;
+    this.session="";
+    console.log("signed out" + this.user)
+  }
+  async getBestToppings():Promise<any>{
+    await this.statServ.getBestToppingsNames().then(data=>{this.names=data});
+   console.log(this.names)
+   localStorage.setItem("topping_names_key_1",this.names[0]);
+   localStorage.setItem("topping_names_key_2",this.names[1]);
+   localStorage.setItem("topping_names_key_3",this.names[2]);
+   localStorage.setItem("topping_names_key_4",this.names[3]);
+   localStorage.setItem("topping_names_key_5",this.names[4]);
 
+
+
+   for(let name of this.names){
+      this.toppingNames.push(name);
+    }
+    let i = 0;
+    for(let topname of this.toppingNames){
+      this.topnames[i] = topname;
+      i++;
+    }
+    console.log(this.toppingNames);
+   
+      return this.names;
+     }
+     async getBestToppingsAmounts():Promise<any>{
+       await this.statServ.getBestToppingsAmounts().then(data=>{this.amounts=data});
+      console.log(this.amounts)
+      localStorage.setItem("topping_amounts_key_1",this.amounts[0].toString());
+      localStorage.setItem("topping_amounts_key_2",this.amounts[1].toString());
+      localStorage.setItem("topping_amounts_key_3",this.amounts[2].toString());
+      localStorage.setItem("topping_amounts_key_4",this.amounts[3].toString());
+      localStorage.setItem("topping_amounts_key_5",this.amounts[4].toString());
+   
+       for(let amount of this.amounts){
+   ;
+         this.toppingAmounts.push(amount);
+       }
+       let i = 0;
+       for(let topamount of this.toppingAmounts){
+         this.topamounts[i] = topamount;
+         i++;
+       }
+       console.log(this.toppingAmounts);
+   
+         return this.names;
+        }
 }
