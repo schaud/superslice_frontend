@@ -29,15 +29,16 @@ div.desc {
   height: 950px;
   padding-right: 40px;
   padding-left: 40px;
-  padding-top: 40px;
-  padding-bottom: 200px;
+  padding-top: 150px;
+  padding-bottom: 250px;
   display:flex;
   flex-wrap: wrap;
 }
 
 .desc{
   font-weight: bold;
-float:left;}
+  float:left;
+}
 
 a{
   color : black;

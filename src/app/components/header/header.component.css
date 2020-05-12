@@ -7,7 +7,7 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
   }
 
-#navLinks{
+.navLinks{
   position: absolute;
   right: 10%;
 }
@@ -213,7 +213,7 @@ li{
 
   #page{
     position: relative;
-    padding-top:50px;
+    padding-top:39px;
   }
 
   header{
@@ -234,7 +234,11 @@ li{
   font-size: 12px;
 }
 
-
+nav{
+  position: absolute;
+  height: 50px;
+  width: 100%;
+}
 
 
 

@@ -26,11 +26,15 @@ export class HeaderComponent implements OnInit {
   password: string;
   user: any;
   session: string;
+
   cartItems : orderForm = {username: localStorage.getItem('user_key'),
+    pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity: 1}],
+    note: null };
 
-  pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity: 1}],
+  cartWithToppings : orderForm = {username: localStorage.getItem('user_key'),
+    pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity:1}],
+    note: "null" };
 
-  note: null };
   title = 'SuperSlice';
   loginmodal:string;
   registermodal:string;
@@ -52,6 +56,9 @@ export class HeaderComponent implements OnInit {
     this.loginmodal = 'notshown'
     this.registermodal = 'notshown'
     this.dataservice.sharedOrderForm.subscribe(cartItems => this.cartItems = cartItems);
+    this.dataservice.sharedOrder2Form.subscribe(cartWithToppings => this.cartWithToppings = cartWithToppings);
+
+
     console.log("this is the num of items when it header starts"+this.cartItems.pizzaForms.length);
     this.session = localStorage.getItem(`user_key`);
     console.log(this.session)
@@ -115,11 +122,21 @@ export class HeaderComponent implements OnInit {
 
 
   logout():void{
+
     localStorage.removeItem("user_key");
+    this.cartItems = {username: localStorage.getItem('user_key'),
+      pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity: 1}],
+      note: null };
+
+    this.cartWithToppings = {username: localStorage.getItem('user_key'),
+      pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity: 1}],
+      note: null };
+
     this.user=null;
     this.session="";
     console.log("signed out" + this.user)
   }
+
   async getBestToppings():Promise<any>{
     await this.statServ.getBestToppingsNames().then(data=>{this.names=data});
    console.log(this.names)

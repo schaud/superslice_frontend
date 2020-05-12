@@ -36,7 +36,7 @@ export class DataService {
 
   private bestToppingNames = new BehaviorSubject<Array<string>>(null);
   sharedBestToppingNames = this.bestToppingNames.asObservable();
-  
+
   private bestToppingAmounts = new BehaviorSubject<Array<number>>(null);
   sharedBestToppingAmounts = this.bestToppingAmounts.asObservable();
 
