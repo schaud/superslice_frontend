@@ -41,16 +41,21 @@ export class OrderNumberComponent implements OnInit {
   showCompletePizza: boolean = false;
 
   showPendingOnly(){
+    this.update_ticket_status_url = this.UpdateTicketStatus();
+
     this.showIncompletePizza = false;
     this.showCompletePizza = false; 
   }
 
   showIncompleteOnly(){
+    this.In_completedTickets = this.GetIncompleteOrder();
     this.showPendingPizza = false;
     this.showCompletePizza = false; 
+    
   }
 
   showCompleteOnly(){
+    this.CompleteURL = this.GetCompleteOrder();
     this.showPendingPizza = false;
     this.showIncompletePizza = false;
   }
@@ -156,6 +161,9 @@ export class OrderNumberComponent implements OnInit {
     if (this.url[i].status !== 'Pending') {
       this.url.splice(i, 1); // remove 1 element
     }
+    this.update_ticket_status_url = this.UpdateTicketStatus();
+    this.In_completedTickets = this.GetIncompleteOrder();
+    this.CompleteURL = this.GetCompleteOrder();
   }
 
   
@@ -180,9 +188,15 @@ export class OrderNumberComponent implements OnInit {
     var tic = JSON.stringify(this.t);
     // console.log("selected value: ", JSON.stringify(this.t.status));
     // console.log(this.t.status);
-    if (this.In_completedTickets[i].status !== 'Pending') {
+    if (this.t.status === 'Complete') {
+      console.log("this if statement executed in changestatus2 getting rid of order with status  " + this.In_completedTickets[i].status );
       this.In_completedTickets.splice(i, 1); // remove 1 element
     }
+
+    this.update_ticket_status_url = this.UpdateTicketStatus();
+    this.In_completedTickets = this.GetIncompleteOrder();
+    this.CompleteURL = this.GetCompleteOrder();
+    this.showIncompleteOnly();
   }
 
   ChangeStatus3(i) {
@@ -206,9 +220,15 @@ export class OrderNumberComponent implements OnInit {
     var tic = JSON.stringify(this.t);
     // console.log("selected value: ", JSON.stringify(this.t.status));
     // console.log(this.t.status);
-    if (this.CompleteURL[i].status !== 'Pending') {
+    if (this.t.status !== 'Complete') {
+      console.log("this if statement executed in changestatus3")
+
       this.CompleteURL.splice(i, 1); // remove 1 element
     }
+    this.update_ticket_status_url = this.UpdateTicketStatus();
+    this.In_completedTickets = this.GetIncompleteOrder();
+    this.CompleteURL = this.GetCompleteOrder();
+    this.showCompleteOnly();
   }
 
 
