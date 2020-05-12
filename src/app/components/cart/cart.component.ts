@@ -18,7 +18,7 @@ import {CheckoutService} from "../../services/checkout.service";
 export class CartComponent implements OnInit {
 
   cartItems : orderForm = {username: localStorage.getItem('user_key'),
-    pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity:1}],
+  pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity:1}],
 
      note: '' };
   images =  new Map([
