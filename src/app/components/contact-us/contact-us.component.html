@@ -1,23 +1,22 @@
 <div class="contact_details">
-    <h1>Contact information</h1>
-    <h2>Email Us</h2>
+    <h2 style="padding: 10px;">Email Us</h2>
     <form>
-        <label>Name</label>
+        <label style="padding: 10px;">Name</label>
         <input mdInput  type="text" class="form-control"
         required
         name="name"  placeholder="name" [(ngModel)]="name">
-        <label for="usr">Email:</label>
+        <label for="usr" style="padding: 10px;">Email:</label>
         <input mdInput type="email" class="form-control"
         required
         name="email"  placeholder="email" [(ngModel)]="email">
-        <label for="comment" >Comment:</label>
+        <label for="comment" style="padding: 10px;"  >Comment:</label>
         <input mdInput  type="text" class="form-control"
               required
-              name="comment"  placeholder="comment" [(ngModel)]="comment">
-        <button class="btn-default" type="submit" (click)="onSubmit()">Submit</button>
+              name="comment" style="padding: 10px;"  placeholder="comment" [(ngModel)]="comment">
+        <button class="btn-default" style="margin-top: 10px;"  type="submit" (click)="onSubmit()">Submit</button>
     </form>
 
     
-    <h2>Give us a call</h2>
+    <h2 style="padding: 10px;">Give us a call</h2>
     <p>555-SSPizza</p>
 </div>
