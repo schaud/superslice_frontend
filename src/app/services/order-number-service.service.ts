@@ -20,14 +20,12 @@ export class OrderNumberServiceService {
 
   GetIncompleteOrder() : Promise<any>{
     const IncompleteStatusPromise: Promise<any> = this.http.get(`http://ec2-3-135-228-219.us-east-2.compute.amazonaws.com:9000/ticket?status=Incomplete`).toPromise();
-
     return IncompleteStatusPromise;
   }
 
   
   GetCompleteOrder() : Promise<any>{
     const IncompleteStatusPromise: Promise<any> = this.http.get(`http://ec2-3-135-228-219.us-east-2.compute.amazonaws.com:9000/ticket?status=Complete`).toPromise();
-
     return IncompleteStatusPromise;
   }
 
