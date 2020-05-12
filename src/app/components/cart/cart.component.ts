@@ -56,7 +56,7 @@ export class CartComponent implements OnInit {
   costPerPizza = [];
   pizzaData: any;
   order : any;
-  note : string = 'none';
+  note : string;
 //   @ViewChild("shownSec") divView: ElementRef;
 
 
@@ -154,6 +154,9 @@ export class CartComponent implements OnInit {
 
 
   async checkout(): Promise<any>{
+    if (this.note == null){
+      this.note = 'None';
+    }
     this.cartItems.note = this.note;
 
 
@@ -166,6 +169,7 @@ export class CartComponent implements OnInit {
     this.cartWithToppings = {username: localStorage.getItem('user_key'),
       pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity:1}],
       note: '' };
+    this.cartIsEmpty();
     console.log('Cart has been cleared!')
 
   }

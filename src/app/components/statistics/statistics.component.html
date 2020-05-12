@@ -1,3 +1,4 @@
+<div *ngIf ="user!=null">
 <h1>Statistics page</h1>
 <h3>The total revenue made : {{totalRevenue}}</h3>
 <h3>The average Order amount : {{avgTotal}}</h3>
@@ -39,3 +40,4 @@
         (chartClick)="CustomeronChartClick($event)">
     </canvas>
   </div>
+</div>

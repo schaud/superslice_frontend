@@ -67,7 +67,7 @@ export class PizzaComponent implements OnInit {
       let index:number = this.names.findIndex(x => x == name)
       console.log("deleting a "+ name+ " at position "+index)
     this.names.splice(index,1);
-    this.prices.splice(index+1,1);
+    this.prices.splice(index,1);
     this.addToTotal();
     console.log(this.names)
     }

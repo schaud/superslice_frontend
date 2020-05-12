@@ -1,7 +1,5 @@
 <h2 id="empty" class="section-header">Your cart is currently empty.</h2>
 
-
-
 <section id="cart-container"   class="container content-section">
 
   <br>
@@ -38,16 +36,24 @@
 
 </div>
 
+
+
+<div id ="note-div">
+  <h3>Note: </h3>
+    <input id="note" type="text" [(ngModel)]="note" placeholder="Please enter any details about your order.">
+</div>
+
   <div  class="cart-items">
   </div>
+
+  <div>
   <div class="cart-total">
     <strong class="cart-total-title">Total:</strong>
     <span class="cart-total-price">{{totalCost | currency}}</span>
   </div>
 
-
-    <input  type="text" [(ngModel)]="note" placeholder="Please enter any details about your order.">
   <button  class="btn btn-primary btn-purchase" type="button" (click)="checkout()">PURCHASE</button>
+  </div>
 
   </section>
 
