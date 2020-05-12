@@ -41,6 +41,8 @@ import { PizzanamePipe } from './pipes/pizzaname.pipe';
 // import {MatSelectModule} from '@angular/material/select';
 
 import {StatsService} from './services/stats.service';
+import { CustomerViewComponent } from './components/customer-view/customer-view.component';
+import { CustomerTicketComponent } from './components/customer-ticket/customer-ticket.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +69,9 @@ import {StatsService} from './services/stats.service';
     StatisticsComponent,
     LocationComponent,
     EmployeeHeaderComponent,
-    PizzanamePipe
+    PizzanamePipe,
+    CustomerViewComponent,
+    CustomerTicketComponent
 
 
   ],

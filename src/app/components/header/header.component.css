@@ -205,5 +205,37 @@ li{
     float:right;
   }
 
+  img{
+    width : 220px;
+    height : 220px;
+    z-index: 1;
+  }
+
+  #page{
+    position: relative;
+    padding-top:50px;
+  }
+
+  header{
+    position: relative;
+    padding-top: 13px;
+  }
+
+#logo{
+  padding-left: 2px;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+#user{
+  padding-left: 200px;
+  font-size: 12px;
+}
+
+
+
+
+
 
 

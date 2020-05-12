@@ -53,8 +53,9 @@ export class HeaderComponent implements OnInit {
     this.registermodal = 'notshown'
     this.dataservice.sharedOrderForm.subscribe(cartItems => this.cartItems = cartItems);
     console.log("this is the num of items when it header starts"+this.cartItems.pizzaForms.length);
-    
+    this.session = localStorage.getItem(`user_key`);
   }
+
   showRegister() {
     this.registermodal = 'shown';
 
@@ -109,6 +110,7 @@ export class HeaderComponent implements OnInit {
     this._router.navigate(['/employee']);
   }
 
+
   logout():void{
     localStorage.removeItem("user_key");
     this.user=null;
@@ -123,6 +125,7 @@ export class HeaderComponent implements OnInit {
    localStorage.setItem("topping_names_key_3",this.names[2]);
    localStorage.setItem("topping_names_key_4",this.names[3]);
    localStorage.setItem("topping_names_key_5",this.names[4]);
+
 
 
 

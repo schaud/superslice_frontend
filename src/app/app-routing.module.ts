@@ -14,9 +14,11 @@ import { EmployeeViewComponent } from './components/employee-view/employee-view.
 import { PlainPizzaComponent } from './components/plain-pizza/plain-pizza.component';
 import {StatisticsComponent} from './components/statistics/statistics.component';
 import { LocationComponent } from './components/location/location.component';
+import { CustomerViewComponent } from './components/customer-view/customer-view.component';
 
 const routes: Routes = [
 
+  {path: 'customer', component: CustomerViewComponent},
   {path: 'employee', component: EmployeeViewComponent},
   {path: 'cart', component: CartComponent},
   {path: 'pizzaCustomizer',component:PizzaComponent},

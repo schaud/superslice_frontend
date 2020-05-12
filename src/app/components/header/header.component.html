@@ -1,10 +1,15 @@
-<header >
-  <nav *ngIf="user == null" style="background-color: #E3D081;"class="navbar navbar-expand-sm navbar-light">
-    <a class="navbar-brand" routerLink=""><img class="i2" src="../../../assets/logo.png"></a>
+
+<div id = page>
+  <div id = "logo">
+    <a class="navbar-brand" routerLink=""><img class="i2" src="../../../assets/logo3.png"></a>
+  </div>
+<header>
+  <nav style="background-color: #E3D081;"class="navbar navbar-expand-sm navbar-light">
+
 
 
     <div id="user">
-      <h1>{{session}}</h1>
+      <h2>{{session}}</h2>
     </div>
 
     <div id="navLinks">
@@ -117,6 +122,7 @@
       <input type="password"#epwField [(ngModel)]="password" placeholder="Enter Password" name="psw" required>
 
       <button id="emploginBtn" (click) = "EmployeeloginUser(); hideEmployeeLogin(); goToEmployee();eunField.value='';epwField.value='';getBestToppings();getBestToppingsAmounts()">Sign In</button>
+
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
@@ -147,7 +153,9 @@
       <label for="psw"><b>Password</b></label>
       <input type="password"#cpwField [(ngModel)]="password" placeholder="Enter Password" name="psw" required>
 
+
       <button (click) = "loginUser(); hideLogin();cunField.value='';cpwField.value=''">Sign In</button>
+
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
       </label>
@@ -186,4 +194,5 @@
       <button type="button" (click)="hideRegister()" class="cancelbtn">Cancel</button>
     </div>
   </form>
+</div>
 </div>
