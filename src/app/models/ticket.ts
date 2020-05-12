@@ -11,6 +11,8 @@ export class ticket{
   ticketId : number;
   user : user;
 
+  
+
   constructor(note:string, pizzas:Array<pizza>,
               placementTime : string, status: string, ticketId:number, user:user) {
 

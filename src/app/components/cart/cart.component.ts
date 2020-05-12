@@ -20,6 +20,7 @@ export class CartComponent implements OnInit {
   cartItems : orderForm = {username: localStorage.getItem('user_key'),
     pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity:1}],
     note: 'none' };
+
   images =  new Map([
   ['AlfredoPizza','../assets/alfredo.png'],
   ['MeatLoversPizza','../assets/meat-lovers.png'],

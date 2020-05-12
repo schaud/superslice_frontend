@@ -36,13 +36,16 @@
 
 
 
-
+  
 
 <div class="cost">
 <h3>Price : {{costTotal | currency}}</h3>
-  <div class="btn">
+  <!-- <div class="btn">
     <button class="btn-success" (click)="addToCart()" routerLink="/cart">Add to Cart</button>
-  </div>
+  </div> -->
+  <div id = btn-cost>
+    <button id="cart-btn"  (click)="addToCart()" routerLink="/cart"> Add To Cart </button>
+    </div>
 </div>
 </div>
 
