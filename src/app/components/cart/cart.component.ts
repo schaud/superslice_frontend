@@ -22,7 +22,7 @@ export class CartComponent implements OnInit {
 
      note: '' };
   images =  new Map([
-    ['AlfredoPizza','../assets/alfredo.png'],
+  ['AlfredoPizza','../assets/alfredo.png'],
   ['MeatLoversPizza','../assets/meat-lovers.png'],
   ['HawaiianPizza','../assets/Hawaii.png'],
   ['VeggiePizza','../assets/vege_delux.png'],
@@ -40,9 +40,10 @@ export class CartComponent implements OnInit {
   ['CauliflowerPizza','../assets/staple_pizza/Cauliflower.png'],
   ['SausagePizza','../assets/staple_pizza/Sausage.png'],
   ['EggplantPizza','../assets/staple_pizza/Eggplant.png'],
-  ['CustomPizza','../assets/byo.png'],
+  ['CustomPizza','../assets/byo.png']
+]
+  );
 
-]);
 
 
   cartWithToppings : orderForm = {username: localStorage.getItem('user_key'),
@@ -56,7 +57,9 @@ export class CartComponent implements OnInit {
   pizzaData: any;
   order : any;
   note : string = 'none';
-  @ViewChild("shownSec") divView: ElementRef;
+//   @ViewChild("shownSec") divView: ElementRef;
+
+
 
 
   constructor(private dataservice:DataService, private checkoutservice: CheckoutService) { }
@@ -66,19 +69,23 @@ export class CartComponent implements OnInit {
     this.dataservice.sharedPizzaObj.subscribe(pizzaData => this.pizzaData = pizzaData);
     this.dataservice.sharedOrderForm.subscribe(cartItems => this.cartItems = cartItems);
     this.dataservice.sharedOrder2Form.subscribe(cartWithToppings => this.cartWithToppings = cartWithToppings);
-    if(this.cartItems.pizzaForms.length <= 1 || this.cartWithToppings.pizzaForms.length<=1)
-    this.divView.nativeElement.setAttribute("style","visibility:visible;");
+    // if(this.cartItems.pizzaForms.length <= 1 || this.cartWithToppings.pizzaForms.length<=1)
+    // this.divView.nativeElement.setAttribute("style","visibility:visible;");
 
-    if (this.cartItems.pizzaForms[0].type == null){
-      this.cartItems.pizzaForms.shift();
+
+    if (this.cartItems.pizzaForms.length == 0){
+      this.cartIsEmpty();
     }
-    if (this.cartWithToppings.pizzaForms[0].type == null){
-      this.cartWithToppings.pizzaForms.shift();
+
+    if (this.cartItems.pizzaForms == []){
+      this.cartIsEmpty();
     }
+
+
 
     console.log('In the Cart:');
     console.log(this.cartItems);
-    console.log(this.cartItems.pizzaForms)
+    console.log(this.cartItems.pizzaForms);
     this.populateQuantity();
     this.totalCost = this.calcCost();
     console.log(this.totalCost);
@@ -86,9 +93,8 @@ export class CartComponent implements OnInit {
     console.log(this.cartItems.pizzaForms.length);
 
 
-    console.log('cart with toppings')
-    console.log(this.cartWithToppings)
-
+    console.log('cart with toppings');
+    console.log(this.cartWithToppings);
 
   }
 
@@ -120,6 +126,10 @@ export class CartComponent implements OnInit {
     this.totalCost = this.totalCost - this.cartItems.pizzaForms[index].cost * this.quantity[index];
     this.cartItems.pizzaForms.splice(index, 1);
     this.cartWithToppings.pizzaForms.splice(index, 1);
+    console.log(this.cartItems);
+    if (this.cartItems.pizzaForms.length == 0) {
+      this.cartIsEmpty();
+    }
   }
 
   updateQuantity(){
@@ -132,6 +142,16 @@ export class CartComponent implements OnInit {
     this.totalCost = tempCost;
     console.log(this.cartItems)
   }
+
+  cartIsEmpty() {
+
+    let emptyMsg = document.getElementById('empty');
+    let cart = document.getElementById('cart-container');
+
+    cart.style.visibility = 'hidden';
+    emptyMsg.style.display = 'block';
+  }
+
 
   async checkout(): Promise<any>{
     this.cartItems.note = this.note;
@@ -149,6 +169,5 @@ export class CartComponent implements OnInit {
     console.log('Cart has been cleared!')
 
   }
-
 
 }

@@ -12,6 +12,7 @@ import {PizzaRetrieverService} from "../../services/pizza-retriever.service";
   templateUrl: './specials-view.component.html',
   styleUrls: ['./specials-view.component.css']
 })
+
 export class SpecialsViewComponent implements OnInit {
   @ViewChild("pizzaPic") divView: ElementRef;
   sizes: topping;
@@ -238,6 +239,16 @@ export class SpecialsViewComponent implements OnInit {
     console.log('CWT');
 
     console.log(this.cartWithToppings)
+
+    if (this.cartItems.pizzaForms[0].type == ''){
+      this.cartItems.pizzaForms.shift();
+      this.cartWithToppings.pizzaForms.shift();
+    }
+
+    if (this.cartItems.pizzaForms[0].type == null){
+      this.cartItems.pizzaForms.shift();
+      this.cartWithToppings.pizzaForms.shift();
+    }
 
 
 

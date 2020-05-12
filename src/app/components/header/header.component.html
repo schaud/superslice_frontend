@@ -1,10 +1,14 @@
+<div id = page>
+  <div id = "logo">
+    <a class="navbar-brand" routerLink=""><img class="i2" src="../../../assets/logo3.png"></a>
+  </div>
 <header>
   <nav style="background-color: #E3D081;"class="navbar navbar-expand-sm navbar-light">
-    <a class="navbar-brand" routerLink=""><img class="i2" src="../../../assets/logo.png"></a>
+
 
 
     <div id="user">
-      <h1>{{session}}</h1>
+      <h2>{{session}}</h2>
     </div>
 
     <div id="navLinks">
@@ -27,7 +31,7 @@
 
         <li> <a class="nav-link"(click)="showLogin()" routerLink="/login" >Login</a></li>
         <li><a class="nav-link" (click)="showRegister()" routerLink="/register">Register</a></li>
-        <li><a routerLink="/cart" (mouseover)="updateItems()"><img class="i1" src="../../../assets/cart.png"><b  *ngIf="numOfItems > 0">{{numOfItems}}</b></a></li>
+        <li><a routerLink="/cart" ><img class="i1" src="../../../assets/cart.png"></a></li>
         <li></li>
     </ul>
   </div>
@@ -123,4 +127,5 @@
       <button type="button" (click)="hideRegister()" class="cancelbtn">Cancel</button>
     </div>
   </form>
+</div>
 </div>

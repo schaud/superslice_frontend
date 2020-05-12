@@ -198,4 +198,7 @@ span{
   display: block;
 }
 
-
+#empty{
+  padding-top: 25px;
+  display: none;
+}
