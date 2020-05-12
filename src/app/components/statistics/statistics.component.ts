@@ -32,12 +32,15 @@ export class StatisticsComponent implements OnInit {
   names:Array<string>;
   amounts:Array<number>;
   timeprom:Promise<Array<number>>;
+
+  user:string =localStorage.getItem('user_key');
+
   ToppingchartData = [
-    { data: [this.topamounts[0]], label: this.topnames[0]},
-    { data: [this.topamounts[1]], label: this.topnames[1]},
-    { data: [this.topamounts[2]], label:this.topnames[2] },
-    { data: [this.topamounts[3]], label: this.topnames[3] },
-    { data: [this.topamounts[4]], label: this.topnames[4] },
+    { data: [Number.parseInt(localStorage.getItem("topping_amounts_key_1"))], label: localStorage.getItem("topping_names_key_1")},
+    { data: [Number.parseInt(localStorage.getItem("topping_amounts_key_2"))], label: localStorage.getItem("topping_names_key_2")},
+    { data:[Number.parseInt(localStorage.getItem("topping_amounts_key_3"))], label: localStorage.getItem("topping_names_key_3")},
+    { data:[Number.parseInt(localStorage.getItem("topping_amounts_key_4"))], label: localStorage.getItem("topping_names_key_4")},
+    { data:[Number.parseInt(localStorage.getItem("topping_amounts_key_5"))], label: localStorage.getItem("topping_names_key_5")},
   ];
   ToppingColors = [
 
@@ -104,6 +107,7 @@ export class StatisticsComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    console.log("this is the second amount " +localStorage.getItem("topping_amounts_key_2"))
     this.getTimes();
     this.getBestToppings();
     this.getBestToppingsAmounts();
@@ -113,8 +117,10 @@ export class StatisticsComponent implements OnInit {
     this.getAverageTotal();
     console.log(this.timedata);
     console.log(this.toppingNames)
-
+    
     console.log(this.topnames)
+
+    console.log("this is the current user" + this.user)
  
   }
 
