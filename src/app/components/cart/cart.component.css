@@ -152,7 +152,7 @@ html, body {
 }
 
 .cart-total {
-  text-align: end;
+  text-align: left;
   margin-top: 10px;
   margin-right: 10px;
 }
@@ -173,10 +173,6 @@ html, body {
   display: block;
   margin: 40px auto 80px auto;
   font-size: 1.75em;
-}
-
-span{
-
 }
 
 .dropdown {
@@ -201,4 +197,13 @@ span{
 #empty{
   padding-top: 25px;
   display: none;
+}
+
+#note{
+  width: 400px;
+}
+
+#note-div{
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
