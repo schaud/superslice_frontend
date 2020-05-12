@@ -39,6 +39,7 @@ export class SpecialsViewComponent implements OnInit {
       pizzaForms: [{type : null, toppingNames: [null], size: null, cost: null, quantity: 1}],
       note: null };
 
+
   constructor(private dataservice : DataService, private pizzaservice : PizzaRetrieverService, private el: ElementRef,private pizzaCustomizer:PizzaCustomizationService) { }
 
 

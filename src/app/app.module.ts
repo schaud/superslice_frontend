@@ -71,7 +71,7 @@ import { CustomerTicketComponent } from './components/customer-ticket/customer-t
     EmployeeHeaderComponent,
     PizzanamePipe,
     CustomerViewComponent,
-    CustomerTicketComponent
+    CustomerTicketComponent,
 
 
   ],
@@ -101,7 +101,7 @@ import { CustomerTicketComponent } from './components/customer-ticket/customer-t
     ChartsModule
   ],
   bootstrap: [AppComponent],
-  
+
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 
 })

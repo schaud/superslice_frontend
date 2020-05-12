@@ -4,15 +4,16 @@
     <a class="navbar-brand" routerLink=""><img class="i2" src="../../../assets/logo3.png"></a>
   </div>
 <header>
+  <div id = 'header-nav'></div>
   <nav style="background-color: #E3D081;"class="navbar navbar-expand-sm navbar-light">
-
+<!-- #8e2934 -->
 
 
     <div id="user">
       <h2>{{session}}</h2>
     </div>
 
-    <div id="navLinks" *ngIf="user==null">
+    <div class="navLinks" *ngIf="user==null">
     <ul class="navbar-nav " >
 
         <li class="nav-item dropdown">
@@ -37,12 +38,12 @@
     </ul>
   </div>
 
-  <div id="navLinks" *ngIf="user != null && user.userRole.roleId == 2">
+  <div class="navLinks" *ngIf="user != null && user.userRole.roleId == 2">
     <ul class="navbar-nav " >
       <li><a class="nav-link" routerLink="/customer" >Past Orders</a></li>
         <li class="nav-item dropdown">
 
-          <a class="nav-link dropdown-toggle"id="navbardrop" data-toggle="dropdown">
+          <a class="nav-link dropdown-toggle"class="navbardrop" data-toggle="dropdown">
 
             Menu
           </a>
@@ -61,7 +62,7 @@
     </ul>
   </div>
 
-  <div id="navLinks" *ngIf="user != null && user.userRole.roleId == 1">
+  <div class="navLinks" *ngIf="user != null && user.userRole.roleId == 1">
     <ul class="navbar-nav " >
 
         <li class="nav-item dropdown">
