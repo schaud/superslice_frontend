@@ -34,7 +34,11 @@ export class DataService {
   );
   sharedOrder2Form = this.cartObj2.asObservable();
 
-
+  private bestToppingNames = new BehaviorSubject<Array<string>>(null);
+  sharedBestToppingNames = this.bestToppingNames.asObservable();
+  
+  private bestToppingAmounts = new BehaviorSubject<Array<number>>(null);
+  sharedBestToppingAmounts = this.bestToppingAmounts.asObservable();
 
   cartItems : orderForm;
 
@@ -59,5 +63,10 @@ export class DataService {
     this.cartObj.next(cartObj)
   }
 
-
+  sendToppingNames(names : Array<string> ){
+    this.bestToppingNames.next(names)
+  }
+  sendToppingAmounts(amounts : Array<number> ){
+    this.bestToppingAmounts.next(amounts)
+  }
 }
