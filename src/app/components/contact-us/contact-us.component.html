@@ -1,23 +1,28 @@
-<div class="contact_details">
-    <h1>Contact information</h1>
-    <h2>Email Us</h2>
-    <form>
-        <label>Name</label>
-        <input mdInput  type="text" class="form-control"
-        required
-        name="name"  placeholder="name" [(ngModel)]="name">
-        <label for="usr">Email:</label>
-        <input mdInput type="email" class="form-control"
-        required
-        name="email"  placeholder="email" [(ngModel)]="email">
-        <label for="comment" >Comment:</label>
-        <input mdInput  type="text" class="form-control"
-              required
-              name="comment"  placeholder="comment" [(ngModel)]="comment">
-        <button class="btn-default" type="submit" (click)="onSubmit()">Submit</button>
-    </form>
 
-    
-    <h2>Give us a call</h2>
-    <p>555-SSPizza</p>
-</div>
+
+    <div class="contact_details">
+        <br>
+        <h2 id="cost" style="padding: 10px;">Email Us</h2>
+        <form>
+            <label style="padding: 10px;">Name</label>
+            <input mdInput  type="text" class="form-control"
+            required
+            name="name"  placeholder="name" [(ngModel)]="name">
+            <label for="usr" style="padding: 10px;">Email:</label>
+            <input mdInput type="email" class="form-control"
+            required
+            name="email"  placeholder="email" [(ngModel)]="email">
+            <label for="comment" style="padding: 10px;"  >Comment:</label>
+            <input mdInput  type="text" class="form-control"
+                  required
+                  name="comment" style="padding: 10px;"  placeholder="comment" [(ngModel)]="comment"><br>
+            <button id="cart-btn" class="btn-default" style="margin-top: 10px;"  type="submit" (click)="onSubmit()">Submit</button>
+        </form>
+    <br>
+        
+        <h2 id="cost" style="padding: 10px;">Give us a call</h2>
+        <br>
+        <p id="number" >555-SSPizza</p>
+    </div>
+
+
