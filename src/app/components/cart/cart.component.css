@@ -24,6 +24,7 @@ html, body {
   color: #333;
   text-align: center;
   font-size: 2.5em;
+
 }
 
 
@@ -206,4 +207,8 @@ html, body {
 #note-div{
   padding-top: 25px;
   padding-bottom: 25px;
+}
+
+#cart-container{
+align-content: center;
 }

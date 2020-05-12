@@ -7,3 +7,9 @@ agm-map{
 h1{
     text-align: center;
 }
+#cost{
+    background-color:red;
+    color: white;
+    border-radius: 5px;
+    width: auto;
+  }
