@@ -22,7 +22,7 @@
     </div>
     </div>
     </body> -->
-
+<!-- 
     <body class="Site">
 
         <main class="Site-content">
@@ -46,22 +46,47 @@
         <button id="cart-btn"  (click)="addToCart()" routerLink="/cart"> Add To Cart </button>
 
 
-<!--                 <h3>Price : ${{costTotal}}</h3>
-                <button class="btn-success" (click)="addToCart()">Add to Cart</button> -->
-
-
-                <!-- <button class="btn-success" (click)="addToCart()">Add to Cart</button> -->
-
-                <!-- <button class="btn-success" >Add to Cart</button> -->
-
-
             </div></div>
         </div>
         </div>
         </main>
 
-      </body>
+      </body> -->
 
+      <body class="Site">
+        <main class="Site-content">
+          <div id = "title">
+            <h1>Plain Pizza</h1>
+            <h3 id="cost">{{cost | currency}}</h3>
+          </div>
+      
+          <div id="container"> <!--start container  -->
+            <img #pizzaPic src="../../../assets/plain_pizza/imageedit_3_2133899129.png" width="350" height="300">
+      
+                <div id ="fixx"> <!--start fixxx  div : contains toppings and sizes-->
+      
+      
+                     <div id="sizesDiv">  <!--start sizes  div -->
+                       <h2>Sizes</h2>
+                        <div *ngFor="let size of sizes">
+                        <input type="radio"  name="size"[value]="size.toppingName" [checked]="size.toppingName=='Medium'" (change)="ontoppingChange(size.toppingName,size.cost,$event.target.checked)">
+                        <label   [for]=" size.toppingName"> {{size.toppingName}}</label><br>
+                     </div>
+                    </div> <!--end sizes  div -->
+                    <div id = btn-cost>
+                      <button id="cart-btn"  (click)="addToCart()" routerLink="/cart"> Add To Cart </button>
+                      </div>
+                </div> <!--end fixxx  div -->
+      
+            
+      
+      
+          </div> <!--end container  div -->
+      
+        </main>
+      
+      </body>
+      
 
 
 

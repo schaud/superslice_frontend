@@ -8,3 +8,52 @@ div.contact_details {
     min-height: 100vh;
     flex-direction: column;
 }
+
+/* body{
+    background-color: wheat;
+} */
+
+
+#textform{
+    font-size: 20px;
+    font-family: Arial;
+    font-weight: normal;
+    padding: 10px 14px;
+    margin: 0px;
+    background: white;
+    color: red;
+    font-style: normal;
+}
+#cost{
+    background-color:red;
+    color: white;
+    border-radius: 10px;
+    width: auto;
+  }
+
+#textform2{
+    font-size: 20px;
+    font-family: Arial;
+    font-weight: normal;
+    padding: 10px 14px;
+    margin: 0px;
+    background: white;
+    color: red;
+    font-style: normal;
+}
+
+#cart-btn{
+    width: 200px;
+    background-color:rebeccapurple;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+  }
+#number{
+    width: 200px;
+    background-color:rebeccapurple;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 300px;
+}
