@@ -2,7 +2,7 @@
   <div class="gallery" *ngFor="let staple of staples">
     <a (click)="newPizza(staple.name); newImage(staple.img); newPizzaObj(getPizza(staple.name))"
       routerLink="../staple/specials-view">
-      <img [src]="staple.img" width="600" height="400">
+      <img [src]="staple.img2" width="600" height="400">
     </a>
     <div class="desc">{{staple.name | pizzaname}}</div>
   </div>

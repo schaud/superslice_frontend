@@ -22,15 +22,15 @@ export class MenuStapleComponent implements OnInit {
 
 
   staples = [
-    {name: 'PepperoniPizza', img : '../assets/staple_pizza/Pepperpni.png'},
-    {name: 'MushroomPizza', img : '../assets/staple_pizza/mushroom.png'},
-    {name: 'ChickenPizza', img : '../assets/staple_pizza/chicken.png'},
-    {name: 'AnchoviePizza', img : '../assets/staple_pizza/Anchovies.png'},
-    {name: 'SpinachPizza', img : '../assets/staple_pizza/spinach.png'},
-    {name: 'BaconPizza', img : '../assets/staple_pizza/bacon.png'},
-    {name: 'CauliflowerPizza', img : '../assets/staple_pizza/Cauliflower.png'},
-    {name: 'SausagePizza', img : '../assets/staple_pizza/Sausage.png'},
-    {name: 'EggplantPizza', img : '../assets/staple_pizza/Eggplant.png'}
+    {name: 'PepperoniPizza', img : '../assets/staple_pizza/Pepperpni.png', img2 : '../assets/pepperoni.jpg'},
+    {name: 'MushroomPizza', img : '../assets/staple_pizza/mushroom.png', img2 : '../assets/mushroom3.jpg' },
+    {name: 'ChickenPizza', img : '../assets/staple_pizza/chicken.png', img2 : '../assets/chicken.jpg'},
+    {name: 'AnchoviePizza', img : '../assets/staple_pizza/Anchovies.png', img2 : '../assets/anchovies.jpg'},
+    {name: 'SpinachPizza', img : '../assets/staple_pizza/spinach.png', img2 : '../assets/spinach2.jpg'},
+    {name: 'BaconPizza', img : '../assets/staple_pizza/bacon.png', img2 : '../assets/bacon.jpg'},
+    {name: 'CauliflowerPizza', img : '../assets/staple_pizza/Cauliflower.png', img2 : '../assets/cauliflower.jpg'},
+    {name: 'SausagePizza', img : '../assets/staple_pizza/Sausage.png', img2 : '../assets/sausage.jpg'},
+    {name: 'EggplantPizza', img : '../assets/staple_pizza/Eggplant.png', img2 : '../assets/eggplant.jpg'}
   ];
 
   ngOnInit(): void {

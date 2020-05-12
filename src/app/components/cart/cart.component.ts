@@ -18,9 +18,9 @@ import {CheckoutService} from "../../services/checkout.service";
 export class CartComponent implements OnInit {
 
   cartItems : orderForm = {username: localStorage.getItem('user_key'),
-  pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity:1}],
+    pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity:1}],
+    note: 'none' };
 
-     note: '' };
   images =  new Map([
   ['AlfredoPizza','../assets/alfredo.png'],
   ['MeatLoversPizza','../assets/meat-lovers.png'],
@@ -57,7 +57,6 @@ export class CartComponent implements OnInit {
   pizzaData: any;
   order : any;
   note : string;
-//   @ViewChild("shownSec") divView: ElementRef;
 
 
 
@@ -69,9 +68,6 @@ export class CartComponent implements OnInit {
     this.dataservice.sharedPizzaObj.subscribe(pizzaData => this.pizzaData = pizzaData);
     this.dataservice.sharedOrderForm.subscribe(cartItems => this.cartItems = cartItems);
     this.dataservice.sharedOrder2Form.subscribe(cartWithToppings => this.cartWithToppings = cartWithToppings);
-    // if(this.cartItems.pizzaForms.length <= 1 || this.cartWithToppings.pizzaForms.length<=1)
-    // this.divView.nativeElement.setAttribute("style","visibility:visible;");
-
 
     if (this.cartItems.pizzaForms.length == 0){
       this.cartIsEmpty();

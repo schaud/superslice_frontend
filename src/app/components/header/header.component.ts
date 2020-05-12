@@ -47,13 +47,15 @@ export class HeaderComponent implements OnInit {
 
 
   ngOnInit(){
-    
+
     this.employeeloginmodal = 'notshown'
     this.loginmodal = 'notshown'
     this.registermodal = 'notshown'
     this.dataservice.sharedOrderForm.subscribe(cartItems => this.cartItems = cartItems);
     console.log("this is the num of items when it header starts"+this.cartItems.pizzaForms.length);
     this.session = localStorage.getItem(`user_key`);
+    console.log(this.session)
+
   }
 
   showRegister() {
@@ -90,6 +92,7 @@ export class HeaderComponent implements OnInit {
     if (this.user != null && this.user.userRole.roleId == 1) {
       localStorage.setItem('user_key', this.username);
       this.session = localStorage.getItem('user_key');
+      console.log('Logged in as: ')
 
     }
   }
@@ -138,7 +141,7 @@ export class HeaderComponent implements OnInit {
       i++;
     }
     console.log(this.toppingNames);
-   
+
       return this.names;
      }
      async getBestToppingsAmounts():Promise<any>{
@@ -149,7 +152,7 @@ export class HeaderComponent implements OnInit {
       localStorage.setItem("topping_amounts_key_3",this.amounts[2].toString());
       localStorage.setItem("topping_amounts_key_4",this.amounts[3].toString());
       localStorage.setItem("topping_amounts_key_5",this.amounts[4].toString());
-   
+
        for(let amount of this.amounts){
    ;
          this.toppingAmounts.push(amount);
@@ -160,7 +163,7 @@ export class HeaderComponent implements OnInit {
          i++;
        }
        console.log(this.toppingAmounts);
-   
+
          return this.names;
         }
 }

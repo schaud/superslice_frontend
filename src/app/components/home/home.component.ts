@@ -18,15 +18,15 @@ export class HomeComponent implements OnInit {
 
 
   specials = [
-    {name: 'AlfredoPizza', img : '../assets/alfredo.png'},
-    {name: 'MeatLoversPizza', img : '../assets/meat-lovers.png'},
-    {name: 'HawaiianPizza', img : '../assets/Hawaii.png'},
-    {name: 'VeggiePizza', img : '../assets/vege_delux.png'},
-    {name: 'ItalianPizza', img : '../assets/Italian.png'},
-    {name: 'SupremePizza', img : '../assets/Supreme_pizza.png'},
-    {name: 'FourCheesePizza', img : '../assets/Four_Cheese.png'},
-    {name: 'WhitePizza', img : '../assets/white_pizza.png'},
-    {name: 'MediterraneanPizza', img : '../assets/Mediterranean.png'}
+    {name: 'AlfredoPizza', img : '../assets/alfredo.png', img2: '../assets/alfredo3.jpg'},
+    {name: 'MeatLoversPizza', img : '../assets/meat-lovers.png', img2: '../assets/Meat-lovers-pizza.jpg'},
+    {name: 'HawaiianPizza', img : '../assets/Hawaii.png', img2: '../assets/hawaii2.jpg'},
+    {name: 'VeggiePizza', img : '../assets/vege_delux.png', img2: '../assets/vege_delux2.jpg'},
+    {name: 'ItalianPizza', img : '../assets/Italian.png', img2: '../assets/italian3.jpg'},
+    {name: 'SupremePizza', img : '../assets/Supreme_pizza.png', img2: '../assets/supreme2.jpeg'},
+    {name: 'FourCheesePizza', img : '../assets/Four_Cheese.png', img2: '../assets/Four_Cheese.jpg'},
+    {name: 'WhitePizza', img : '../assets/white_pizza.png', img2: '../assets/whitepizza.jpg'},
+    {name: 'MediterraneanPizza', img : '../assets/Mediterranean.png', img2: '../assets/mediterranean.jpg'}
     ];
 
   ngOnInit(): void {
