@@ -1,10 +1,14 @@
+<div id = page>
+  <div id = "logo">
+    <a class="navbar-brand" routerLink=""><img class="i2" src="../../../assets/logo3.png"></a>
+  </div>
 <header>
   <nav style="background-color: #E3D081;"class="navbar navbar-expand-sm navbar-light">
-    <a class="navbar-brand" routerLink=""><img class="i2" src="../../../assets/logo.png"></a>
+
 
 
     <div id="user">
-      <h1>{{session}}</h1>
+      <h2>{{session}}</h2>
     </div>
 
     <div id="navLinks">
@@ -123,4 +127,5 @@
       <button type="button" (click)="hideRegister()" class="cancelbtn">Cancel</button>
     </div>
   </form>
+</div>
 </div>

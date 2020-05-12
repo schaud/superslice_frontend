@@ -240,6 +240,16 @@ export class SpecialsViewComponent implements OnInit {
 
     console.log(this.cartWithToppings)
 
+    if (this.cartItems.pizzaForms[0].type == ''){
+      this.cartItems.pizzaForms.shift();
+      this.cartWithToppings.pizzaForms.shift();
+    }
+
+    if (this.cartItems.pizzaForms[0].type == null){
+      this.cartItems.pizzaForms.shift();
+      this.cartWithToppings.pizzaForms.shift();
+    }
+
 
 
 
