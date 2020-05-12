@@ -9,8 +9,8 @@ export class StatusUpdateServiceService {
 
   constructor(private http: HttpClient) { }
 
-  // url = "http://localhost:9000/updateTicket/";
-  url = "http://localhost:9000/update";
+
+
 
 
 
@@ -22,7 +22,8 @@ export class StatusUpdateServiceService {
 
 
     const updateTicketObjPromise =
-    this.http.put(`http://localhost:9000/update?id=${t_id}&status=${status}`,{t_id,status}).toPromise();
+    this.http.put(`http://ec2-3-135-228-219.us-east-2.compute.amazonaws.com:9000/update?id=${t_id}&status=${status}`,{t_id,status}).toPromise();
+
   // const updateTicketObjPromise =
   //   this.http.put(this.url,JSON.stringify(t)).toPromise();
     
