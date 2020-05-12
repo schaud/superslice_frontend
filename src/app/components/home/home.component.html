@@ -2,10 +2,12 @@
   <div class="gallery" *ngFor="let special of specials">
     <a (click)="newPizza(special.name); newImage(special.img); newPizzaObj(getPizza(special.name))"
        routerLink="menu/special/specials-view">
-      <img [src]="special.img" width="600" height="400">  <!-- [@photoState]="photoSize"-->
-    </a>
+      <img [src]="special.img2" width="600" height="400">  <!-- [@photoState]="photoSize"-->
+    <br>
     <div class="desc">{{special.name | pizzaname}}</div>
+    </a>
   </div>
+
 </div>
 
 <!--<div class="center">-->
