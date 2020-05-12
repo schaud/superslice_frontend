@@ -57,9 +57,8 @@ export class CartComponent implements OnInit {
   pizzaData: any;
   order : any;
   note : string = 'none';
-  // emptyMsg = document.getElementById('empty');
-  // cart = document.getElementById('cart-container');
-  @ViewChild("shownSec") divView: ElementRef;
+//   @ViewChild("shownSec") divView: ElementRef;
+
 
 
 
@@ -73,20 +72,10 @@ export class CartComponent implements OnInit {
     // if(this.cartItems.pizzaForms.length <= 1 || this.cartWithToppings.pizzaForms.length<=1)
     // this.divView.nativeElement.setAttribute("style","visibility:visible;");
 
+
     if (this.cartItems.pizzaForms.length == 0){
       this.cartIsEmpty();
     }
-
-
-    // if (this.cartItems.pizzaForms[0].type == ''){
-    //   this.cartItems.pizzaForms.shift();
-    //   this.cartWithToppings.pizzaForms.shift();
-    // }
-    //
-    // if (this.cartWithToppings.pizzaForms[0].type == ''){
-    //   this.cartItems.pizzaForms.shift();
-    //   this.cartWithToppings.pizzaForms.shift();
-    // }
 
     if (this.cartItems.pizzaForms == []){
       this.cartIsEmpty();
@@ -96,7 +85,7 @@ export class CartComponent implements OnInit {
 
     console.log('In the Cart:');
     console.log(this.cartItems);
-    console.log(this.cartItems.pizzaForms)
+    console.log(this.cartItems.pizzaForms);
     this.populateQuantity();
     this.totalCost = this.calcCost();
     console.log(this.totalCost);
@@ -104,14 +93,8 @@ export class CartComponent implements OnInit {
     console.log(this.cartItems.pizzaForms.length);
 
 
-    console.log('cart with toppings')
-    console.log(this.cartWithToppings)
-
-
-
-
-
-
+    console.log('cart with toppings');
+    console.log(this.cartWithToppings);
 
   }
 
