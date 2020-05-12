@@ -1,8 +1,8 @@
 
-
-  <h1>Statistics page</h1>
-<h3 >The total revenue made : {{totalRevenue}}</h3>
-<h3 >The average Order amount : {{avgTotal}}</h3>
+<div *ngIf ="user!=null">
+<h1>Statistics page</h1>
+<h3>The total revenue made : {{totalRevenue}}</h3>
+<h3>The average Order amount : {{avgTotal}}</h3>
 <div style="width: 75%;"class="chart">
     <h3 id="superslice" >Most Popular Toppings</h3>
     <canvas
@@ -42,4 +42,4 @@
     </canvas>
   </div>
 
-
+</div>

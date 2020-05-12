@@ -1,10 +1,15 @@
+
+<div id = page>
+  <div id = "logo">
+    <a class="navbar-brand" routerLink=""><img class="i2" src="../../../assets/logo3.png"></a>
+  </div>
 <header>
   <nav style="background-color: #E3D081;"class="navbar navbar-expand-sm navbar-light">
-    <a class="navbar-brand" routerLink=""><img class="i2" src="../../../assets/logo.png"></a>
+
 
 
     <div id="user">
-      <h1>{{session}}</h1>
+      <h2>{{session}}</h2>
     </div>
 
     <div id="navLinks">
@@ -32,8 +37,71 @@
     </ul>
   </div>
   </nav>
+
 </header>
-<app-startup></app-startup>
+
+<header >
+  <nav *ngIf="user != null && user.userRole.roleId == 2" style="background-color: #E3D081;"class="navbar navbar-expand-sm navbar-light">
+    <a class="navbar-brand" routerLink=""><img class="i2" src="../../../assets/logo.png"></a>
+
+
+    <div id="user">
+      <h1>{{session}}</h1>
+    </div>
+
+    <div id="navLinks">
+    <ul class="navbar-nav " >
+      <li><a class="nav-link" routerLink="/employee" >Past Orders</a></li>
+        <li class="nav-item dropdown">
+
+          <a class="nav-link dropdown-toggle"id="navbardrop" data-toggle="dropdown">
+
+            Menu
+          </a>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" routerLink="menu/plain/specials-view">Plain</a>
+            <a class="dropdown-item" routerLink="/pizzaCustomizer">Build Your Own</a>
+            <a class="dropdown-item" routerLink="">Special</a>
+            <a class="dropdown-item" routerLink="menu/staple">Staple</a>
+          </div>
+
+        </li>
+
+        <li><a class="nav-link" routerLink="" (click)="logout()">logout</a></li>
+        <li><a routerLink="/cart" ><img class="i1" src="../../../assets/cart.png"></a></li>
+        <li></li>
+    </ul>
+  </div>
+  </nav>
+
+</header>
+
+<header >
+  <nav *ngIf="user != null && user.userRole.roleId == 1" style="background-color: #E3D081;"class="navbar navbar-expand-sm navbar-light">
+    <a class="navbar-brand" routerLink=""><img class="i2" src="../../../assets/logo.png"></a>
+
+
+    <div id="user">
+      <h1>{{session}}</h1>
+    </div>
+
+    <div id="navLinks">
+    <ul class="navbar-nav " >
+
+        <li class="nav-item dropdown">
+
+          <li><a class="nav-link" (click)="goToEmployee()">main</a></li>
+
+          <li><a class="nav-link" routerLink="/stats" >Statistics</a></li>
+
+        <li><a class="nav-link" routerLink="" (click)="logout()">logout</a></li>
+        <li></li>
+    </ul>
+  </div>
+  </nav>
+
+</header>
+
 
 
 <!--  -->
@@ -48,13 +116,13 @@
 
     <div class="container">
       <label for="uname"><b>Username</b></label>
-      <input type="text" [(ngModel)]="username" placeholder="Enter Username" name="uname" required>
+      <input type="text" #eunField [(ngModel)]="username" placeholder="Enter Username" name="uname" required>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" [(ngModel)]="password" placeholder="Enter Password" name="psw" required>
+      <input type="password"#epwField [(ngModel)]="password" placeholder="Enter Password" name="psw" required>
 
-      <button id="emploginBtn" (click) = "EmployeeloginUser(); hideEmployeeLogin(); goToEmployee()">Sign In</button>
-  
+      <button id="emploginBtn" (click) = "EmployeeloginUser(); hideEmployeeLogin(); goToEmployee();eunField.value='';epwField.value='';getBestToppings();getBestToppingsAmounts()">Sign In</button>
+
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
@@ -77,13 +145,18 @@
 
     <div class="container">
       <label for="uname"><b>Username</b></label>
-      <input type="text" [(ngModel)]="username" placeholder="Enter Username" name="uname" required>
+      <input #cunField type="text" [(ngModel)]="username" placeholder="Enter Username" name="uname" required>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" [(ngModel)]="password" placeholder="Enter Password" name="psw" required>
+      <input type="password"#cpwField [(ngModel)]="password" placeholder="Enter Password" name="psw" required>
+
+
+      <button (click) = "loginUser(); hideLogin();cunField.value='';cpwField.value=''">Sign In</button>
+
 
       <button (click) = "loginUser(); hideLogin()">Sign In</button>
-     
+
+
     </div>
 
     <div class="container" style="background-color:#f1f1f1">
@@ -104,11 +177,11 @@
     <div class="container">
 
       <label for="uname" ><b>Username</b></label>
-      <input type="text"[(ngModel)]="username" placeholder="Enter Username" name="uname" required>
+      <input  #nunField type="text"[(ngModel)]="username" placeholder="Enter Username" name="uname" required>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" [(ngModel)]="password"  placeholder="Enter Password" name="psw" required>
-      <button type="submit" (click) = "SignUpUser(); hideRegister()">Sign Up</button>
+      <input #npwField type="password" [(ngModel)]="password"  placeholder="Enter Password" name="psw" required>
+      <button type="submit" (click) = "SignUpUser(); hideRegister();cunField.value='';cpwField.value=''">Sign Up</button>
 
       <label>
         <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -119,4 +192,5 @@
       <button type="button" (click)="hideRegister()" class="cancelbtn">Cancel</button>
     </div>
   </form>
+</div>
 </div>

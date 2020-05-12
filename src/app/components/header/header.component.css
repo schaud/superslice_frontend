@@ -46,7 +46,9 @@ b{
     margin: 24px 0 12px 0;
     position: relative;
   }
-
+li{
+ font-size: 16pt;
+}
 
   img.avatar {
     width: 40%;
@@ -196,10 +198,44 @@ b{
 
   }
   .i1 {
-    width :32px;
-    height:42px;
+    padding-left: 10px;
+    
+    width :50px;
+    height:60px;
     float:right;
   }
+
+  img{
+    width : 220px;
+    height : 220px;
+    z-index: 1;
+  }
+
+  #page{
+    position: relative;
+    padding-top:50px;
+  }
+
+  header{
+    position: relative;
+    padding-top: 13px;
+  }
+
+#logo{
+  padding-left: 2px;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+#user{
+  padding-left: 200px;
+  font-size: 12px;
+}
+
+
+
+
 
 
 

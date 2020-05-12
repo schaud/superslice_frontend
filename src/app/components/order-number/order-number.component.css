@@ -26,3 +26,38 @@ ul {
   border: 1px solid black;
   background-color: lightblue;
 }
+
+.three_b {
+  /* padding: 10px; */
+  margin : 30px;
+  border-top: 1px solid #96d1f8;
+  background: #26638c;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3186bf), to(#26638c));
+  background: -webkit-linear-gradient(top, #3186bf, #26638c);
+  background: -moz-linear-gradient(top, #3186bf, #26638c);
+  background: -ms-linear-gradient(top, #3186bf, #26638c);
+  background: -o-linear-gradient(top, #3186bf, #26638c);
+  padding: 7.5px 15px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+  box-shadow: rgba(0,0,0,1) 0 1px 0;
+  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  color: #76c9a1;
+  font-size: 14px;
+  font-family: Helvetica, Arial, Sans-Serif;
+  text-decoration: none;
+  vertical-align: middle;
+}
+.three_b:hover {
+  border-top-color: #3497d9;
+   background: #3497d9;
+   color: #ccc;
+}
+
+.three_b:active {
+  border-top-color: #29668f;
+  background: #29668f;
+}

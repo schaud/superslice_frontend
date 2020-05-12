@@ -18,5 +18,18 @@ export class OrderNumberServiceService {
     return pendingStatusPromise;
   }
 
+  GetIncompleteOrder() : Promise<any>{
+    const IncompleteStatusPromise: Promise<any> = this.http.get(`http://localhost:9000/ticket?status=Incomplete`).toPromise();
+    return IncompleteStatusPromise;
+  }
+
+  
+  GetCompleteOrder() : Promise<any>{
+    const IncompleteStatusPromise: Promise<any> = this.http.get(`http://localhost:9000/ticket?status=Complete`).toPromise();
+    return IncompleteStatusPromise;
+  }
+
+
+
 
 }

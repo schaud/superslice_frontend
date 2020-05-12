@@ -1,0 +1,36 @@
+<!-- <p>customer-ticket works!</p> -->
+<br>
+<br>
+<h1 style="text-align: center;">{{ticket_user_url[0].user.username}}'s Ticket</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Ticket #</th>
+      <th>Items #</th>
+      <th >Note</th>
+      <th>Total Cost</th>
+      <th>Placement Time</th>
+      <th>Status</th>
+    </tr>
+    
+  </thead>
+  <tbody>
+    <tr *ngFor="let u of ticket_user_url; let i = index; ">
+
+        <td>{{ticket_user_url[i].ticketId}}</td>
+        <td>
+            <div style="list-style-type:none; text-align: center;" *ngFor="let pizza of u.pizzas; let j = index;">
+                <div class="c_style">pizza # {{j}}</div>
+                 <span *ngFor="let topping of pizza.toppings">
+                    <span>{{topping.toppingName}},</span>
+                 </span> 
+             </div>  
+        </td>
+        <td>{{this.ticket_user_url[i].note}}</td>
+        <td>${{ticket_user_url[i].totalCost}}</td>
+        <td>{{ticket_user_url[i].placementTime}}</td>
+        <td>{{ticket_user_url[i].status}}</td>
+    </tr>
+  </tbody>
+  
+</table>

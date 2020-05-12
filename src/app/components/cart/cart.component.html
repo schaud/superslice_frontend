@@ -1,6 +1,11 @@
-<section class="container content-section">
+<h2 id="empty" class="section-header">Your cart is currently empty.</h2>
+
+<section id="cart-container"   class="container content-section">
+
   <br>
+
   <h2 class="section-header">YOUR CART</h2>
+
   <div class="cart-row">
     <span class="cart-item cart-header cart-column">ITEM</span>
     <span class="cart-size cart-header cart-column">SIZE</span>
@@ -10,7 +15,6 @@
 
   <div class="cart-row" *ngFor="let pizza of cartWithToppings.pizzaForms; let i = index" >
 
-<!-- <<<<<<< raymond5 -->
     <div  class="cart-item cart-column dropdown">
       <img class="cart-item-image" src="{{images.get(pizza.type)}}" width="100" height="100">
       <span class="cart-item-title">{{pizza.type| pizzaname}}</span>
@@ -32,17 +36,35 @@
 
 </div>
 
-  <div class="cart-items">
+
+
+<div id ="note-div">
+  <h3>Note: </h3>
+    <input id="note" type="text" [(ngModel)]="note" placeholder="Please enter any details about your order.">
+</div>
+
+  <div  class="cart-items">
   </div>
+
+  <div>
   <div class="cart-total">
     <strong class="cart-total-title">Total:</strong>
     <span class="cart-total-price">{{totalCost | currency}}</span>
   </div>
 
+  <button  class="btn btn-primary btn-purchase" type="button" (click)="checkout()">PURCHASE</button>
+  </div>
 
-    <input type="text" [(ngModel)]="note" placeholder="Please enter any details about your order.">
-  <button class="btn btn-primary btn-purchase" type="button" (click)="checkout()">PURCHASE</button>
   </section>
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,0 +1,28 @@
+/* .p1 {
+    margin: 30px auto;
+    border: 1px solid black;
+    width: 55%;  
+    height: 300px;
+} */
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 80%;
+    margin: 0px auto;
+  }
+td, th {
+  border: 1px solid black;
+  text-align: left;
+  padding: 2px;
+
+}
+
+ul {
+  list-style-type:none;
+  text-align: left;
+}
+
+.c_style{
+  border: 1px solid black;
+  background-color: lightblue;
+}
