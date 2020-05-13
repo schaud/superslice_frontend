@@ -135,5 +135,9 @@ input[type=text], input[type=password] {
     }
   }
 
+body{
+  min-width: 600px;
+}
+
 
 

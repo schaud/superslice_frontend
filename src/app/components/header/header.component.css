@@ -288,9 +288,12 @@ a.navlink{
 
 #navlinks2{
   position: absolute;
-  right:25%;
+  right:28%;
   display: flex;
-  width: 950px;
+  width: 50%;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
 
 
 }

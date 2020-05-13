@@ -174,6 +174,7 @@ export class CartComponent implements OnInit {
     this.cartItems = {username: localStorage.getItem('user_key'),
       pizzaForms: [],
       note: '' };
+
     this.cartWithToppings = {username: localStorage.getItem('user_key'),
       pizzaForms: [],
       note: '' };
