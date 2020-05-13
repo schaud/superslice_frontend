@@ -57,3 +57,7 @@ div.contact_details {
     text-align: center;
     margin-left: 300px;
 }
+
+.contact_details{
+  padding-top: 100px;
+}

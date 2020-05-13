@@ -28,8 +28,8 @@
   height: 200px;
   top: 250%;
   left: 75%;
-  margin-top: -100px; 
-  margin-left: -250px; 
+  margin-top: -100px;
+  margin-left: -250px;
 }
 #cart{
   position: relative;
@@ -58,7 +58,7 @@ img{
   color: white;
   border-radius: 5px;
   text-align: center;
-  
+
 }
 
 
@@ -97,7 +97,7 @@ img{
 }
 
 #title{
-  padding-top: 20px;
+  padding-top: 100px;
   text-align: center;
   padding-bottom: 5px;
   /*display: flex;*/

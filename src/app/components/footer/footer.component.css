@@ -4,7 +4,8 @@ footer{
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color:  rgb(230, 217, 167);
+    background:linear-gradient(-120deg, #ee3124, #00a160, #ffc425);
+
     color: white;
     text-align: center;
     margin :0px;
@@ -18,7 +19,7 @@ footer{
 
 }
   footer  a{
-      color:black;
+      color:white;
       margin:0 50px 0 50px;
       text-decoration: underline;
   }

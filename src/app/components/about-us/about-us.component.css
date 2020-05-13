@@ -31,13 +31,13 @@ div.love_in_intro {
     ), url('../../../assets/IMG_0645_1_25.png'),
      url();
     background-repeat: no-repeat;
-    background-position: 
+    background-position:
     top 125px right;
 } */
-#background{background: 
-    /* top, transparent red, faked with gradient */ 
+#background{background:
+    /* top, transparent red, faked with gradient */
     linear-gradient(
-      /* rgba(0, 0, 255, 0.3), 
+      /* rgba(0, 0, 255, 0.3),
       rgba(0, 0, 255, 0.3) */
       rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)
@@ -46,9 +46,11 @@ div.love_in_intro {
     url('../../../assets/IMG_0645_2_35_1_901.png'),
     url('../../../assets/abtus.v1.png');
     background-repeat: no-repeat;
-    background-position: 
+    background-position:
     top 125px left,
     top 125px right
     ;
     /* background-color: wheat; */
+
+  padding-top: 120px;
 }
