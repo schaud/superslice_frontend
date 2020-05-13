@@ -26,12 +26,13 @@ export class HeaderComponent implements OnInit {
   password: string;
   user: any;
   session: string;
+  loggedIn: boolean;
 
-  cartItems : orderForm = {username: localStorage.getItem('user_key'),
+  cartItems : orderForm = {username: 'guest',
     pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity: 1}],
     note: null };
 
-  cartWithToppings : orderForm = {username: localStorage.getItem('user_key'),
+  cartWithToppings : orderForm = {username: 'guest',
     pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity:1}],
     note: "null" };
 
@@ -59,9 +60,15 @@ export class HeaderComponent implements OnInit {
     this.dataservice.sharedOrder2Form.subscribe(cartWithToppings => this.cartWithToppings = cartWithToppings);
 
 
-    console.log("this is the num of items when it header starts"+this.cartItems.pizzaForms.length);
-    this.session = localStorage.getItem(`user_key`);
+    console.log("this is the num of items when it header starts "+this.cartItems.pizzaForms.length);
+    if (this.loggedIn){
+    this.session = "Logged in as: " + localStorage.getItem('user_key');
+    }
     console.log(this.session)
+    console.log('this is the current cart at home')
+    this.clearCart()
+
+
 
   }
 
@@ -86,8 +93,10 @@ export class HeaderComponent implements OnInit {
     this.user = await this.login.loginserv(this.username, this.password);
     console.log(this.user);
     if (this.user != null && this.user.userRole.roleId == 2) {
-      localStorage.setItem('user_key', this.username);
-      this.session = localStorage.getItem('user_key');
+      this.loggedIn = true;
+      localStorage.setItem('user_key', this.user.username);
+      this.session = "Logged in as: " + localStorage.getItem('user_key');
+      console.log(this.session)
 
     }
   }
@@ -97,9 +106,10 @@ export class HeaderComponent implements OnInit {
     this.user = await this.login.loginserv(this.username, this.password);
     console.log(this.user);
     if (this.user != null && this.user.userRole.roleId == 1) {
-      localStorage.setItem('user_key', this.username);
-      this.session = localStorage.getItem('user_key');
-      console.log('Logged in as: ')
+      localStorage.setItem('user_key', this.user.username);
+      this.loggedIn = true;
+      this.session = "Logged in as: " + localStorage.getItem('user_key');
+      console.log(this.session);
 
     }
   }
@@ -112,7 +122,7 @@ export class HeaderComponent implements OnInit {
     console.log(this.user);
     if (this.user != null) {
       localStorage.setItem('user_key', this.username);
-      this.session = localStorage.getItem('user_key');
+      this.session = "Logged in as: " + localStorage.getItem('user_key');
     }
   }
 
@@ -124,17 +134,10 @@ export class HeaderComponent implements OnInit {
   logout():void{
 
     localStorage.removeItem("user_key");
-    this.cartItems = {username: localStorage.getItem('user_key'),
-      pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity: 1}],
-      note: null };
-
-    this.cartWithToppings = {username: localStorage.getItem('user_key'),
-      pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity: 1}],
-      note: null };
-
-    this.user=null;
-    this.session="";
-    console.log("signed out" + this.user)
+    localStorage.clear();
+    this.user = null;
+    this.session = null;
+    console.log("Signed out: " + this.user)
   }
 
   async getBestToppings():Promise<any>{
@@ -182,5 +185,10 @@ export class HeaderComponent implements OnInit {
        console.log(this.toppingAmounts);
 
          return this.names;
+        }
+
+        clearCart(){
+    console.log(this.cartWithToppings);
+
         }
 }

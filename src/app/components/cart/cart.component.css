@@ -200,7 +200,8 @@ html, body {
 }
 
 #empty{
-  padding-top: 25px;
+  padding-top: 120px;
+  padding-left: 125px;
   display: none;
 }
 
@@ -220,4 +221,10 @@ align-content: center;
 
 #purchase-div{
   padding-right: 80px;
+}
+
+#success{
+  display: none;
+  padding-top: 120px;
+  padding-left: 125px;
 }

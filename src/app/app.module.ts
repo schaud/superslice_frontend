@@ -82,7 +82,7 @@ import { CustomerTicketComponent } from './components/customer-ticket/customer-t
     HttpClientModule,
     ChartsModule,
     AgmCoreModule.forRoot({
-      apiKey:'AIzaSyC2MHBjkpGK0Nj-ec79KS0Ht3imzUrulPw'
+      apiKey:'AIzaSyCc0J1TUzTviLdqNNqex_0sutz3DNDrX2I'
     }),
     // MatInputModule,
      HttpModule,
@@ -100,7 +100,7 @@ import { CustomerTicketComponent } from './components/customer-ticket/customer-t
     StatsService,
     ChartsModule
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent, HeaderComponent],
 
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 

@@ -19,7 +19,7 @@ export class CartComponent implements OnInit {
 
   cartItems : orderForm = {username: localStorage.getItem('user_key'),
     pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity:1}],
-    note: 'none' };
+    note: '' };
 
   images =  new Map([
   ['AlfredoPizza','../assets/alfredo.png'],
@@ -148,10 +148,22 @@ export class CartComponent implements OnInit {
     emptyMsg.style.display = 'block';
   }
 
+  success() {
+
+    let success = document.getElementById('success');
+
+    success.style.display = 'block';
+  }
+
 
   async checkout(): Promise<any>{
+    console.log(this.cartItems);
     if (this.note == null){
       this.note = 'None';
+    }
+
+    if (this.cartItems.username == null){
+      this.cartItems.username = 'guest';
     }
     this.cartItems.note = this.note;
 
@@ -160,13 +172,18 @@ export class CartComponent implements OnInit {
     console.log(this.cartItems);
     console.log('Clearing Cart...')
     this.cartItems = {username: localStorage.getItem('user_key'),
-      pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity:1}],
+      pizzaForms: [],
       note: '' };
     this.cartWithToppings = {username: localStorage.getItem('user_key'),
-      pizzaForms: [{type : '', toppingNames: [''], size: '', cost: 0, quantity:1}],
+      pizzaForms: [],
       note: '' };
+
     this.cartIsEmpty();
+    this.success();
     console.log('Cart has been cleared!')
+    console.log(this.cartItems)
+
+
 
   }
 

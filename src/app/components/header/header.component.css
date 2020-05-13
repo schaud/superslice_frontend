@@ -7,10 +7,10 @@ input[type=text], input[type=password] {
     box-sizing: border-box;
   }
 
-.navLinks{
-  position: absolute;
-  right: 10%;
+#p-menu{
+  padding-top: 10px;
 }
+
 b{
   color:red;
 }
@@ -230,6 +230,7 @@ li{
 }
 
 #user{
+  padding-top: 5px;
   padding-left: 200px;
   font-size: 12px;
 }
@@ -239,6 +240,136 @@ nav{
   height: 50px;
   width: 100%;
 }
+
+.navLinks{
+  display: flex;
+  position: absolute;
+  right: 8%;
+  width: auto;
+  text-align: center;
+  height: 50px;
+
+
+}
+
+li{
+  width: auto;
+  position: relative;
+  font-weight: 500;
+
+
+}
+
+a.navlink{
+  color: white;
+  font-family: Futura, sans-serif;
+}
+
+#nav1{
+  background:linear-gradient(-120deg, #ee3124, #00a160, #ffc425);
+}
+#nav2{
+  background-color: #8e2934;
+  height: 44px;
+  border: 2px solid black;
+
+}
+
+#nav-secondary{
+  padding-top: 50px;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-radius: 5px;
+  z-index : 1;
+
+
+}
+
+#navlinks2{
+  position: absolute;
+  right:25%;
+  display: flex;
+  width: 950px;
+
+
+}
+
+#nav-secondary ul.navbar-nav{
+  width: 950px;
+}
+
+#navlinks2 li{
+  white-space: nowrap;
+  flex: 1 0 18%;
+  transition: 0.5s;
+  z-index: 1;
+}
+
+/*#navlinks2 ul{*/
+/*overflow: hidden;*/
+/*}*/
+
+
+
+/*#navlinks2 .animation{*/
+/*  position:absolute;*/
+/*  height: 100%;*/
+/*  margin-left: 165px;*/
+/*  top: 0;*/
+/*  z-index: 0;*/
+/*  background: #1abc9c;*/
+/*  width: 150px;*/
+/*  border-radius: 8px;*/
+/*  transition: all .5s ease 0s;*/
+/*}*/
+
+/*#navlinks2 .a:nth-child(1){*/
+/*  width: 150px;*/
+/*}*/
+
+/*#navlinks2 .start-home, a:nth-child(1):hover~.animation{*/
+/*  width: 150px;*/
+/*  left: 0;*/
+/*}*/
+
+/*#navlinks2 .a:nth-child(2){*/
+/*  width: 150px;*/
+/*}*/
+
+/*#navlinks2 .start-staples, a:nth-child(2):hover~.animation{*/
+/*  width: 110px;*/
+/*  left: 100px;*/
+/*}*/
+
+/*#navlinks2 .a:nth-child(3){*/
+/*  width: 150px;*/
+/*}*/
+
+/*#navlinks2 .start-plain, a:nth-child(3):hover~.animation{*/
+/*  width: 100px;*/
+/*  left: 210px;*/
+/*}*/
+
+/*#navlinks2 .a:nth-child(4){*/
+/*  width: 150px;*/
+/*}*/
+
+/*#navlinks2 .start-create-own, a:nth-child(4):hover~.animation{*/
+/*  width: 100px;*/
+/*  left: 310px;*/
+/*}*/
+
+
+
+
+
+
+
+
+
+
+
 
 
 
